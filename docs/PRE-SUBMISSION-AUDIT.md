@@ -2,7 +2,8 @@
 
 2026-10-16 checkpoint. Status: **TECHNICAL_ACCEPTANCE_PASS**.
 Static no-BLOCKER and passing tests do not establish browser signing or full
-submission readiness. No portal contribution has been submitted.
+submission readiness. The completed Portal contribution is now Pending review;
+its exact ID and inspected evidence links are recorded in portal-submission.json.
 
 ## Four-source cross-check
 
@@ -82,7 +83,7 @@ paragraph itself contains971. Both are within1000.
 The static warning points to gl.nondet in _judge, outside the lexical inner
 leader body. The actual chain is review_round -> run_nondet_default -> leader ->
 _judge; validator independently calls leader. No deterministic entrypoint calls
-_judge outside that sandbox. Semantic lint, captured validator replay and two
+_judge outside that sandbox. Semantic lint, captured validator replay and three
 actual successful network reviews support this review. The warning is preserved.
 The grader's generic Studionet reminder does not change the selected Studio Dev
 network or permit mixed evidence.
@@ -92,7 +93,7 @@ network or permit mixed evidence.
 The exact submitted-description draft is971 characters after trimming its final
 newline (972 including newline), within the observed1000-character Portal limit.
 Its title/one-liner/outcome and all links
-are in SUBMISSION.md; the packet has not been submitted.
+are in SUBMISSION.md; the actual submitted paragraph was inspected in Portal.
 
 The production-origin account was connected and the user signed all five
 primary actions. browser-lifecycle-audit.json returned passed=true with exact
@@ -115,7 +116,9 @@ passed from that same hash. Timestamp harvesting preserves the previously
 verified33 immutable finalized receipts and explicitly dates the9 new browser-
 council records; it does not relabel earlier observations as fresh RPC reads.
 
-CI must be successful for the final public commit. Final39-item acceptance,
-final master reread, registry/postmortem completion and Portal submission remain
-pending until their own final checkpoints. Actual browser cancellation/recovery,
-real-network semantic RETRYABLE and external adoption are not claimed.
+CI38874072324 for submitted public commit1f0ec53 completed SUCCESS. Portal now
+shows SlateFold, Builder/Projects, Pending review, four evidence items and ID
+91cf547f-d1fd-4647-a7df-c734840c9f83. The post-submission documentation checkpoint,
+final master reread and39-item proof are recorded in FINAL-ACCEPTANCE.md.
+Actual browser cancellation/recovery, real-network semantic RETRYABLE and
+external adoption are not claimed. Steward acceptance remains pending.

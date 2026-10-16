@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-10-16T08:44:07Z",
+  "portal": "https://portal.genlayer.foundation/my-submissions",
+  "project": "SlateFold",
+  "track": "Builder",
+  "category": "Projects",
+  "submissionId": "91cf547f-d1fd-4647-a7df-c734840c9f83",
+  "status": "Pending review",
+  "displayedSubmittedDate": "Oct 16, 2026",
+  "evidenceItems": 4,
+  "descriptionCharacters": 971,
+  "submittedPublicCommit": "1f0ec53872de63b72a90d907b94319034cfb16c7",
+  "submittedSuccessfulCI": "https://github.com/duclucky/slate-fold-genlayer/actions/runs/38874072324",
+  "observation": "Authenticated Portal UI: My submissions > SlateFold > View details; exact ID obtained through its Copy ID button. Category, description and four evidence links were inspected after submission.",
+  "transportNote": "The submit locator returned no_matches after navigation. The actual resulting submission was inspected before any retry; no duplicate form was sent.",
+  "acceptedBySteward": false,
+  "officialScoreAvailable": false
+}

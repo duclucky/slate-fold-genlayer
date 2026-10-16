@@ -2,7 +2,7 @@
 
 ## Identity
 
-- Idea: IDEA-046; category: Projects; status: VALIDATED (all14 gates, including execution; submission pending).
+- Idea: IDEA-046; category: Projects; status: COMPLETED (all14 gates, including execution; Portal submitted, pending review).
 - Independent child repository: slate-fold. Public source: https://github.com/duclucky/slate-fold-genlayer.
 - Target: Studio Dev61997; IC RPC follows verified workspace D1.
 - Runtime: GenVM v0.3 with verified5jyc runner. Current upstream9b8 runner failed
@@ -152,7 +152,8 @@ than inventing fixtures, funds, successful signatures or canonical results.
 Admission and unsigned feasibility12/12 are recorded; local implementation,
 Studio Dev consequences, five primary browser-wallet writes, public CI and
 hosting are verified. Gate13 is now PASS_EXECUTION, supported by the separate
-browser-lifecycle-audit.json and native-delivery proof. Submission is pending.
+browser-lifecycle-audit.json and native-delivery proof. Portal submission
+91cf547f-d1fd-4647-a7df-c734840c9f83 is pending steward review.
 
 ## Adoption path and milestone headroom
 

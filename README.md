@@ -6,6 +6,11 @@ validators group equivalent motions, and deterministic ballots allocate a fixed
 
 **Category: Projects. Local/CI checks, Studio Dev consequences and the primary browser-wallet journey are verified.**
 
+Portal submission `91cf547f-d1fd-4647-a7df-c734840c9f83` is **Pending review**.
+See the [submission packet](docs/SUBMISSION.md),
+[final acceptance checklist](docs/FINAL-ACCEPTANCE.md) and
+[postmortem](docs/POSTMORTEM.md). No steward acceptance is claimed.
+
 [Public repository](https://github.com/duclucky/slate-fold-genlayer)
 
 ## Why it exists

@@ -1,6 +1,10 @@
 # SlateFold submission packet
 
-Status: NOT_SUBMITTED. This is copy-ready field text, not a submission confirmation.
+Status: SUBMITTED, PENDING REVIEW. Portal submission ID:
+`91cf547f-d1fd-4647-a7df-c734840c9f83`, observed2026-10-16.
+[Confirmation](evidence/studio-dev/portal-submission.json) records the actual
+authenticated My submissions entry, Projects category and four evidence items.
+This is not steward acceptance or an official score.
 The authenticated Portal form was inspected on2026-10-16; it exposes a180-character
 one-liner,1000-character description and500-character verification outcome.
 
@@ -20,11 +24,12 @@ recorded in [pre-submission audit](PRE-SUBMISSION-AUDIT.md).
 
 ## How-to
 
-1. **Inspect a completed council.** Open the website, choose Rounds, then open
-   the archive permissions council. Read its motions, public ballots and result.
-   Equivalent motions2/3 pooled two votes; member2 is the fixed representative.
-2. **Compare the tie.** Open the distinct-motions council. Its three meaning
-   classes each have one vote, so the sponsor received the refund credit.
+1. **Inspect the browser council.** Open the website, choose History, then open
+   Browser archive council -> Result. Motions1/2 pooled two votes; member1 is
+   the fixed representative and its actual OKX withdrawal finalized.
+2. **Compare the tie.** Open Three distinct archive permissions with3/3 ballots.
+   Its three meaning classes each have one vote, so the sponsor received the
+   refund credit. The similarly named1/3-ballot round expired safely.
 3. **Inspect real settlement.** Follow the Explorer/evidence links below for
    finalized reviews and delivered2GEN withdrawals. The canonical accounting
    records12GEN received,12GEN withdrawn and0GEN escrow/credit/native balance.
@@ -50,11 +55,13 @@ History shows six finalized councils. The browser council groups [[1,2],[3]] wit
 - Majority review: https://explorer-studio-dev.genlayer.com/tx/0x9e4a5c16338f67095a9b1896d4a1d6eabd7af106af41d2d402eb72dfb46571b6
 - Tie review: https://explorer-studio-dev.genlayer.com/tx/0x4caea369c7f6827acc1fbd9f278a616de49659fb568781a5157c26a8855a68b0
 - Successful code/hosting-source CI: https://github.com/duclucky/slate-fold-genlayer/actions/runs/38872338701
+- Successful submitted-public-commit CI: https://github.com/duclucky/slate-fold-genlayer/actions/runs/38874072324
 - Current main workflow: https://github.com/duclucky/slate-fold-genlayer/actions/workflows/check.yml?query=branch%3Amain
 - Frontend read/write scope: [FRONTEND-VERIFICATION.md](FRONTEND-VERIFICATION.md).
 
-The fixed CI run belongs to source commit32bddef. Later documentation commits
-require their own successful CI before final submission; the workflow link is
+The code/hosting CI belongs to32bddef; the submission-time public-main CI belongs
+to1f0ec53 and completed SUCCESS before submission. Later documentation commits
+require their own successful CI before final completion; the workflow link is
 not itself a claim that its latest run has passed.
 
 ## Verified facts and limits
@@ -73,8 +80,8 @@ The primary browser journey is verified. No external adoption, real-world work
 verification, identity guarantee, Sybil protection, private ballots, formal clone
 independence or guaranteed model correctness is claimed. Runtime infrastructure
 is Studio Dev, not mainnet. A retryable semantic/source case is proven locally;
-no successful real-network RETRYABLE lifecycle is claimed. Portal submission is
-pending; no confirmation ID exists. Cancellation/recovery browser execution is
+no successful real-network RETRYABLE lifecycle is claimed. Portal review is
+pending; the actual submission ID is recorded above. Cancellation/recovery browser execution is
 not claimed; those branches have UI/SDK tests and real script-signed network cases.
 
 ## Why Projects
