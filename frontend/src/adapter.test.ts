@@ -9,6 +9,8 @@ const sender='0x1111111111111111111111111111111111111111';
 const recipient='0x2222222222222222222222222222222222222222';
 const tx='0x'+'33'.repeat(32);
 const endpoint='https://offline-slatefold.invalid/genlayer-rpc';
+const quotedFee=10n**15n;
+const distribution={leaderTimeunitsAllocation:'100',validatorTimeunitsAllocation:'100',appealRounds:'0',executionBudgetPerRound:'100000000000000',executionConsumed:'0',totalMessageFees:'0',rotations:['0'],maxPriceGenPerTimeUnit:'1',storageFeeMaxGasPrice:'1',receiptFeeMaxGasPrice:'1'};
 const receipt={transactionHash:tx,transactionIndex:'0x0',blockHash:'0x'+'44'.repeat(32),blockNumber:'0x10',from:sender,to:recipient,cumulativeGasUsed:'0x1',gasUsed:'0x1',contractAddress:null,logs:[],logsBloom:'0x'+'00'.repeat(256),status:'0x1',effectiveGasPrice:'0x0',type:'0x0'};
 afterEach(()=>vi.unstubAllGlobals());
 function io(finalExecution='SUCCESS'){
@@ -19,6 +21,8 @@ function io(finalExecution='SUCCESS'){
   let result:unknown;
   switch(body.method){
    case 'eth_getTransactionCount':result='0x0';break;
+   case 'sim_getFeeConfig':result={enabled:true,policy:{genPerTimeUnit:'1',storageUnitPrice:'1',receiptGasPrice:'1'}};break;
+   case 'sim_estimateTransactionFees':result={recommendedPreset:{distribution,feeValue:quotedFee.toString()}};break;
    case 'eth_estimateGas':result='0x30d40';break;
    case 'eth_gasPrice':result='0x0';break;
    case 'eth_blockNumber':result='0x10';break;
@@ -38,17 +42,24 @@ it('actual adapter + real SDK encode selected caller, IC destination and exact2G
  const requests=sends.filter(x=>x.method==='eth_sendTransaction');expect(requests).toHaveLength(1);
  const request=requests[0].params![0] as {from:string;to:string;value:string;data:`0x${string}`};
  expect(request.from.toLowerCase()).toBe(sender);expect(request.to.toLowerCase()).toBe(studioDevnet.consensusMainContract!.address.toLowerCase());
- expect(BigInt(request.value)).toBe(2n*10n**18n);
+ expect(BigInt(request.value)).toBe(2n*10n**18n+quotedFee);
  const decoded=decodeFunctionData({abi:studioDevnet.consensusMainContract!.abi,data:request.data});
  expect(decoded.functionName).toBe('addTransaction');
  const params=(decoded.args as unknown as [{sender:string;recipient:string;userValue:bigint}])[0];
  expect(params.sender.toLowerCase()).toBe(sender);expect(params.recipient.toLowerCase()).toBe(recipient);expect(params.userValue).toBe(2n*10n**18n);
- expect(stages).toEqual(['submitted','accepted','finalized']);expect(reads).toContain('eth_getTransactionByHash');
+ expect(stages).toEqual(['estimating','signing','submitted','accepted','finalized']);expect(reads).toContain('eth_getTransactionByHash');
  expect(sends.every(x=>['eth_chainId','eth_accounts','eth_sendTransaction'].includes(x.method))).toBe(true);
 });
 it('zero-value write uses SDK contract call and selected wallet',async()=>{
  const {provider,sends}=io();await createSlateAdapter({address:recipient,account:sender,provider,endpoint,pollIntervalMs:0}).write('cancel_round',['cancel-fixture'],'0',()=>{});
- expect(BigInt((sends.find(x=>x.method==='eth_sendTransaction')!.params![0] as {value:string}).value)).toBe(0n);
+ expect(BigInt((sends.find(x=>x.method==='eth_sendTransaction')!.params![0] as {value:string}).value)).toBe(quotedFee);
+});
+it('live fee quote must be funded separately from the exact2GEN purse',async()=>{
+ const {provider,sends}=io();await createSlateAdapter({address:recipient,account:sender,provider,endpoint,pollIntervalMs:0}).write('create_round',['fee-regression','Archive council','Choose archive permission.',sender,recipient,1900000100,1900000200,1900000300],'2',()=>{});
+ const request=sends.find(x=>x.method==='eth_sendTransaction')!.params![0] as {value:string;data:`0x${string}`};
+ const decoded=decodeFunctionData({abi:studioDevnet.consensusMainContract!.abi,data:request.data});
+ const params=(decoded.args as unknown as [{userValue:bigint;feesDistribution:{executionBudgetPerRound:bigint}}])[0];
+ expect(params.userValue).toBe(2n*10n**18n);expect(BigInt(request.value)).toBeGreaterThan(params.userValue);expect(params.feesDistribution.executionBudgetPerRound).toBeGreaterThan(0n);
 });
 it.each([undefined,'undefined','0x0','0x'+'00'.repeat(20)])('invalid contract %s fails before wallet or RPC',async address=>{
  const {provider,sends}=io();const a=createSlateAdapter({address,account:sender,provider,endpoint});

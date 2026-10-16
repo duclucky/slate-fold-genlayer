@@ -17,5 +17,5 @@ export function receiptState(receipt){
 }
 export function safeReceipt(receipt){
  const state=receiptState(receipt);
- return {...state,hash:hash(receipt?.hash??receipt?.txId),from:address(receipt?.from_address??receipt?.sender),to:address(receipt?.to_address??receipt?.recipient)};
+ return {...state,hash:hash(receipt?.hash??receipt?.txId??receipt?.transactionHash),from:address(receipt?.from_address??receipt?.sender??receipt?.from),to:address(receipt?.to_address??receipt?.recipient??receipt?.to)};
 }

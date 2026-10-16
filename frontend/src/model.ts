@@ -7,10 +7,10 @@ export interface Round {
 }
 export interface NewRound {id:string;title:string;objective:string;members:string[];proposalDeadline:number;voteDeadline:number;reviewDeadline:number}
 export type Action='create_round'|'submit_motion'|'cast_ballot'|'review_round'|'cancel_round'|'recover_round'|'withdraw_credit';
-export type TxStage='submitted'|'accepted'|'finalized'|'failed'|'retry';
+export type TxStage='estimating'|'signing'|'submitted'|'accepted'|'finalized'|'failed'|'retry';
 export interface Adapter {
  list():Promise<Round[]>; round(id:string):Promise<Round>; credit(address:string):Promise<string>;
- write(action:Action,args:unknown[],valueGEN:'0'|'2',onStage:(stage:TxStage,hash?:string)=>void):Promise<void>;
+ write(action:Action,args:unknown[],valueGEN:'0'|'2',onStage:(stage:TxStage,hash?:string,feeGEN?:string)=>void):Promise<void>;
 }
 export const unavailable:Adapter={
  async list(){throw new Error('Contract connection is not configured yet. You can explore the guide; council records will appear when a verified deployment is connected.');},

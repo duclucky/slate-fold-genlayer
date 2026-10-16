@@ -1,13 +1,14 @@
 /** Capture an unsigned SDK envelope, then estimate it. Never broadcast. */
 import {readFile} from 'node:fs/promises';
 import {createClient} from 'genlayer-js';
-import {chain,sourcePath,sponsor,rpc,save,gen,verifyNetwork,safeError,client} from './network.mjs';
+import {chain,sourcePath,sponsor,rpc,save,gen,verifyNetwork,safeError} from './network.mjs';
+import {quoteDeploy} from './fees.mjs';
 const actor=await sponsor();const network=await verifyNetwork();const code=await readFile(sourcePath,'utf8');
 const checks=[];
-for(const withFees of [false,true]){
+for(const withFees of [true]){
  let request;
  const provider={async request(input){if(input.method==='eth_sendTransaction'){request=input.params[0];throw Error('CAPTURE_ONLY_NO_BROADCAST');}throw Error('Unexpected signing request');}};
- const fees=withFees?await client().estimateTransactionFees():undefined;
+ const fees=await quoteDeploy(actor);
  try{await createClient({chain:{...chain},account:actor.address,provider}).deployContract({code,args:[],...fees?{fees}:{}});}catch{}
  if(!request){checks.push({withFees,captured:false});continue;}
  const transaction={from:request.from,to:request.to,data:request.data,value:request.value};

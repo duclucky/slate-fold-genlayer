@@ -1,6 +1,6 @@
 /** Fixed-origin, bounded read proxy. Wallet signing never passes through here. */
 const RPC='https://studio-next.genlayer.com/api';
-const methods=new Set(['eth_chainId','gen_call','eth_getTransactionByHash','eth_getTransactionCount','eth_estimateGas','eth_gasPrice','eth_getTransactionReceipt','eth_blockNumber','sim_getFeeConfig']);
+const methods=new Set(['eth_chainId','gen_call','eth_getTransactionByHash','eth_getTransactionCount','eth_estimateGas','eth_gasPrice','eth_getTransactionReceipt','eth_blockNumber','sim_getFeeConfig','sim_estimateTransactionFees']);
 const fields=(object,keys)=>Object.fromEntries(keys.filter(key=>object&&Object.hasOwn(object,key)).map(key=>[key,object[key]]));
 function project(method,result){
  if(method==='gen_call'&&result&&typeof result==='object')return {...fields(result,['data','result','execution_result']),...result.status?{status:{code:result.status.code,message:result.status.code===0?'OK':'Contract read failed'}}:{}};
@@ -12,6 +12,7 @@ function project(method,result){
  }
  if(method==='eth_getTransactionReceipt'&&result)return fields(result,['transactionHash','transactionIndex','blockHash','blockNumber','from','to','contractAddress','cumulativeGasUsed','gasUsed','effectiveGasPrice','logs','logsBloom','status','type','root']);
  if(method==='sim_getFeeConfig'&&result)return {enabled:result.enabled,policy:fields(result.policy,['genPerTimeUnit','storageUnitPrice','receiptGasPrice','timeUnitOverlayBps','intrinsicGas','bootloaderOverhead','gasPerChangedSlot','calldataGasPerByte','fixedProposeReceiptGas','fixedMessageRevealGas','messageFeeParamsBudgetFloor'])};
+ if(method==='sim_estimateTransactionFees'&&result)return {recommendedPreset:result.recommendedPreset,feeAccounting:fields(result.feeAccounting,['execution_fee_consumed','message_fee_consumed','genvm_message_fee_consumed','message_fee_budget','message_fee_refunded','external_message_fee_reimbursed','external_message_fee_reserved','external_message_fee_remainder','message_allocations'])};
  return result;
 }
 export async function forwardRpc(body){
@@ -19,6 +20,7 @@ export async function forwardRpc(body){
  const fail=(code,message)=>({jsonrpc:'2.0',id,error:{code,message}});
  if(!body||!methods.has(body.method)||!Array.isArray(body.params))return fail(-32601,'This proxy accepts only the configured read methods.');
  if(body.method==='gen_call'&&(body.params.length!==1||body.params[0]?.type!=='read'))return fail(-32602,'Only contract reads are accepted.');
+ if(body.method==='sim_estimateTransactionFees'&&(body.params.length!==1||body.params[0]?.type!=='write'||!/^0x[0-9a-fA-F]{40}$/.test(body.params[0]?.to??'')))return fail(-32602,'Only a bounded contract-write fee quote is accepted.');
  try{
   const response=await fetch(RPC,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id,method:body.method,params:body.params}),signal:AbortSignal.timeout(25000)});
   if(!response.ok)return fail(-32000,'Studio Dev read is temporarily unavailable.');

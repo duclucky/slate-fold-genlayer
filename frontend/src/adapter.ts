@@ -1,6 +1,7 @@
 import {createClient} from 'genlayer-js';
 import {studioDevnet} from 'genlayer-js/chains';
 import {TransactionHashVariant} from 'genlayer-js/types';
+import {formatUnits} from 'viem';
 import {receiptState} from '../../scripts/receipt.mjs';
 import {ensureChain,validAddress,type Provider} from './wallet';
 import {labels,type Adapter,type Round,type Action,type TxStage} from './model';
@@ -61,9 +62,15 @@ export function createSlateAdapter(options:Options):Adapter{
    const selected=options.provider;
    const provider:Provider={async request(request){const result=await selected.request(request);if(request.method==='eth_sendTransaction'&&txHash(result)){pending.set(key,result);onStage('submitted',result);}return result;}};
    const writer=createClient({chain,account:options.account,provider});
+   onStage('estimating');
+   const value=valueGEN==='2'?2n*10n**18n:0n;
+   const call={address,functionName:action,args:args as Parameters<typeof writer.writeContract>[0]['args'],value};
+   const quote=await writer.estimateTransactionFeesForWrite({...call,transactionHashVariant:TransactionHashVariant.LATEST_FINAL});
+   if(quote.policy.enabled&&quote.feeValue<=0n)throw Error('The network did not provide a funded fee quote. No transaction was submitted.');
+   onStage('signing',undefined,formatUnits(quote.feeValue,18));
    let hash:`0x${string}`;
    try{
-    hash=await writer.writeContract({address,functionName:action,args:args as Parameters<typeof writer.writeContract>[0]['args'],value:valueGEN==='2'?2n*10n**18n:0n});
+    hash=await writer.writeContract({...call,fees:{distribution:quote.distribution,feeValue:quote.feeValue,messageAllocations:quote.messageAllocations}});
    }catch(error){
     if(pending.has(key))throw Error('The wallet submitted a transaction. Check the existing transaction before retrying.');
     if((error as {code?:number}).code===4001)throw Error('Signing was declined in your wallet.');

@@ -5,6 +5,7 @@ import {spawnSync} from 'node:child_process';
 import {keccak256} from 'viem';
 import {root,evidence,sourcePath,identity,sponsor,client,rpc,read,balance,gen,save,wait,verifyNetwork,SafeError,safeError,EXPLORER} from './network.mjs';
 import {hash,address,safeReceipt} from './receipt.mjs';
+import {quoteDeploy} from './fees.mjs';
 
 async function load(name){try{return JSON.parse(await readFile(resolve(evidence,name),'utf8'));}catch(error){if(error.code==='ENOENT')return null;throw new SafeError('EvidenceReadFailed');}}
 async function deploy(){
@@ -26,8 +27,18 @@ async function deploy(){
  const check=JSON.parse(await readFile(resolve(root,'.codex/last-check.json'),'utf8'));
  if(check.exitCode!==0||check.sourceSha256!==id.sourceSha256)throw new SafeError('CurrentLocalCheckRequired');
  if(attempt&&attempt.sourceSha256!==id.sourceSha256)throw new SafeError('PriorAttemptNeedsReconciliation');
+ if(attempt?.hash){
+  const envelope=await rpc('eth_getTransactionReceipt',[attempt.hash]);
+  if(envelope?.status==='0x0'){
+   const reason=String(envelope.revertReason??'');
+   if(!reason.includes('FeeValueMustBeNonZero'))throw new SafeError('RevertedEnvelopeNeedsInspection');
+   const archived={...attempt,status:'ENVELOPE_REVERTED',reason:'FeeValueMustBeNonZero',contractCreated:false,remainingContractLiabilityGEN:'0',reconciledAt:new Date().toISOString()};
+   await save('deployment-archive-001.json',archived);attempt=null;
+  }
+ }
  if(!attempt){
-  attempt={...id,at:new Date().toISOString(),actor:actor.address,valueGEN:'0',status:'PREPARED',hash:null};
+  const fees=await quoteDeploy(actor);
+  attempt={...id,at:new Date().toISOString(),actor:actor.address,valueGEN:'0',feeDepositGEN:gen(fees.feeValue),status:'PREPARED',hash:null};
   await save('deployment-attempt.json',attempt);
   const originalFetch=globalThis.fetch;
   globalThis.fetch=async(url,options)=>{
@@ -41,7 +52,7 @@ async function deploy(){
    }
    return originalFetch(url,options);
   };
-  try{const returned=await client(actor).deployContract({code:await readFile(sourcePath,'utf8'),args:[]});if(!hash(returned))throw new SafeError('InvalidDeploymentHash');attempt.hash=returned;attempt.status='SUBMITTED';await save('deployment-attempt.json',attempt);}
+  try{const returned=await client(actor).deployContract({code:await readFile(sourcePath,'utf8'),args:[],fees});if(!hash(returned))throw new SafeError('InvalidDeploymentHash');attempt.hash=returned;attempt.status='SUBMITTED';await save('deployment-attempt.json',attempt);}
   finally{globalThis.fetch=originalFetch;}
  }
  if(!hash(attempt.hash))throw new SafeError('PriorAttemptNeedsInspection');

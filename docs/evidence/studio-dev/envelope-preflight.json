@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-16T00:33:03.404Z",
+  "at": "2026-10-16T00:44:51.249Z",
   "command": "node scripts/envelope-preflight.mjs",
   "scope": "Unsigned SDK capture and read-only gas estimation; no signature/broadcast.",
   "network": {
@@ -10,9 +10,9 @@
   },
   "checks": [
     {
-      "withFees": false,
+      "withFees": true,
       "captured": true,
-      "feeDepositGEN": "0",
+      "feeDepositGEN": "0.000379320000010352",
       "estimatedGasIsPositive": true,
       "passed": true
     }

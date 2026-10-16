@@ -33,3 +33,21 @@ arbitrary upstream errors. Wallet signing stays inside the selected provider.
 
 Deployed-address reads, live-host proxy and browser-wallet writes are
 PENDING_REAL_EVIDENCE until the later lifecycle/live verification checkpoint.
+
+## Fee correction during deployment smoke
+
+The first zero-value deployment envelope was explicitly reverted with
+FeeValueMustBeNonZero. No contract was created and the sponsor balance did not
+change. RPC gas estimation had succeeded, so gas estimation alone is not protocol
+fee admission proof. The failed hash is archived separately.
+
+The actual adapter now measures a fee quote with the installed SDK, funds its
+distribution and feeValue, and preserves exactly2GEN as the application userValue.
+The wallet total includes the protocol fee deposit as well as the purse; UI copy
+and the signing state display that distinction in GEN. A failing regression
+observed the previous2GEN-only envelope, then passed with the quoted fee included.
+The CSS design remains unchanged. Current deployed/browser fee behavior still
+needs live evidence and is not inferred from the regression.
+
+Official fee-estimation reference:
+https://docs.genlayer.com/api-references/genlayer-js

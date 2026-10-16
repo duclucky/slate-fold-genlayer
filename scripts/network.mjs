@@ -27,7 +27,7 @@ console.error=()=>{};
 export function safeError(error){
  const text=String(error?.message??'');
  return {kind:error instanceof SafeError?error.kind:['AbortError','TimeoutError'].includes(error?.name)?error.name:'OperationFailed',rpcCode:error instanceof SafeError?error.code:null,
-  markers:{insufficientFunds:/insufficient funds/i.test(text),invalidAddress:/invalid address|Address.*invalid/i.test(text),timeout:/time.*out/i.test(text),nonPayable:/non.payable/i.test(text),...error?.markers}};
+  markers:{insufficientFunds:/insufficient funds/i.test(text),invalidAddress:/invalid address|Address.*invalid/i.test(text),timeout:/time.*out/i.test(text),nonPayable:/non.payable/i.test(text),...(error instanceof SafeError?error.markers:{})}};
 }
 export async function rpc(method,params=[]){
  const response=await fetch(RPC,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,method,params}),signal:AbortSignal.timeout(55000)});
