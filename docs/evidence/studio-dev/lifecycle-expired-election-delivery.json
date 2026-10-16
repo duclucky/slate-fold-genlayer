@@ -1,0 +1,87 @@
+{
+  "parentHash": "0xd9ee03a10a9414507b5e1e8fba59084a7f2eaa7fee40d01cc7b143b15f64b1a6",
+  "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "expectedTransferGEN": "2",
+  "contractBeforeGEN": "4",
+  "contractAfterGEN": "2",
+  "recipientNetIncreaseGEN": "1.999873694749999177",
+  "feeDepositGEN": "0.000759798000010352",
+  "creditAfterGEN": "0",
+  "childReceipts": [],
+  "after": {
+    "round": {
+      "attemptCount": 0,
+      "ballots": [
+        0,
+        0,
+        0
+      ],
+      "configDigest": "51c6d50ed909ff0f36856e9a831d0bf033b604eb6b4ce1955bc3858353a5f1a3",
+      "createdAt": 1792112749,
+      "escrowGEN": "0",
+      "groups": [],
+      "id": "council-permissions-v1",
+      "members": [
+        "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "ef5c2b0ee33090028bd4805f20ac676485b82133ea77b46c941fa0349d018425",
+        "3e2082df12f8234155558dbeaa99a516df8579b1e8d37cb2e572f096dd53b270",
+        ""
+      ],
+      "motions": [
+        "Permit every council member to read the council archive and to redistribute archive copies to the public, provided the original author is credited.",
+        "Permit council members to read the council archive. Prohibit redistribution of archive copies to anyone outside the council. Require attribution to the original author.",
+        ""
+      ],
+      "objective": "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+      "proposalDeadline": 1792113042,
+      "reason": "Unresolved round expired; sponsor recovered budget.",
+      "recipient": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "reviewDeadline": 1792113762,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [],
+      "settledAt": 1792114192,
+      "slateDigest": "",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "status": "REFUNDED",
+      "title": "Council archive permissions",
+      "voteDeadline": 1792113282,
+      "winnerSlot": 0
+    },
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "2",
+      "receivedGEN": "4",
+      "withdrawnGEN": "2"
+    },
+    "nativeContractGEN": "2",
+    "creditsGEN": [
+      "0",
+      "0",
+      "0"
+    ],
+    "actorBalancesGEN": [
+      "28.173151468500092508",
+      "0.999685473499996708",
+      "0.999764105249997531"
+    ]
+  },
+  "checkedAt": "2026-10-16T01:31:30.339Z",
+  "balanceProven": true,
+  "externalReceipt": {
+    "kind": "parent-attached external EVM execution receipt",
+    "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+    "valueGEN": "2",
+    "executionRecorded": true,
+    "messageValueDelivered": true,
+    "effectId": "0x7a8fd0c74233f4ef191809f90320dc3fa7824557cbaf2f12712ab32a023518ea",
+    "separateChildHashAvailable": false
+  },
+  "deliveryProven": true,
+  "receiptReconciledAt": "2026-10-16T01:40:20.636Z"
+}

@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-16T01:15:02.571Z",
+  "identity": {
+    "network": "Studio Dev",
+    "chainId": 61997,
+    "sourceCommit": "93a2214d8c6857b06f27dd375ae4d66aca0fbbb0",
+    "sourceSha256": "cdef441b27f661c96fb4c7dcaf2316858a810b46779ff8d6ff1d74a95728fe74",
+    "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+    "api": "v0.3.0",
+    "genvm": "v0.6.0-rc5",
+    "sdk": "2.0.0-rc.1"
+  },
+  "methodCount": 14,
+  "writes": [
+    {
+      "name": "cancel_round",
+      "payable": false
+    },
+    {
+      "name": "cast_ballot",
+      "payable": false
+    },
+    {
+      "name": "create_round",
+      "payable": true
+    },
+    {
+      "name": "recover_round",
+      "payable": false
+    },
+    {
+      "name": "review_round",
+      "payable": false
+    },
+    {
+      "name": "submit_motion",
+      "payable": false
+    },
+    {
+      "name": "withdraw_credit",
+      "payable": false
+    }
+  ],
+  "passed": true
+}

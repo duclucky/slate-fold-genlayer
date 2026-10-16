@@ -1,0 +1,463 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "rpc": "https://studio-next.genlayer.com/api",
+  "explorer": "https://explorer-studio-dev.genlayer.com",
+  "command": "node scripts/evidence-timeline.mjs",
+  "checkedAt": "2026-10-16T01:42:06.837Z",
+  "transactions": [
+    {
+      "hash": "0xadc6472055b41bd0b322a875d37798cf9b2d4195952d54388142eb2dbfc49b24",
+      "operation": "zero-value caller-spoof tripwire",
+      "actor": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "ERROR",
+      "successful": false,
+      "createdAt": "2026-10-16T00:57:11.759150+00:00",
+      "acceptedAt": "2026-10-16T00:57:15.270Z",
+      "finalizedAt": "2026-10-16T00:57:45.404Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T00:57:13.555Z",
+        "PROPOSING": "2026-10-16T00:57:13.571Z",
+        "COMMITTING": "2026-10-16T00:57:14.082Z",
+        "REVEALING": "2026-10-16T00:57:15.202Z",
+        "ACCEPTED": "2026-10-16T00:57:15.270Z",
+        "FINALIZED": "2026-10-16T00:57:45.404Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xadc6472055b41bd0b322a875d37798cf9b2d4195952d54388142eb2dbfc49b24",
+      "canonicalRecords": [
+        "caller-spoof-smoke.json"
+      ],
+      "expectedRejection": true
+    },
+    {
+      "hash": "0x3275a16da79952af5b50f33015139a84f35cd078f7d70acd59390dce03f3d3fe",
+      "operation": "deployment",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T00:47:34.395204+00:00",
+      "acceptedAt": "2026-10-16T00:47:37.880Z",
+      "finalizedAt": "2026-10-16T00:48:08.066Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T00:47:36.130Z",
+        "PROPOSING": "2026-10-16T00:47:36.146Z",
+        "COMMITTING": "2026-10-16T00:47:36.656Z",
+        "REVEALING": "2026-10-16T00:47:37.789Z",
+        "ACCEPTED": "2026-10-16T00:47:37.880Z",
+        "FINALIZED": "2026-10-16T00:48:08.066Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x3275a16da79952af5b50f33015139a84f35cd078f7d70acd59390dce03f3d3fe",
+      "canonicalRecords": [
+        "deployment-attempt.json",
+        "deployment.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0xc15e098bd366e30788120d4d951c0b0bc8cee48f54bfcadf68f54a5b824337a1",
+      "operation": "create_round",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "applicationValueGEN": "2",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T01:05:49.959938+00:00",
+      "acceptedAt": "2026-10-16T01:05:53.491Z",
+      "finalizedAt": "2026-10-16T01:06:23.701Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:05:51.124Z",
+        "PROPOSING": "2026-10-16T01:05:51.163Z",
+        "COMMITTING": "2026-10-16T01:05:51.855Z",
+        "REVEALING": "2026-10-16T01:05:53.416Z",
+        "ACCEPTED": "2026-10-16T01:05:53.491Z",
+        "FINALIZED": "2026-10-16T01:06:23.701Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xc15e098bd366e30788120d4d951c0b0bc8cee48f54bfcadf68f54a5b824337a1",
+      "canonicalRecords": [
+        "lifecycle-election-create.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0x1848c3aac06754f983fc32de02e5b19afbc86f7ca01003a46e040835a4fc9fe4",
+      "operation": "recover_round",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T01:29:52.882614+00:00",
+      "acceptedAt": "2026-10-16T01:29:55.166Z",
+      "finalizedAt": "2026-10-16T01:30:25.403Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:29:53.695Z",
+        "PROPOSING": "2026-10-16T01:29:53.711Z",
+        "COMMITTING": "2026-10-16T01:29:54.272Z",
+        "REVEALING": "2026-10-16T01:29:55.103Z",
+        "ACCEPTED": "2026-10-16T01:29:55.166Z",
+        "FINALIZED": "2026-10-16T01:30:25.403Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x1848c3aac06754f983fc32de02e5b19afbc86f7ca01003a46e040835a4fc9fe4",
+      "canonicalRecords": [
+        "lifecycle-expired-election-recover.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0xd9ee03a10a9414507b5e1e8fba59084a7f2eaa7fee40d01cc7b143b15f64b1a6",
+      "operation": "withdraw_credit",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T01:30:40.941500+00:00",
+      "acceptedAt": "2026-10-16T01:30:43.298Z",
+      "finalizedAt": "2026-10-16T01:31:13.486Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:30:41.638Z",
+        "PROPOSING": "2026-10-16T01:30:41.656Z",
+        "COMMITTING": "2026-10-16T01:30:42.309Z",
+        "REVEALING": "2026-10-16T01:30:43.207Z",
+        "ACCEPTED": "2026-10-16T01:30:43.298Z",
+        "FINALIZED": "2026-10-16T01:31:13.486Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xd9ee03a10a9414507b5e1e8fba59084a7f2eaa7fee40d01cc7b143b15f64b1a6",
+      "canonicalRecords": [
+        "lifecycle-expired-election-withdraw.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0x89cbfd7a5f6eab8010cb8eb0256ff5b79367496f9eb08d7fddcbcb3335d99582",
+      "operation": "submit_motion",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T01:09:00.400185+00:00",
+      "acceptedAt": "2026-10-16T01:09:08.015Z",
+      "finalizedAt": "2026-10-16T01:09:38.408Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:09:05.470Z",
+        "PROPOSING": "2026-10-16T01:09:05.491Z",
+        "COMMITTING": "2026-10-16T01:09:06.218Z",
+        "REVEALING": "2026-10-16T01:09:07.922Z",
+        "ACCEPTED": "2026-10-16T01:09:08.015Z",
+        "FINALIZED": "2026-10-16T01:09:38.408Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x89cbfd7a5f6eab8010cb8eb0256ff5b79367496f9eb08d7fddcbcb3335d99582",
+      "canonicalRecords": [
+        "lifecycle-motion1.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0x22ba89f1821d6832cc201a615f86b9fecd3e4c02b95954f54e659c9ce6a4bf26",
+      "operation": "submit_motion",
+      "actor": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T01:09:53.092741+00:00",
+      "acceptedAt": "2026-10-16T01:09:56.509Z",
+      "finalizedAt": "2026-10-16T01:10:26.688Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:09:54.447Z",
+        "PROPOSING": "2026-10-16T01:09:54.468Z",
+        "COMMITTING": "2026-10-16T01:09:55.061Z",
+        "REVEALING": "2026-10-16T01:09:56.440Z",
+        "ACCEPTED": "2026-10-16T01:09:56.509Z",
+        "FINALIZED": "2026-10-16T01:10:26.688Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x22ba89f1821d6832cc201a615f86b9fecd3e4c02b95954f54e659c9ce6a4bf26",
+      "canonicalRecords": [
+        "lifecycle-motion2.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0x98e5fac29db548fde892c9b897808be2116f28e5471eece4107214561fc28536",
+      "operation": "submit_motion",
+      "actor": "0x79F9eCaa174b2F17afb57DFC8450684C238A033e",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "ERROR",
+      "successful": false,
+      "createdAt": "2026-10-16T01:10:48.892235+00:00",
+      "acceptedAt": "2026-10-16T01:10:54.915Z",
+      "finalizedAt": "2026-10-16T01:11:25.160Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:10:52.722Z",
+        "PROPOSING": "2026-10-16T01:10:52.742Z",
+        "COMMITTING": "2026-10-16T01:10:53.392Z",
+        "REVEALING": "2026-10-16T01:10:54.847Z",
+        "ACCEPTED": "2026-10-16T01:10:54.915Z",
+        "FINALIZED": "2026-10-16T01:11:25.160Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x98e5fac29db548fde892c9b897808be2116f28e5471eece4107214561fc28536",
+      "canonicalRecords": [
+        "lifecycle-motion3.json"
+      ],
+      "expectedRejection": true
+    },
+    {
+      "hash": "0x2ee2e5497cce1037198b117cdce422992893c87ad699ebcd6e4e258a9072fcc7",
+      "operation": "cast_ballot",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T01:20:00.290729+00:00",
+      "acceptedAt": "2026-10-16T01:20:06.514Z",
+      "finalizedAt": "2026-10-16T01:20:38.911Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:20:04.355Z",
+        "PROPOSING": "2026-10-16T01:20:04.372Z",
+        "COMMITTING": "2026-10-16T01:20:04.974Z",
+        "REVEALING": "2026-10-16T01:20:06.440Z",
+        "ACCEPTED": "2026-10-16T01:20:06.514Z",
+        "FINALIZED": "2026-10-16T01:20:38.911Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x2ee2e5497cce1037198b117cdce422992893c87ad699ebcd6e4e258a9072fcc7",
+      "canonicalRecords": [
+        "lifecycle-run2-ballot1.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0x900f50e023ddcc181323c198fdd0266174cdc67243fa7a939f3842303048ebc7",
+      "operation": "cast_ballot",
+      "actor": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T01:21:02.083630+00:00",
+      "acceptedAt": "2026-10-16T01:21:05.225Z",
+      "finalizedAt": "2026-10-16T01:21:35.373Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:21:02.835Z",
+        "PROPOSING": "2026-10-16T01:21:02.867Z",
+        "COMMITTING": "2026-10-16T01:21:03.559Z",
+        "REVEALING": "2026-10-16T01:21:05.142Z",
+        "ACCEPTED": "2026-10-16T01:21:05.225Z",
+        "FINALIZED": "2026-10-16T01:21:35.373Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x900f50e023ddcc181323c198fdd0266174cdc67243fa7a939f3842303048ebc7",
+      "canonicalRecords": [
+        "lifecycle-run2-ballot2.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0xd808ec3a48cbb7840610c2d71f119b099c765c2e282d5561bac50da55f3cb63c",
+      "operation": "cast_ballot",
+      "actor": "0x79F9eCaa174b2F17afb57DFC8450684C238A033e",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T01:21:52.800174+00:00",
+      "acceptedAt": "2026-10-16T01:21:56.222Z",
+      "finalizedAt": "2026-10-16T01:22:26.427Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:21:53.575Z",
+        "PROPOSING": "2026-10-16T01:21:53.607Z",
+        "COMMITTING": "2026-10-16T01:21:54.333Z",
+        "REVEALING": "2026-10-16T01:21:56.133Z",
+        "ACCEPTED": "2026-10-16T01:21:56.222Z",
+        "FINALIZED": "2026-10-16T01:22:26.427Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xd808ec3a48cbb7840610c2d71f119b099c765c2e282d5561bac50da55f3cb63c",
+      "canonicalRecords": [
+        "lifecycle-run2-ballot3.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0x64134fb6e83a673724d68eb5a4a68f3a0e76ffb2c56d9acf26fd7bb7bb2e4b76",
+      "operation": "create_round",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "applicationValueGEN": "2",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T01:12:58.152931+00:00",
+      "acceptedAt": "2026-10-16T01:13:03.516Z",
+      "finalizedAt": "2026-10-16T01:13:34.481Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:13:01.389Z",
+        "PROPOSING": "2026-10-16T01:13:01.415Z",
+        "COMMITTING": "2026-10-16T01:13:01.992Z",
+        "REVEALING": "2026-10-16T01:13:03.441Z",
+        "ACCEPTED": "2026-10-16T01:13:03.516Z",
+        "FINALIZED": "2026-10-16T01:13:34.481Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x64134fb6e83a673724d68eb5a4a68f3a0e76ffb2c56d9acf26fd7bb7bb2e4b76",
+      "canonicalRecords": [
+        "lifecycle-run2-election-create.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0xa85cd0789c8f71ef8bddf9e1426a5ed40e08d2aa3a447f09e67496d06bbd2295",
+      "operation": "review_round",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "ERROR",
+      "successful": false,
+      "createdAt": "2026-10-16T01:24:13.834987+00:00",
+      "acceptedAt": "2026-10-16T01:25:47.000Z",
+      "finalizedAt": "2026-10-16T01:26:18.155Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:24:17.588Z",
+        "PROPOSING": "2026-10-16T01:25:42.158Z",
+        "COMMITTING": "2026-10-16T01:25:44.518Z",
+        "REVEALING": "2026-10-16T01:25:47.865Z",
+        "FINALIZED": "2026-10-16T01:26:18.155Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xa85cd0789c8f71ef8bddf9e1426a5ed40e08d2aa3a447f09e67496d06bbd2295",
+      "canonicalRecords": [
+        "lifecycle-run2-election-review.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0x2fd632c4f4210bd3c01ea92eb7999ac7e683c293f1190ced5beda0be5211fd6d",
+      "operation": "recover_round",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T01:36:41.325799+00:00",
+      "acceptedAt": "2026-10-16T01:36:46.298Z",
+      "finalizedAt": "2026-10-16T01:37:16.450Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:36:44.805Z",
+        "PROPOSING": "2026-10-16T01:36:44.819Z",
+        "COMMITTING": "2026-10-16T01:36:45.385Z",
+        "REVEALING": "2026-10-16T01:36:46.227Z",
+        "ACCEPTED": "2026-10-16T01:36:46.298Z",
+        "FINALIZED": "2026-10-16T01:37:16.450Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x2fd632c4f4210bd3c01ea92eb7999ac7e683c293f1190ced5beda0be5211fd6d",
+      "canonicalRecords": [
+        "lifecycle-run2-expired-election-recover.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0x46aff8ed9e72aeda666914a280bd31a0cc3360c831fca34fe12ecc2c5714b23a",
+      "operation": "withdraw_credit",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T01:37:34.037315+00:00",
+      "acceptedAt": "2026-10-16T01:37:39.111Z",
+      "finalizedAt": "2026-10-16T01:38:09.272Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:37:37.692Z",
+        "PROPOSING": "2026-10-16T01:37:37.706Z",
+        "COMMITTING": "2026-10-16T01:37:38.224Z",
+        "REVEALING": "2026-10-16T01:37:39.036Z",
+        "ACCEPTED": "2026-10-16T01:37:39.111Z",
+        "FINALIZED": "2026-10-16T01:38:09.272Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x46aff8ed9e72aeda666914a280bd31a0cc3360c831fca34fe12ecc2c5714b23a",
+      "canonicalRecords": [
+        "lifecycle-run2-expired-election-withdraw.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0x244c0342a457c7e9533929bc6eaea44ae226c819098a3de4c89efeb7118150cb",
+      "operation": "submit_motion",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T01:13:53.096861+00:00",
+      "acceptedAt": "2026-10-16T01:15:42.838Z",
+      "finalizedAt": "2026-10-16T01:16:13.053Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:15:34.811Z",
+        "PROPOSING": "2026-10-16T01:15:34.828Z",
+        "COMMITTING": "2026-10-16T01:15:40.926Z",
+        "REVEALING": "2026-10-16T01:15:42.748Z",
+        "ACCEPTED": "2026-10-16T01:15:42.838Z",
+        "FINALIZED": "2026-10-16T01:16:13.053Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x244c0342a457c7e9533929bc6eaea44ae226c819098a3de4c89efeb7118150cb",
+      "canonicalRecords": [
+        "lifecycle-run2-motion1.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0xc9a14228af3ef4abb3ec9d5be121fa65eaa0ec0d4cfbcf0347f23a6705cd5eb5",
+      "operation": "submit_motion",
+      "actor": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T01:16:31.052181+00:00",
+      "acceptedAt": "2026-10-16T01:16:35.024Z",
+      "finalizedAt": "2026-10-16T01:17:05.204Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:16:33.475Z",
+        "PROPOSING": "2026-10-16T01:16:33.491Z",
+        "COMMITTING": "2026-10-16T01:16:34.089Z",
+        "REVEALING": "2026-10-16T01:16:34.962Z",
+        "ACCEPTED": "2026-10-16T01:16:35.024Z",
+        "FINALIZED": "2026-10-16T01:17:05.204Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xc9a14228af3ef4abb3ec9d5be121fa65eaa0ec0d4cfbcf0347f23a6705cd5eb5",
+      "canonicalRecords": [
+        "lifecycle-run2-motion2.json"
+      ],
+      "expectedRejection": false
+    },
+    {
+      "hash": "0x1324476efd5d3600d3db1c9ef222c11fac9cdb399e28fba91510a0f26d5c2c77",
+      "operation": "submit_motion",
+      "actor": "0x79F9eCaa174b2F17afb57DFC8450684C238A033e",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "createdAt": "2026-10-16T01:17:21.505490+00:00",
+      "acceptedAt": "2026-10-16T01:17:24.884Z",
+      "finalizedAt": "2026-10-16T01:17:55.887Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T01:17:22.505Z",
+        "PROPOSING": "2026-10-16T01:17:22.526Z",
+        "COMMITTING": "2026-10-16T01:17:23.218Z",
+        "REVEALING": "2026-10-16T01:17:24.815Z",
+        "ACCEPTED": "2026-10-16T01:17:24.884Z",
+        "FINALIZED": "2026-10-16T01:17:55.887Z"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x1324476efd5d3600d3db1c9ef222c11fac9cdb399e28fba91510a0f26d5c2c77",
+      "canonicalRecords": [
+        "lifecycle-run2-motion3.json"
+      ],
+      "expectedRejection": false
+    }
+  ],
+  "successful": 15,
+  "expectedRejections": 2,
+  "unexpectedFailures": 1
+}

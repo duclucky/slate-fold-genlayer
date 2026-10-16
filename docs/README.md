@@ -331,6 +331,9 @@ No score, winner, recipient, amount, external performance or truth assertion.
 Use `response_format="text"` with a strict JSON-only prompt: the pinned SDK's
 JSON convenience decoder discards duplicate object keys before application
 validation. Manual `object_pairs_hook` parsing preserves and rejects duplicates.
+Text output is bounded to4096characters. One complete optional JSON markdown
+fence is transport-normalized before the same strict parser; surrounding prose,
+duplicate keys, invalid classes, extra fields and invalid partitions still reject.
 Decode deferred SDK results via `.get()` only when needed; normalize JSON strings
 or mappings, reject duplicate semantic keys, exact expected IDs and locked enums.
 No schema aliases or inferred missing fields. Non-critical rationale, if retained,
@@ -371,7 +374,11 @@ Deterministic invariants before any settlement:
 Global invariant: `received = total_escrow + total_credit + requested_withdrawn`;
 no negative term. On verified completed exits, actual native balance must equal
 remaining escrow+credit. Accounting records transfer requests; only child receipt
-and exact native decrease prove delivery. External EOA transfer uses a private
+and exact native decrease prove delivery. Studio currently attaches the external
+EVM execution/value-delivery receipt to the parent and exposes no separate child
+hash for this native transfer. Require executionRecorded, the matching delivered
+finalized value effect, exact native contract decrease and recipient evidence;
+do not invent an independent child transaction. External EOA transfer uses a private
 `@gl.evm.contract_interface` recipient, never gl.chain.Account or the IC boundary.
 If an unexpected child fails, stop and reconcile; no blind retry or invented refund.
 No platform fee, third-party custody, split rounding or unallocated residual.
@@ -474,8 +481,10 @@ Use verified Studio Dev61997 and matched SDK2.0.0-rc.1; no relabeled Studionet.
 Resumable inspect-first scripts bind network/source commit/runner/API/address and
 keep all accepted/finalized action hashes. Read canonical state before signing,
 recover current attempt dynamically, and never replay an ambiguous transfer.
-Use three existing authorized EOAs; generate no wallet. Check actual GEN balances
-and use authorized same-network funding only when needed. All application deposits
+Use the authorized sponsor and two separately approved demo EOAs stored only in
+ignored local configuration. Each demo EOA received1GEN on Studio Dev. All three
+are controlled by one demo operator; distinct real people are not claimed.
+Check actual GEN balances and use authorized same-network funding only when needed. All application deposits
 are2GEN; any native actor funding uses1GEN or2GEN. No faucet.
 
 After lint/direct/metadata/receipt/SDK/browser-CORS checks, deploy an exact-source
@@ -514,9 +523,14 @@ escrow, frontend canonical-state gap,4/7duplicate or a core untraceable claim.
 
 ## Evidence status
 
-Local: provisional frontend61PASS/typecheck/build and documented unsigned target
-feasibility12/12. Contract/direct/SDK tests and finalized lifecycle are not yet run.
-Studio Dev: identity/runtime feasibility only, no product deployment/consequence.
+Local checkpoint2026-10-16:104 Python tests,14 receipt/journal/delivery tests and82 frontend
+tests PASS, no skips; recognized contract lint, TypeScript and production build
+PASS. Unsigned viability vectors were12/12. These are separate from CI.
+Studio Dev revision1 at `0xA78E771B40C017ff88520ff2fc632cF37cf60A88` is
+SUPERSEDED_RECOVERED after one failed real review. Both2GEN budgets were recovered
+and delivered; native balance/escrow/credit are0GEN. A0GEN normalization control
+finalized SUCCESS. The replacement source still needs its own deployment and
+consequential election. Browser-wallet writes remain PENDING_REAL_EVIDENCE.
 Studionet/localnet/other networks: no SlateFold evidence or deployment claimed.
 Browser: actual local rendering/navigation/discovery only; no account permission,
 signature, funding, transaction or external adopter claimed. Public CI/app/Portal:

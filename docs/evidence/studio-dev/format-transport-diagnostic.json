@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-16T01:34:27.775Z",
+  "scope": "Unsigned diagnostic only; no deployment, no transaction, no value, no model configs.",
+  "rows": [
+    {
+      "case": 1,
+      "execution": "SUCCESS",
+      "sourceStatus": "OK",
+      "format": "STRICT",
+      "classes": {
+        "12": "DIFFERENT",
+        "13": "DIFFERENT",
+        "23": "SAME"
+      }
+    }
+  ]
+}

@@ -61,6 +61,12 @@ it('live fee quote must be funded separately from the exact2GEN purse',async()=>
  const params=(decoded.args as unknown as [{userValue:bigint;feesDistribution:{executionBudgetPerRound:bigint}}])[0];
  expect(params.userValue).toBe(2n*10n**18n);expect(BigInt(request.value)).toBeGreaterThan(params.userValue);expect(params.feesDistribution.executionBudgetPerRound).toBeGreaterThan(0n);
 });
+it('failed fee estimation gives a recovery message without RPC payloads or a wallet broadcast',async()=>{
+ const {provider,sends}=io();const original=fetch;
+ vi.stubGlobal('fetch',vi.fn(async(url:unknown,options:RequestInit)=>JSON.parse(String(options.body)).method==='sim_estimateTransactionFees'?Response.json({jsonrpc:'2.0',id:1,error:{code:-32000,message:'Internal RPC diagnostic payload'}}):original(url as RequestInfo,options)));
+ await expect(createSlateAdapter({address:recipient,account:sender,provider,endpoint}).write('cancel_round',['quote-failure-fixture'],'0',()=>{})).rejects.toThrow('The network could not quote this action. Refresh the round and check its timing before trying again. No transaction was submitted.');
+ expect(sends.some(x=>x.method==='eth_sendTransaction')).toBe(false);
+});
 it.each([undefined,'undefined','0x0','0x'+'00'.repeat(20)])('invalid contract %s fails before wallet or RPC',async address=>{
  const {provider,sends}=io();const a=createSlateAdapter({address,account:sender,provider,endpoint});
  await expect(a.write('cancel_round',['bad-fixture'],'0',()=>{})).rejects.toThrow(/contract address/i);expect(sends).toHaveLength(0);expect(fetch).not.toHaveBeenCalled();

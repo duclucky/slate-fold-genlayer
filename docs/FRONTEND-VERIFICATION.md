@@ -51,3 +51,17 @@ needs live evidence and is not inferred from the regression.
 
 Official fee-estimation reference:
 https://docs.genlayer.com/api-references/genlayer-js
+
+## Current local transport checkpoint
+
+2026-10-16: full `npm run check` passed93 Python,12 receipt/journal and82 frontend
+tests, plus recognized lint, TypeScript and production build. The CSS hash above
+is unchanged. Additional regressions cover clocked fee simulation, filtering
+unexpected fee metadata, exact synthetic quorum-control projection, and a clear
+fee-error recovery message without SDK diagnostic copy in the product surface.
+
+Actual IAB request from http://127.0.0.1:5178 to `/genlayer-rpc` returned HTTP200,
+no RPC error and a funded quote of0.000378535200010352GEN for an unsigned2GEN
+create simulation. No transaction was broadcast. This proves the corrected fee
+proxy path works from a browser without CORS failure. It does not prove wallet
+signing, deployed-address rendering or live-host behavior; those remain separate.

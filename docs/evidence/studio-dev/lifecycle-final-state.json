@@ -1,0 +1,26 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "rpc": "https://studio-next.genlayer.com/api",
+  "explorer": "https://explorer-studio-dev.genlayer.com",
+  "target": "0xA78E771B40C017ff88520ff2fc632cF37cf60A88",
+  "checkedAt": "2026-10-16T01:38:29.159Z",
+  "round": null,
+  "accounting": {
+    "creditGEN": "0",
+    "escrowGEN": "0",
+    "receivedGEN": "4",
+    "withdrawnGEN": "4"
+  },
+  "nativeContractGEN": "0",
+  "creditsGEN": [
+    "0",
+    "0",
+    "0"
+  ],
+  "actorBalancesGEN": [
+    "30.172867498500090039",
+    "0.999685473499996708",
+    "0.999764105249997531"
+  ]
+}

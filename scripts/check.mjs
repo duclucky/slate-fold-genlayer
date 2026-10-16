@@ -7,7 +7,7 @@ if(!existsSync(python))throw new Error('Create the project Python 3.12 .venv and
 const steps=[
  [python,['scripts/genvm_lint_rc.py','check','contracts/slate_fold.py']],
  [python,['-m','pytest','tests/direct','tests/tooling','-q','--tb=short']],
- [process.execPath,['--test','scripts/receipt.test.mjs']],
+ [process.execPath,['--test',...readdirSync('scripts').filter(name=>name.endsWith('.test.mjs')).map(name=>'scripts/'+name)]],
  [windows?'npm.cmd':'npm',['run','check','--workspace','frontend']],
 ];
 for(const file of readdirSync('scripts').filter(name=>name.endsWith('.mjs'))){

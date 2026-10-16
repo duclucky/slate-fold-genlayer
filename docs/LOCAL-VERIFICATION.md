@@ -32,3 +32,28 @@ Withdrawal unit tests capture the EVM external boundary and assert debit-before-
 message, exact recipient/value and duplicate rejection. They do not prove native
 delivery. Before claiming an exit, network evidence must prove the outgoing child
 and an exact contract native-balance decrease, with recipient balance evidence.
+
+Fresh checkpoint2026-10-16: `npm run check` exit0;93 Python,12 receipt/journal
+and80 frontend tests PASS, zero skips. The journal suite covers hash persistence
+before broadcast, ambiguous transport, recovery without resubmission, a prepared
+operation needing inspection, and reverted native envelopes.
+
+Two observed Studio transport differences have explicit regressions. Unsigned
+write simulation needs current `sim_config.genvm_datetime` for temporal guards;
+the proxy supplies only its own clock for fee simulation. Signed writes contain
+no simulation override. Studio can append a synthetic idle validator ERROR after
+quorum; it is ignored only with mode=validator, vote=idle, the exact documented
+quorum control code, an actual successful leader, and an explicit normalized
+successful transaction result. Every other error still rejects success.
+
+Latest checkpoint:93 Python +12 receipt/journal +82 frontend tests,187 total,
+all passed. `.venv/Scripts/gltest.exe tests/ -q --tb=short` separately returned
+`93 passed in 9.44s`; these are the same Python cases, not93 additional tests.
+
+Replacement-source checkpoint:104 Python (100 direct,4 tooling),14 Node receipt/
+journal/delivery and82 frontend tests,200 total, all passed. New tests first
+observed4 failures for plain-versus-fenced JSON, then passed after bounded fence
+normalization. Duplicate keys, surrounding prose, extra payout fields, invalid
+partitions and oversized output remain rejected with unchanged accounting.
+Native-delivery tests reject parent-only success, wrong recipient/amount,
+premature phase, unrecorded external execution and undelivered value effects.

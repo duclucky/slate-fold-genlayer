@@ -75,8 +75,14 @@ def _relations(raw):
     if hasattr(raw, "get") and not isinstance(raw, dict):
         raw = raw.get()
     if isinstance(raw, str):
+        _require(len(raw) <= 4096, "semantic output bounds")
+        raw = raw.strip()
+        # A single complete JSON fence is transport, never additional authority.
+        fenced = re.fullmatch(r"```(?:json)?[ \t]*\r?\n([\s\S]*?)\r?\n```", raw, re.IGNORECASE)
+        if fenced:
+            raw = fenced.group(1).strip()
         try:
-            raw = json.loads(raw.strip(), object_pairs_hook=_unique_object)
+            raw = json.loads(raw, object_pairs_hook=_unique_object)
         except (ValueError, TypeError):
             raise gl.vm.UserError("[EXPECTED] invalid semantic JSON")
     _require(isinstance(raw, dict) and set(raw) == set(PAIRS), "exact semantic pair coverage required")

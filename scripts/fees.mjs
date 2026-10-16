@@ -15,8 +15,14 @@ export async function quoteDeploy(account){
  return {distribution:createFeesDistribution(preset.distribution),feeValue,messageAllocations:preset.messageAllocations??[]};
 }
 export async function quoteWrite(account,address,functionName,args,value=0n){
- const estimate=await client(account).estimateTransactionFeesForWrite({address,functionName,args,value});
- if(estimate.policy.enabled&&estimate.feeValue<=0n)throw new SafeError('FundedFeeQuoteRequired');
- if(estimate.feeValue>=10n**18n)throw new SafeError('WriteFeeQuoteOutsideBound');
- return {distribution:estimate.distribution,feeValue:estimate.feeValue,messageAllocations:estimate.messageAllocations};
+ const baseline=await client(account).estimateTransactionFees();
+ const data=abi.transactions.serialize([abi.calldata.encode(abi.calldata.makeCalldataObject(functionName,args)),false]);
+ // Studio's unsigned write simulation omits its clock unless explicitly supplied.
+ // This affects fee simulation only; no sim_config is sent with signed writes.
+ const estimate=await rpc('sim_estimateTransactionFees',[{type:'write',from:account.address,to:address,data,value:'0x'+value.toString(16),fees:rpcFees(baseline),sim_config:{genvm_datetime:new Date().toISOString()}}]);
+ const preset=estimate?.recommendedPreset;
+ if(!preset?.distribution||!preset.feeValue)throw new SafeError('FundedFeeQuoteRequired');
+ const feeValue=BigInt(preset.feeValue);
+ if(feeValue<=0n||feeValue>=10n**18n)throw new SafeError('WriteFeeQuoteOutsideBound');
+ return {distribution:createFeesDistribution(preset.distribution),feeValue,messageAllocations:preset.messageAllocations??[]};
 }

@@ -1,0 +1,166 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "rpc": "https://studio-next.genlayer.com/api",
+  "explorer": "https://explorer-studio-dev.genlayer.com/transactions/0x1324476efd5d3600d3db1c9ef222c11fac9cdb399e28fba91510a0f26d5c2c77",
+  "identity": {
+    "network": "Studio Dev",
+    "chainId": 61997,
+    "sourceCommit": "93a2214d8c6857b06f27dd375ae4d66aca0fbbb0",
+    "sourceSha256": "cdef441b27f661c96fb4c7dcaf2316858a810b46779ff8d6ff1d74a95728fe74",
+    "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+    "api": "v0.3.0",
+    "genvm": "v0.6.0-rc5",
+    "sdk": "2.0.0-rc.1"
+  },
+  "target": "0xA78E771B40C017ff88520ff2fc632cF37cf60A88",
+  "operation": "submit_motion",
+  "actor": "0x79F9eCaa174b2F17afb57DFC8450684C238A033e",
+  "args": [
+    "council-permissions-v2",
+    "f24b06eefe1d20cc8d9a0f58bd206fea5f92bed670718116ec013f8556393621",
+    "Every member of the council may read its archive, must credit the original author, and must not share copies with people who are not council members."
+  ],
+  "valueGEN": "0",
+  "feeDepositGEN": "0.000378522000010352",
+  "before": {
+    "round": {
+      "attemptCount": 0,
+      "ballots": [
+        0,
+        0,
+        0
+      ],
+      "configDigest": "f24b06eefe1d20cc8d9a0f58bd206fea5f92bed670718116ec013f8556393621",
+      "createdAt": 1792113178,
+      "escrowGEN": "2",
+      "groups": [],
+      "id": "council-permissions-v2",
+      "members": [
+        "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "ae7b7b1c73dff2a2b40cd9fa2b6ba49414f8a516af72c2e3f3e9aa900a7e06f4",
+        "5bb9c2a143ec7fa8026794078f4e4b6cbf53802aba49400e36958ee6c31c58bc",
+        ""
+      ],
+      "motions": [
+        "Permit every council member to read the council archive and to redistribute archive copies to the public, provided the original author is credited.",
+        "Permit council members to read the council archive. Prohibit redistribution of archive copies to anyone outside the council. Require attribution to the original author.",
+        ""
+      ],
+      "objective": "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+      "proposalDeadline": 1792113589,
+      "reason": "",
+      "recipient": "",
+      "reviewDeadline": 1792114429,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [],
+      "settledAt": 0,
+      "slateDigest": "",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "status": "COLLECTING",
+      "title": "Council archive permissions",
+      "voteDeadline": 1792113829,
+      "winnerSlot": 0
+    },
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "4",
+      "receivedGEN": "4",
+      "withdrawnGEN": "0"
+    },
+    "nativeContractGEN": "4",
+    "creditsGEN": [
+      "0",
+      "0",
+      "0"
+    ],
+    "actorBalancesGEN": [
+      "26.173750437750098094",
+      "0.999764104999997531",
+      "0.999921371999999177"
+    ]
+  },
+  "preparedAt": "2026-10-16T01:17:20.311Z",
+  "status": "FINALIZED",
+  "hash": "0x1324476efd5d3600d3db1c9ef222c11fac9cdb399e28fba91510a0f26d5c2c77",
+  "executionResult": "SUCCESS",
+  "finalizedObservedAt": "2026-10-16T01:17:57.127Z",
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0x1324476efd5d3600d3db1c9ef222c11fac9cdb399e28fba91510a0f26d5c2c77",
+    "from": "0x79f9ecaa174b2f17afb57dfc8450684c238a033e",
+    "to": "0xa78e771b40c017ff88520ff2fc632cf37cf60a88"
+  },
+  "after": {
+    "round": {
+      "attemptCount": 0,
+      "ballots": [
+        0,
+        0,
+        0
+      ],
+      "configDigest": "f24b06eefe1d20cc8d9a0f58bd206fea5f92bed670718116ec013f8556393621",
+      "createdAt": 1792113178,
+      "escrowGEN": "2",
+      "groups": [],
+      "id": "council-permissions-v2",
+      "members": [
+        "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "ae7b7b1c73dff2a2b40cd9fa2b6ba49414f8a516af72c2e3f3e9aa900a7e06f4",
+        "5bb9c2a143ec7fa8026794078f4e4b6cbf53802aba49400e36958ee6c31c58bc",
+        "5fb53e02e251e8ac1eec35a220a8e3cad463b9883ae09e7e5caefe636e1f030c"
+      ],
+      "motions": [
+        "Permit every council member to read the council archive and to redistribute archive copies to the public, provided the original author is credited.",
+        "Permit council members to read the council archive. Prohibit redistribution of archive copies to anyone outside the council. Require attribution to the original author.",
+        "Every member of the council may read its archive, must credit the original author, and must not share copies with people who are not council members."
+      ],
+      "objective": "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+      "proposalDeadline": 1792113589,
+      "reason": "",
+      "recipient": "",
+      "reviewDeadline": 1792114429,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [],
+      "settledAt": 0,
+      "slateDigest": "feb1869607743bc45800696388952525aa96920085c73805d9400f21da88df10",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "status": "BALLOT_OPEN",
+      "title": "Council archive permissions",
+      "voteDeadline": 1792113829,
+      "winnerSlot": 0
+    },
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "4",
+      "receivedGEN": "4",
+      "withdrawnGEN": "0"
+    },
+    "nativeContractGEN": "4",
+    "creditsGEN": [
+      "0",
+      "0",
+      "0"
+    ],
+    "actorBalancesGEN": [
+      "26.173750437750098094",
+      "0.999764104999997531",
+      "0.999842737249998354"
+    ]
+  },
+  "verified": true
+}

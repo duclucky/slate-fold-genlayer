@@ -23,3 +23,10 @@ test('safe projection drops validator configuration and arbitrary strings',()=>{
 test('malformed receipt fails closed',()=>{
  for(const r of [null,{},'SUCCESS',{status:'invented',execution_result:'SUCCESS'}])assert.equal(receiptState(r).successful,false);
 });
+test('idle validator quorum cancellation is not the successful leader execution',()=>{
+ const idle={mode:'validator',vote:'idle',execution_result:'ERROR',genvm_result:{error_code:'CONSENSUS_VALIDATOR_QUORUM_REACHED'}};
+ const receipt={status:'FINALIZED',txExecutionResultName:'FINISHED_WITH_RETURN',consensus_data:{leader_receipt:[{mode:'leader',execution_result:'SUCCESS'},idle]}};
+ assert.equal(receiptState(receipt).successful,true);
+ for(const patch of [{mode:'leader'},{vote:'disagree'},{genvm_result:{error_code:'OTHER_ERROR'}}])assert.equal(receiptState({...receipt,consensus_data:{leader_receipt:[{mode:'leader',execution_result:'SUCCESS'},{...idle,...patch}]}}).successful,false);
+ assert.equal(receiptState({...receipt,txExecutionResultName:'FINISHED_WITH_ERROR'}).successful,false);
+});

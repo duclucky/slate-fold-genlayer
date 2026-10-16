@@ -110,3 +110,40 @@ def test_review_checks_clock_with_phase_ready(ready,edge,offset,allowed):
     else:
         with vm.expect_revert("time"): c.review_round("alpha")
         assert state(c)==before
+
+
+@pytest.mark.parametrize("wrapper",["```json\n{}\n```","```\n{}\n```","  ```JSON\n{}\n```  ","```json\r\n{}\r\n```"])
+def test_json_transport_fence_preserves_exact_semantic_classes(ready,wrapper):
+    c,vm,_,_=ready
+    raw=json.dumps({"12":"SAME","13":"DIFFERENT","23":"DIFFERENT"})
+    output(vm,wrapper.format(raw))
+    c.review_round("alpha")
+    assert json.loads(c.get_round("alpha"))["groups"]==[[1,2],[3]]
+    assert json.loads(c.get_accounting())["creditGEN"]=="2"
+
+
+@pytest.mark.parametrize("raw",[
+    'Explanation: ```json\n{"12":"SAME","13":"DIFFERENT","23":"DIFFERENT"}\n```',
+    '```json\n{"12":"SAME","13":"DIFFERENT","23":"DIFFERENT"}\n``` extra',
+    '```json\n{"12":"SAME","12":"DIFFERENT","13":"DIFFERENT","23":"DIFFERENT"}\n```',
+    '```json\n{"12":"SAME","13":"SAME","23":"DIFFERENT"}\n```',
+    '```json\n{"12":"SAME","13":"DIFFERENT","23":"DIFFERENT","amountGEN":"2"}\n```',
+    ' '*4100+'{"12":"SAME","13":"DIFFERENT","23":"DIFFERENT"}',
+])
+def test_transport_normalization_never_repairs_invalid_settlement_meaning(ready,raw):
+    c,vm,_,_=ready
+    before=state(c)
+    output(vm,raw)
+    with vm.expect_revert("[EXPECTED]"): c.review_round("alpha")
+    assert state(c)==before
+
+
+def test_validator_compares_meaning_across_plain_and_fenced_json(ready):
+    c,vm,_,_=ready
+    classes={"12":"SAME","13":"DIFFERENT","23":"DIFFERENT"}
+    output(vm,classes)
+    c.review_round("alpha")
+    vm.clear_mocks()
+    vm.mock_web(r"www\.w3\.org/",{"status":200,"body":REFERENCE})
+    output(vm,"```json\n"+json.dumps(classes)+"\n```")
+    assert vm.run_validator() is True

@@ -65,7 +65,7 @@ export function createSlateAdapter(options:Options):Adapter{
    onStage('estimating');
    const value=valueGEN==='2'?2n*10n**18n:0n;
    const call={address,functionName:action,args:args as Parameters<typeof writer.writeContract>[0]['args'],value};
-   const quote=await writer.estimateTransactionFeesForWrite({...call,transactionHashVariant:TransactionHashVariant.LATEST_FINAL});
+   const quote=await writer.estimateTransactionFeesForWrite({...call,transactionHashVariant:TransactionHashVariant.LATEST_FINAL}).catch(()=>{throw Error('The network could not quote this action. Refresh the round and check its timing before trying again. No transaction was submitted.');});
    if(quote.policy.enabled&&quote.feeValue<=0n)throw Error('The network did not provide a funded fee quote. No transaction was submitted.');
    onStage('signing',undefined,formatUnits(quote.feeValue,18));
    let hash:`0x${string}`;

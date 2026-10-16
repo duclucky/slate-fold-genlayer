@@ -1,0 +1,46 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "rpc": "https://studio-next.genlayer.com/api",
+  "explorer": "https://explorer-studio-dev.genlayer.com",
+  "operation": "zero-value caller-spoof tripwire",
+  "target": "0xA78E771B40C017ff88520ff2fc632cF37cf60A88",
+  "actualSigner": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5",
+  "claimedSender": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "valueGEN": "0",
+  "feeDepositGEN": "0.100000000000010352",
+  "before": {
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "0",
+      "receivedGEN": "0",
+      "withdrawnGEN": "0"
+    },
+    "nativeGEN": "0"
+  },
+  "preparedAt": "2026-10-16T00:57:10.885Z",
+  "status": "SUBMITTED",
+  "hash": "0xadc6472055b41bd0b322a875d37798cf9b2d4195952d54388142eb2dbfc49b24",
+  "checkedAt": "2026-10-16T00:57:48.031Z",
+  "transportRejected": false,
+  "identityPreserved": true,
+  "unchanged": true,
+  "after": {
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "0",
+      "receivedGEN": "0",
+      "withdrawnGEN": "0"
+    },
+    "nativeGEN": "0"
+  },
+  "receipt": {
+    "evmStatus": "0x1",
+    "status": "FINALIZED",
+    "execution": "ERROR",
+    "successful": false,
+    "caller": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5",
+    "origin": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5"
+  },
+  "passed": true
+}

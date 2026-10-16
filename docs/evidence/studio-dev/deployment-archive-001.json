@@ -1,0 +1,19 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "sourceCommit": "5dbb9dfe5459f02f6ec0a9ca12ffbfa5485f7716",
+  "sourceSha256": "cdef441b27f661c96fb4c7dcaf2316858a810b46779ff8d6ff1d74a95728fe74",
+  "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+  "api": "v0.3.0",
+  "genvm": "v0.6.0-rc5",
+  "sdk": "2.0.0-rc.1",
+  "at": "2026-10-16T00:35:46.401Z",
+  "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "valueGEN": "0",
+  "status": "ENVELOPE_REVERTED",
+  "hash": "0xae13a3629cb3c677edcdb6943cd91afd435f75762eccd2afb8bf327e23fee988",
+  "reason": "FeeValueMustBeNonZero",
+  "contractCreated": false,
+  "remainingContractLiabilityGEN": "0",
+  "reconciledAt": "2026-10-16T00:47:30.775Z"
+}

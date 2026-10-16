@@ -1,0 +1,82 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "sourceCommit": "93a2214d8c6857b06f27dd375ae4d66aca0fbbb0",
+  "sourceSha256": "cdef441b27f661c96fb4c7dcaf2316858a810b46779ff8d6ff1d74a95728fe74",
+  "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+  "api": "v0.3.0",
+  "genvm": "v0.6.0-rc5",
+  "sdk": "2.0.0-rc.1",
+  "at": "2026-10-16T00:47:33.166Z",
+  "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "valueGEN": "0",
+  "feeDepositGEN": "0.000379320000010352",
+  "status": "SUPERSEDED_RECOVERED",
+  "hash": "0x3275a16da79952af5b50f33015139a84f35cd078f7d70acd59390dce03f3d3fe",
+  "address": "0xA78E771B40C017ff88520ff2fc632cF37cf60A88",
+  "executionResult": "SUCCESS",
+  "finalizedObservedAt": "2026-10-16T00:48:13.681Z",
+  "explorer": "https://explorer-studio-dev.genlayer.com/address/0xA78E771B40C017ff88520ff2fc632cF37cf60A88",
+  "transactionExplorer": "https://explorer-studio-dev.genlayer.com/transactions/0x3275a16da79952af5b50f33015139a84f35cd078f7d70acd59390dce03f3d3fe",
+  "methods": [
+    "cancel_round",
+    "cast_ballot",
+    "create_round",
+    "get_accounting",
+    "get_attempt",
+    "get_ballot",
+    "get_credit",
+    "get_motion",
+    "get_round",
+    "list_rounds",
+    "recover_round",
+    "review_round",
+    "submit_motion",
+    "withdraw_credit"
+  ],
+  "accounting": {
+    "creditGEN": "0",
+    "escrowGEN": "0",
+    "receivedGEN": "0",
+    "withdrawnGEN": "0"
+  },
+  "nativeBalanceGEN": "0",
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0x3275a16da79952af5b50f33015139a84f35cd078f7d70acd59390dce03f3d3fe",
+    "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+    "to": "0xa78e771b40c017ff88520ff2fc632cf37cf60a88"
+  },
+  "reason": "Strict JSON-only transport failed one real consensus review; replacement adds bounded complete-fence normalization while preserving all settlement invariants.",
+  "archivedAt": "2026-10-16T01:43:00.107Z",
+  "replacementSourceSha256": "2182b042117cf8a0cc7f6c0e4c2eb95a5bc7244cf50b6d9b65e2bc0c4e1cd51e",
+  "finalAccounting": {
+    "creditGEN": "0",
+    "escrowGEN": "0",
+    "receivedGEN": "4",
+    "withdrawnGEN": "4"
+  },
+  "finalNativeBalanceGEN": "0",
+  "rounds": [
+    {
+      "id": "council-permissions-v1",
+      "status": "REFUNDED",
+      "escrowGEN": "0",
+      "attemptCount": 0
+    },
+    {
+      "id": "council-permissions-v2",
+      "status": "REFUNDED",
+      "escrowGEN": "0",
+      "attemptCount": 0
+    }
+  ],
+  "deliveryRecords": [
+    "lifecycle-expired-election-delivery.json",
+    "lifecycle-run2-expired-election-delivery.json"
+  ],
+  "failedReviewHash": "0xa85cd0789c8f71ef8bddf9e1426a5ed40e08d2aa3a447f09e67496d06bbd2295",
+  "diagnosticHash": "0xf86509a707895f3ca3ddda6961944ad831b7c03d2b974f632404ab672f906cc5"
+}

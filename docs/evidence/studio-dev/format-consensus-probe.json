@@ -1,0 +1,27 @@
+{
+  "scope": "0 GEN diagnostic contract, not active product or a consumer integration.",
+  "address": "0xc3467eD51E4BAAcE01ed6e9d49DAb689dBC182E2",
+  "hash": "0xf86509a707895f3ca3ddda6961944ad831b7c03d2b974f632404ab672f906cc5",
+  "sourceSha256": "c2040e4b97520b53e93f672f432cac5d354bc721de19c6cb921eb8f418ca0ca1",
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0xf86509a707895f3ca3ddda6961944ad831b7c03d2b974f632404ab672f906cc5",
+    "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+    "to": "0xc3467ed51e4baace01ed6e9d49dab689dbc182e2"
+  },
+  "diagnostic": {
+    "pairs": {
+      "classes": {
+        "12": "DIFFERENT",
+        "13": "DIFFERENT",
+        "23": "SAME"
+      },
+      "format": "STRICT"
+    },
+    "sourceStatus": "OK"
+  },
+  "nativeBalanceGEN": "0",
+  "observedAt": "2026-10-16T01:35:40.789Z"
+}

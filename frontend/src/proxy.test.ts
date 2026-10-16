@@ -19,3 +19,19 @@ it('proxy suppresses arbitrary upstream error details',async()=>{
  vi.stubGlobal('fetch',vi.fn(async()=>new Response(JSON.stringify({error:{code:-32000,message:'private validator configuration',data:{secret:'private'}}}))));
  expect(JSON.stringify(await forwardRpc({method:'eth_chainId',params:[]}))).not.toContain('private');
 });
+it('fee simulation uses current server time without accepting caller simulation overrides',async()=>{
+ vi.useFakeTimers();vi.setSystemTime(new Date('2026-10-16T01:00:00Z'));
+ try{
+  vi.stubGlobal('fetch',vi.fn(async(_url,options:RequestInit)=>{const body=JSON.parse(String(options.body));expect(body.params[0].sim_config).toEqual({genvm_datetime:'2026-10-16T01:00:00.000Z'});return Response.json({result:{recommendedPreset:{distribution:{},feeValue:'1'}}});}));
+  const response=await forwardRpc({method:'sim_estimateTransactionFees',params:[{type:'write',to:'0x'+'11'.repeat(20),sim_config:{genvm_datetime:'2000-01-01',validators:[{secret:'private'}]}}]});
+  expect(response).toHaveProperty('result.recommendedPreset.feeValue','1');
+ }finally{vi.useRealTimers();}
+});
+it('fee projection excludes unexpected preset and allocation metadata',async()=>{
+ vi.stubGlobal('fetch',vi.fn(async()=>Response.json({result:{recommendedPreset:{feeValue:'1',distribution:{executionBudgetPerRound:'1',node_config:'private'},node_config:'private',messageAllocations:[{messageType:1,budget:'1',node_config:'private'}]},feeAccounting:{node_config:'private'}}})));
+ const response=await forwardRpc({method:'sim_estimateTransactionFees',params:[{type:'write',to:'0x'+'11'.repeat(20)}]});expect(JSON.stringify(response)).not.toContain('private');expect(response).toHaveProperty('result.recommendedPreset.feeValue','1');
+});
+it('receipt projection retains only the exact quorum control signal needed by the parser',async()=>{
+ vi.stubGlobal('fetch',vi.fn(async()=>Response.json({result:{status:'FINALIZED',txExecutionResultName:'FINISHED_WITH_RETURN',consensus_data:{leader_receipt:[{mode:'leader',execution_result:'SUCCESS'},{mode:'validator',vote:'idle',execution_result:'ERROR',genvm_result:{error_code:'CONSENSUS_VALIDATOR_QUORUM_REACHED',node_config:'private'}}]}}})));
+ const result=await forwardRpc({method:'eth_getTransactionByHash',params:['0x'+'ab'.repeat(32)]});expect(result).toHaveProperty('result.consensus_data.leader_receipt.1.controlCode','CONSENSUS_VALIDATOR_QUORUM_REACHED');expect(JSON.stringify(result)).not.toContain('private');
+});
