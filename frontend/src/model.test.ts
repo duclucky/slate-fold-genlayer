@@ -1,0 +1,12 @@
+import {expect,it} from 'vitest';
+import {actionsFor,unavailable,type Round} from './model';
+import {members,roundFixture} from './test-support';
+it.each([99,100,101])('enforces motion cutoff at %s with stale phase',now=>{expect(actionsFor(roundFixture,members[1],now).submit).toBe(now<100);});
+it.each([99,100,101,199,200,201])('enforces the ballot interval at %s with stale phase',now=>{const r={...roundFixture,motions:['motion A','motion B','motion C']};expect(actionsFor(r,members[1],now).vote).toBe(now>=100&&now<200);});
+it.each([199,200,201,299,300,301])('enforces review and sponsor recovery at %s',now=>{const r={...roundFixture,motions:['a','b','c'],ballots:[1,2,3]};const a=actionsFor(r,members[0],now);expect(a.review).toBe(now>=200&&now<300);expect(a.recover).toBe(now>=300);});
+it.each(['ELECTED','REFUNDED','CANCELLED'] as const)('never exposes recovery or review after %s',status=>{expect(Object.values(actionsFor({...roundFixture,status},members[0],400)).some(Boolean)).toBe(false);});
+it('does not expose sponsor recovery to another member',()=>{expect(actionsFor(roundFixture,members[1],301).recover).toBe(false);});
+it('does not expose a second ballot',()=>{expect(actionsFor({...roundFixture,motions:['a','b','c'],ballots:[0,2,0]},members[1],150).vote).toBe(false);});
+it('does not cancel a round after a member has committed',()=>{expect(actionsFor({...roundFixture,motions:['','committed','']},members[0],50).cancel).toBe(false);});
+it('does not expose member writes while disconnected',()=>{const a=actionsFor(roundFixture,undefined,50);expect(a.submit||a.vote||a.review||a.cancel||a.recover).toBe(false);});
+it('unconfigured adapter cannot fabricate records, credit or successful writes',async()=>{await expect(unavailable.list()).rejects.toThrow('not configured');await expect(unavailable.credit(members[0])).rejects.toThrow('not configured');await expect(unavailable.write('withdraw_credit',[],'0',()=>{})).rejects.toThrow('No transaction');});

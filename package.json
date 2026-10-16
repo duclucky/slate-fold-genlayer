@@ -1,0 +1,6 @@
+{
+  "name": "slate-fold-genlayer", "version": "0.1.0", "private": true, "type": "module",
+  "workspaces": ["frontend"],
+  "scripts": {"dev":"npm run dev --workspace frontend", "build":"npm run build --workspace frontend", "check":"node scripts/check.mjs"},
+  "dependencies": {"genlayer-js":"2.0.0-rc.1", "viem":"2.56.5"}
+}

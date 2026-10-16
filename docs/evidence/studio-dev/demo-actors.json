@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-16T00:34:34.460Z",
+  "scope": "Distinct demo EOAs controlled by one demo operator; not independent people/adoption.",
+  "actors": [
+    {
+      "role": "member2",
+      "address": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5"
+    },
+    {
+      "role": "member3",
+      "address": "0x79F9eCaa174b2F17afb57DFC8450684C238A033e"
+    }
+  ]
+}

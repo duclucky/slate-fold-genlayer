@@ -1,0 +1,6 @@
+{
+  "name":"slatefold-frontend", "version":"0.1.0", "private":true, "type":"module",
+  "scripts":{"dev":"vite --host 127.0.0.1", "build":"tsc --noEmit && vite build", "test":"vitest run", "check":"npm run test && npm run build"},
+  "dependencies":{"react":"19.3.1", "react-dom":"19.3.1", "react-router-dom":"7.18.4"},
+  "devDependencies":{"@types/react":"19.3.0", "@types/react-dom":"19.3.0", "@vitejs/plugin-react":"6.1.2", "vite":"8.3.4", "typescript":"5.9.3", "vitest":"5.0.5", "jsdom":"27.4.0", "@testing-library/react":"16.3.2", "@testing-library/user-event":"14.6.1"}
+}
