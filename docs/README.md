@@ -3,7 +3,7 @@
 ## Identity
 
 - Idea: IDEA-046; category: Projects; status: BUILDING (specification admission verified; execution pending).
-- New independent child repository: slate-fold. Public remote not created yet.
+- Independent child repository: slate-fold. Public source: https://github.com/duclucky/slate-fold-genlayer.
 - Target: Studio Dev61997; IC RPC follows verified workspace D1.
 - Runtime: GenVM v0.3 with verified5jyc runner. Current upstream9b8 runner failed
   isolated schema/constructor controls with and without a pragma; this is recorded

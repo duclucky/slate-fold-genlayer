@@ -6,6 +6,8 @@ validators group equivalent motions, and deterministic ballots allocate a fixed
 
 **Category: Projects. Local build and Studio Dev lifecycle verified; browser-wallet write verification is pending.**
 
+[Public repository](https://github.com/duclucky/slate-fold-genlayer)
+
 ## Why it exists
 
 Two differently worded motions can express the same promise and split a council's
