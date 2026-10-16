@@ -30,8 +30,10 @@ No fixture is imported into the production frontend or used as canonical state.
 
 Withdrawal unit tests capture the EVM external boundary and assert debit-before-
 message, exact recipient/value and duplicate rejection. They do not prove native
-delivery. Before claiming an exit, network evidence must prove the outgoing child
-and an exact contract native-balance decrease, with recipient balance evidence.
+delivery. Before claiming an exit, network evidence must prove the outgoing EVM
+execution and delivered value, an exact contract native-balance decrease, and
+recipient balance evidence. Studio attaches these native execution records to
+the parent; no separate child transaction hash is exposed or claimed.
 
 Fresh checkpoint2026-10-16: `npm run check` exit0;93 Python,12 receipt/journal
 and80 frontend tests PASS, zero skips. The journal suite covers hash persistence
@@ -85,3 +87,12 @@ another review and reloads its finalized canonical outcome. A read-only guarded
 rerun of the expiry demo recovered all three finalized hashes and its historical
 4GEN ->2GEN exit proof while current native/accounting were0GEN. Broadcasting was
 blocked by the verification wrapper; no new transaction was attempted.
+
+Final source checkpoint32bddef: `npm run check` exit0,104 Python (100 direct,
+4 tooling),20 Node and99 frontend cases =223 tests,0 skips/xfails. Lint recognizes
+SlateFoldContract with7 writes/7 views; TypeScript/build pass. The additional
+actual-SDK regression first failed because a temporary read exposed an invalid-
+parameter diagnostic and SDK version. After the narrow read-error normalization,
+all15 adapter cases passed, including failed-read recovery to canonical credit
+without any wallet write. Actual selected-account/value preflight passed again.
+Linux CI38872338701 passed the same223 cases and build at this source commit.

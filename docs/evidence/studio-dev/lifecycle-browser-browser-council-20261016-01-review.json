@@ -1,0 +1,171 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "rpc": "https://studio-next.genlayer.com/api",
+  "explorer": "https://explorer-studio-dev.genlayer.com",
+  "identity": {
+    "network": "Studio Dev",
+    "chainId": 61997,
+    "sourceCommit": "110baf5b22fa70d2f4657308905b09f6c52eaed1",
+    "sourceSha256": "2182b042117cf8a0cc7f6c0e4c2eb95a5bc7244cf50b6d9b65e2bc0c4e1cd51e",
+    "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+    "api": "v0.3.0",
+    "genvm": "v0.6.0-rc5",
+    "sdk": "2.0.0-rc.1"
+  },
+  "frontendSourceCommit": "4e03472bf7a18b3a7279884793b911fb5f4079c9",
+  "target": "0xFB0943A725499C65D49254168Dce37AFdb949a81",
+  "actor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+  "operation": "review_round",
+  "signatureSource": "browser-selected OKX Wallet on production origin",
+  "origin": "https://slate-fold-genlayer.vercel.app",
+  "valueGEN": "0",
+  "preparedAt": "2026-10-16T08:01:50.168Z",
+  "status": "FINALIZED",
+  "hash": "0x7a805e9c8e0a10dc1196ec8a40d42bbc5cdd9a92e8d40f7092b72af201eace7a",
+  "before": {
+    "round": {
+      "attemptCount": 0,
+      "ballots": [
+        1,
+        2,
+        3
+      ],
+      "configDigest": "5aaf17dc8cadbcebebd87f6426e98e1d911260025c0808b4200974685f931d63",
+      "createdAt": 1792136909,
+      "escrowGEN": "2",
+      "groups": [],
+      "id": "browser-council-20261016-01",
+      "members": [
+        "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "4f63d69c678f5eeabeb2c87bd74e2e374a76a210679c983df277bb83640b50f2",
+        "b14a99ef3071cbf4ee22d10398ab851c7a1e06c9717f941ccb68e630c363b6cb",
+        "f4bbf6de5c2dda6c1e7816dab9da4a9cc3bf30727d39fabf880a906d2c08e797"
+      ],
+      "motions": [
+        "Permit all council members to read the archive and redistribute its copies to the public, with attribution to the original author.",
+        "Every council member may read the archive and share archive copies with the public, provided the original author is credited.",
+        "Permit council members to read the archive. Prohibit sharing archive copies outside the council. Require attribution to the original author."
+      ],
+      "objective": "Choose the council archive policy, pooling equivalent permission commitments under the fixed majority rule.",
+      "proposalDeadline": 1792137380,
+      "reason": "",
+      "recipient": "",
+      "reviewDeadline": 1792139060,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [],
+      "settledAt": 0,
+      "slateDigest": "87d2bdc471766e4ad613532d299236bbcef5c1fb25f4c514ad802caf45c82fe1",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "status": "READY_FOR_REVIEW",
+      "title": "Browser archive council",
+      "voteDeadline": 1792137860,
+      "winnerSlot": 0
+    },
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "2",
+      "receivedGEN": "12",
+      "withdrawnGEN": "10"
+    },
+    "nativeContractGEN": "2",
+    "actorBalanceGEN": "33.280205038332815145",
+    "creditGEN": "0"
+  },
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0x7a805e9c8e0a10dc1196ec8a40d42bbc5cdd9a92e8d40f7092b72af201eace7a",
+    "from": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+    "to": "0xfb0943a725499c65d49254168dce37afdb949a81"
+  },
+  "executionResult": "SUCCESS",
+  "finalizedObservedAt": "2026-10-16T08:06:17.726Z",
+  "after": {
+    "round": {
+      "attemptCount": 1,
+      "ballots": [
+        1,
+        2,
+        3
+      ],
+      "configDigest": "5aaf17dc8cadbcebebd87f6426e98e1d911260025c0808b4200974685f931d63",
+      "createdAt": 1792136909,
+      "escrowGEN": "0",
+      "groups": [
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "id": "browser-council-20261016-01",
+      "members": [
+        "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "4f63d69c678f5eeabeb2c87bd74e2e374a76a210679c983df277bb83640b50f2",
+        "b14a99ef3071cbf4ee22d10398ab851c7a1e06c9717f941ccb68e630c363b6cb",
+        "f4bbf6de5c2dda6c1e7816dab9da4a9cc3bf30727d39fabf880a906d2c08e797"
+      ],
+      "motions": [
+        "Permit all council members to read the archive and redistribute its copies to the public, with attribution to the original author.",
+        "Every council member may read the archive and share archive copies with the public, provided the original author is credited.",
+        "Permit council members to read the archive. Prohibit sharing archive copies outside the council. Require attribution to the original author."
+      ],
+      "objective": "Choose the council archive policy, pooling equivalent permission commitments under the fixed majority rule.",
+      "proposalDeadline": 1792137380,
+      "reason": "Equivalent motions pooled; earliest representative of majority funded.",
+      "recipient": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "reviewDeadline": 1792139060,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [
+        2,
+        1
+      ],
+      "settledAt": 1792137929,
+      "slateDigest": "87d2bdc471766e4ad613532d299236bbcef5c1fb25f4c514ad802caf45c82fe1",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "status": "ELECTED",
+      "title": "Browser archive council",
+      "voteDeadline": 1792137860,
+      "winnerSlot": 1
+    },
+    "accounting": {
+      "creditGEN": "2",
+      "escrowGEN": "0",
+      "receivedGEN": "12",
+      "withdrawnGEN": "10"
+    },
+    "nativeContractGEN": "2",
+    "actorBalanceGEN": "33.280126152832814322",
+    "creditGEN": "2"
+  },
+  "attempt": {
+    "number": 1,
+    "pairs": {
+      "12": "SAME",
+      "13": "DIFFERENT",
+      "23": "DIFFERENT"
+    },
+    "reviewedAt": 1792137929,
+    "round": "browser-council-20261016-01",
+    "slateDigest": "87d2bdc471766e4ad613532d299236bbcef5c1fb25f4c514ad802caf45c82fe1",
+    "sourceStatus": "OK"
+  },
+  "feeDepositGEN": "0.000379764000010352",
+  "verified": true
+}

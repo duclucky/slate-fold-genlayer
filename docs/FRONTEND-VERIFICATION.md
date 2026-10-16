@@ -84,3 +84,53 @@ A minimum-motion test first failed, then passed at10characters. Text bounds coun
 trimmed Unicode code points, matching the Python boundary. The complete check
 passed104 Python,20 Node and98 frontend tests, TypeScript and production build.
 CSS remains exactly the established baseline. Browser signing remains pending.
+
+## Production checkpoint
+
+https://slate-fold-genlayer.vercel.app returned HTTP200 and its real React root.
+Chrome rendered all five canonical rounds through the production same-origin
+proxy. The wallet picker discovered OKX Wallet and MetaMask. The initial
+production permission exposed no account; the owner subsequently connected OKX
+and signed the primary journey described below.
+Earlier pending deployed-read and hosting notes above are historical checkpoints;
+they are superseded by the execution checkpoint below. See
+[hosting verification](HOSTING-VERIFICATION.md) for the exact source manifest.
+
+## Completed production browser journey
+
+Actual Chrome/OKX wallet0xc495ef51618d03267a1f227afe5b27b38c748272 signed:
+create2GEN, own motion, ballot for motion1, semantic review and own withdrawal.
+All five transactions finalized SUCCESS and the UI reloaded canonical state.
+The two peer wallets signed their two motions and two ballots through scripts;
+those four actions are explicitly not browser proof. The exact hashes, source
+commit and per-action before/after views are in
+[browser-lifecycle-audit.json](evidence/studio-dev/browser-lifecycle-audit.json).
+
+The browser review grouped motions1/2 with scores[2,1] and vested2GEN to the
+browser wallet. The withdrawal proves external execution/delivered value2GEN,
+native contract2GEN ->0GEN, credit0GEN and recipient net increase
+1.999873694749999177GEN. Active cumulative accounting is12GEN received and12GEN
+withdrawn, escrow/credit0GEN. No fabricated child hash is used.
+
+The actual UI showed an initial declined-signature error and a successful retry.
+Later, Account encountered a temporary read failure; Try loading again recovered
+the real2GEN credit without signing or changing state. HTTP503 also interrupted
+read-only post-withdraw reconciliation; the existing finalized hash was read
+again, never sent again. The service's precise internal failure is not inferred.
+
+Those five browser writes ran on frontend4e03472. A narrow follow-up at32bddef
+converts SDK read diagnostics into actionable recovery copy. Its regression first
+failed on the SDK/version message, then passed with an actual-SDK failed-read to
+successful-credit retry and zero wallet writes. Full local check and Linux
+CI38872338701 passed223 tests (104 Python,20 Node,99 frontend), no skips/xfails.
+The actual-SDK selected-account/value preflight passed again after this adapter
+change. Successful reads and all write code are unchanged; CSS hash is unchanged.
+
+Production deployment dpl_71HgMGXRWH3k2pPPZevKuAnkQt3U is READY at the same
+verified URL and serves index-Cu05VXCP.js. Actual Chrome on that revision read
+Account0GEN and all six canonical rounds in History. Passive restoration used
+live wallet permission. The clickable account menu exposed Disconnect; after
+logout, the address cleared and New round required connection before any write.
+No new purse was created during this check. Cancellation/recovery browser controls
+are tested, with actual script-signed network cases; their browser execution and
+a real-network semantic RETRYABLE outcome are not claimed.

@@ -4,7 +4,7 @@ SlateFold lets three named council members fund shared policy intent: GenLayer
 validators group equivalent motions, and deterministic ballots allocate a fixed
 2 GEN grant or return it to the sponsor.
 
-**Category: Projects. Local build and Studio Dev lifecycle verified; browser-wallet write verification is pending.**
+**Category: Projects. Local/CI checks, Studio Dev consequences and the primary browser-wallet journey are verified.**
 
 [Public repository](https://github.com/duclucky/slate-fold-genlayer)
 
@@ -67,8 +67,9 @@ and [frontend verification](docs/FRONTEND-VERIFICATION.md).
 
 [Open SlateFold](https://slate-fold-genlayer.vercel.app).
 Production returns HTTP200 and the SlateFold React application. Browser-origin
-reads render the five canonical Studio Dev rounds through the live same-origin
-proxy. Browser-wallet write proof remains pending wallet permission on this origin.
+reads render six canonical Studio Dev rounds through the live same-origin proxy.
+Chrome/OKX signed create, motion, ballot, review and withdrawal; each finalized
+successfully and reloaded canonical state. The two peer wallets used scripts.
 
 ## Deployed Contract
 
@@ -83,14 +84,22 @@ source hash, pinned runner, API family, SDK, address and transaction.
 The [finalized majority review](https://explorer-studio-dev.genlayer.com/tx/0x9e4a5c16338f67095a9b1896d4a1d6eabd7af106af41d2d402eb72dfb46571b6)
 grouped motions2/3, pooled two votes and vested2GEN to member2. The
 [three-way tie review](https://explorer-studio-dev.genlayer.com/tx/0x4caea369c7f6827acc1fbd9f278a616de49659fb568781a5157c26a8855a68b0)
-refunded the sponsor. Five terminal demo cases received and withdrew10GEN in
-five separate2GEN exits. Current native balance, escrow and credits are0GEN.
+refunded the sponsor. The five script-driven terminal cases plus the browser
+council received and withdrew12GEN in six separate2GEN exits. Current native
+balance, escrow and credits are0GEN.
 [Canonical audit](docs/evidence/studio-dev/lifecycle-audit.json),
 [transaction timeline](docs/evidence/studio-dev/lifecycle-timeline.json) and
 [network verification](docs/NETWORK-VERIFICATION.md) contain receipts, timestamps,
 authoritative motion/ballot reads and exact native balance evidence. Two older
-revision1 exits were also fully recovered. Script signatures are distinct from
-browser-wallet signatures; the latter remain pending at this checkpoint.
+revision1 exits were also fully recovered.
+
+The [browser review](https://explorer-studio-dev.genlayer.com/tx/0x7a805e9c8e0a10dc1196ec8a40d42bbc5cdd9a92e8d40f7092b72af201eace7a)
+grouped motions1/2 and elected the browser sponsor with scores[2,1]. Its
+[withdrawal](https://explorer-studio-dev.genlayer.com/tx/0x75b7865002dbf2d858c7e29e602abfa779c7828801460538ee74c82e5eaaddb2)
+has an external delivered-value receipt, exact native2GEN ->0GEN decrease and
+recipient net increase1.999873694749999177GEN after fees.
+[Browser lifecycle audit](docs/evidence/studio-dev/browser-lifecycle-audit.json)
+distinguishes five browser signatures from four script-signed peer actions.
 
 ## Verify and deploy on Studio Dev
 
@@ -132,19 +141,24 @@ hash or unresolved execution requires inspection before another send.
 
 ## Verification
 
-`npm run check` passed222 tests:100 direct contract cases,4 tooling/metadata,
-20 Node receipt/journal/balance/backoff cases and98 frontend cases; no skips or
+`npm run check` passed223 tests:100 direct contract cases,4 tooling/metadata,
+20 Node receipt/journal/balance/backoff cases and99 frontend cases; no skips or
 xfails. GenVM lint recognizes one `SlateFoldContract`,7 writes and7 views.
 TypeScript and production build pass. The separate `gltest tests/` run covers
 the same104 Python tests and is not added again to the total.
-[Successful Linux CI](https://github.com/duclucky/slate-fold-genlayer/actions/runs/38845148997)
-verified that source at commit4e03472. Local and production browser reads render the five canonical
-rounds through the same-origin proxy; wallet connection/menu is observed.
+[Successful Linux CI](https://github.com/duclucky/slate-fold-genlayer/actions/runs/38872338701)
+verified that source at commit32bddef. Local and production browser reads use
+the same-origin proxy; wallet selection, passive restoration and disconnect were
+observed. A real temporary read failure recovered through Try loading again.
 
 [Hosting proof](docs/evidence/studio-dev/hosting-verification.json) records the
 frontend source commit and exact17-file upload manifest. The production build
 uses Vite, Node24, root frontend/ and output dist; no local environment or control
-files were uploaded. The CI lock applies pywin32 only on Windows.
+files were uploaded. The five signed browser actions ran on frontend4e03472;
+32bddef changes only read-error presentation, preserving successful reads and
+all write logic. Its live Account0GEN/history6-round reads were rechecked, and
+the full actual-SDK adapter preflight passed again. CSS is unchanged.
+The CI lock applies pywin32 only on Windows.
 
 ## Honest limits and reuse
 

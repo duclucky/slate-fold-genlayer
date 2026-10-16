@@ -1,5 +1,11 @@
 # Studio Dev verification
 
+Current acceptance is recorded in **Completed browser council and final ledger**
+below. Earlier pending statements describe historical checkpoints, not the
+current deployed revision. Production hosting and CI are separately recorded in
+[hosting verification](HOSTING-VERIFICATION.md); the five primary browser
+signatures are verified in the final section and browser-lifecycle-audit.json.
+
 Revision1 is SUPERSEDED_RECOVERED. Both2GEN round budgets were refunded and
 withdrawn; final native balance, escrow and credit were0GEN. Its immutable
 identity, unsuccessful review and all accepted/finalized receipts remain in
@@ -143,3 +149,30 @@ hosted bucket/window is not claimed. Reads and unsigned fee quotations honor
 bounded retry advice; transaction broadcasting is not automatically retried.
 Polling now waits6seconds. Browser signing is not established by these script
 signatures; the canonical audit explicitly records browserWriteProven=false.
+
+## Completed browser council and final ledger
+
+browser-council-20261016-01 adds a sixth terminal case. Actual Chrome/OKX signed
+five primary actions: create2GEN, motion1, ballot1, review and withdrawal. The
+two registered peers used scripts for their two motions and two ballots.
+Review0x7a805e9c8e0a10dc1196ec8a40d42bbc5cdd9a92e8d40f7092b72af201eace7a
+finalized SUCCESS: groups[[1,2],[3]], scores[2,1], elected slot1/browser wallet.
+Withdrawal0x75b7865002dbf2d858c7e29e602abfa779c7828801460538ee74c82e5eaaddb2
+finalized SUCCESS. Its parent-attached EVM receipt records delivered2GEN; exact
+native decrease2GEN ->0GEN and recipient net increase1.999873694749999177GEN
+prove the exit beyond parent finality. Current credit/escrow/native are0GEN.
+
+`node .codex/browser-audit.mjs` is a local read-only witness, never a signer.
+It returned passed=true, browserSignedActions5, scriptPeerActions4,
+browserWriteProven=true and accounting received12GEN/withdrawn12GEN. Its public
+projection is browser-lifecycle-audit.json. The baseline lifecycle-audit.json
+retains browserWriteProven=false because that script itself witnesses only its
+five original cases; its refreshed global accounting also reads12GEN/12GEN/0GEN.
+Read-only reconciliation encountered HTTP503 and resumed from the same existing
+withdrawal hash after service recovery. No second withdrawal was broadcast.
+
+Combined active evidence proves three semantic outcomes, six terminal cases and
+six2GEN native exits. The seven older delivery records (five baseline active,
+two recovered revision1) are checked by verify-deliveries; the eighth delivery,
+the browser exit, is checked by the separate browser audit. Revision1 remains
+fully recovered at0GEN. Script and browser evidence are distinct throughout.

@@ -2,7 +2,7 @@
 
 ## Identity
 
-- Idea: IDEA-046; category: Projects; status: BUILDING (specification admission verified; execution pending).
+- Idea: IDEA-046; category: Projects; status: VALIDATED (all14 gates, including execution; submission pending).
 - Independent child repository: slate-fold. Public source: https://github.com/duclucky/slate-fold-genlayer.
 - Target: Studio Dev61997; IC RPC follows verified workspace D1.
 - Runtime: GenVM v0.3 with verified5jyc runner. Current upstream9b8 runner failed
@@ -149,10 +149,10 @@ than inventing fixtures, funds, successful signatures or canonical results.
 
 ## Current evidence boundary
 
-Admission and unsigned feasibility12/12 are recorded; local implementation and
-Studio Dev lifecycle are now verified below. Browser-wallet writes, public CI,
-hosting and submission remain pending. Gate13 is PASS_ADMISSION and requires
-the separate browser execution proof before Projects completion.
+Admission and unsigned feasibility12/12 are recorded; local implementation,
+Studio Dev consequences, five primary browser-wallet writes, public CI and
+hosting are verified. Gate13 is now PASS_EXECUTION, supported by the separate
+browser-lifecycle-audit.json and native-delivery proof. Submission is pending.
 
 ## Adoption path and milestone headroom
 
@@ -210,7 +210,7 @@ Design and route structure are frozen; integration changes remain functional.
 | Contract count | PASS | One independent owner of ballots, semantic result and native accounting |
 | Differentiation | PASS | Tallying signed member choices differs from model ranking, pricing and selective consent; comparison below |
 | Claim-to-code | PASS | All core claims mapped below to interface/state/view/test/evidence plan |
-| Full lifecycle | PASS_ADMISSION | All executable acceptance cases specified; PENDING_EXECUTION until actual finalized/browser/native-exit proof |
+| Full lifecycle | PASS_EXECUTION | Three real semantic outcomes, recovery cases, six active2GEN native exits and five browser-signed primary actions; browser-lifecycle-audit.json plus lifecycle-audit.json |
 | Scope honesty | PASS | Public fixed-wallet protocol only; no delivery, legal identity, external execution, adoption or formal clone-independence guarantee |
 
 ## Actors and trust boundary
@@ -402,14 +402,14 @@ plus typed writes, not a claimed Safe integration or pass-through second contrac
 
 | Canonical state | User action | Contract write | UI component/route | Frontend test | Evidence status |
 |---|---|---|---|---|---|
-| No round | Fund council | create_round | CreateRound /rounds/new | exact members/value; deployed input bounds; real SDK2GEN envelope | UI/SDK PASS; script network PASS; browser write pending |
-| COLLECTING own slot empty | Author and assent | submit_motion | RoundWorkspace motions | exact motion/config digest, role/cutoff gating | UI/SDK PASS; script network PASS; browser write pending |
-| BALLOT_OPEN own ballot absent | Cast one choice | cast_ballot | RoundWorkspace ballot | exact slate/choice, duplicate/time gating | UI/SDK PASS; script network PASS; browser write pending |
-| READY_FOR_REVIEW | Group votes and resolve | review_round | RoundWorkspace result | wrapper/control/reload and interval test | UI/SDK PASS; two real semantic outcomes PASS; browser write pending |
+| No round | Fund council | create_round | CreateRound /rounds/new | exact members/value; deployed input bounds; real SDK2GEN envelope | UI/SDK, script network and actual browser PASS |
+| COLLECTING own slot empty | Author and assent | submit_motion | RoundWorkspace motions | exact motion/config digest, role/cutoff gating | UI/SDK, script network and own browser motion PASS; peer motions script-signed |
+| BALLOT_OPEN own ballot absent | Cast one choice | cast_ballot | RoundWorkspace ballot | exact slate/choice, duplicate/time gating | UI/SDK, script network and own browser ballot PASS; peer ballots script-signed |
+| READY_FOR_REVIEW | Group votes and resolve | review_round | RoundWorkspace result | wrapper/control/reload and interval test | UI/SDK PASS; three real semantic outcomes, including browser review PASS |
 | RETRYABLE | Request another review | review_round | RoundWorkspace result | explicit retry label and newly finalized canonical outcome reload | Local direct/UI PASS; real source-uncertainty retry not observed |
 | Unparticipated live round | Safe cancellation | cancel_round | RoundWorkspace result | legal cancel control; participant blocks cancel | UI/SDK PASS; script network PASS; browser write pending |
 | Unresolved expired round | Recover own funding | recover_round | RoundWorkspace result | equality/role/terminal gating plus wrapper/reload | UI/SDK PASS; timed script network PASS; browser write pending |
-| Positive own credit | Withdraw to own wallet | withdraw_credit | Account /account | selected provider, accepted!=finalized, duplicate disabled, canonical reload | UI/SDK PASS; five active2GEN native exits PASS; browser write pending |
+| Positive own credit | Withdraw to own wallet | withdraw_credit | Account /account | selected provider, accepted!=finalized, duplicate disabled, canonical reload | UI/SDK PASS; six active2GEN native exits including browser withdrawal PASS |
 
 All writes use real adapter/SDK at Phase7, account at createClient, no raw-string
 per-write account override. Real-SDK intercepted-I/O adapter regression (including
@@ -421,15 +421,15 @@ requirements. No key enters browser env or an uploaded hosting source tree.
 
 ## Threat model and executable test plan
 
-| Threat | Attack | Mitigation | Required named test family |
+| Threat | Attack | Mitigation | Implemented test file and representative case |
 |---|---|---|---|
-| Role forgery | Other wallet submits same bytes/digest, fake signer text, forwarded call | Exact direct sender, registered immutable slot and config/slate binding | test_authentication_binding; canonical/accounting unchanged |
-| Replay/version substitution | Reuse old motion, duplicate ballot, wrong round or source version | Unique keys, digests with chain/contract/version, immutable slot writes | test_provenance_tripwires with stable digest |
-| Stale phase/time | Late proposal/vote/review or premature recovery | Independent entrypoint timestamp guards | test_temporal_boundaries at-1/equality/+1 with stale phase |
-| Semantic manipulation | Prompt injection, leader chooses payee/labels with right JSON shape | Untrusted-data boundary, independent replay, no payout fields | test_validator_replay, test_injection and malformed-output tests |
-| Invalid partition | Extra/missing/duplicate ID, wrong enum, non-transitive SAME, invented root/downstream | Exact normalized relation and deterministic graph/tally invariants | test_settlement_invariants; no mutation/credit on reject |
-| Source substitution/outage | Matching claimant bytes or changed official representation | Exact built-in URL/raw hash and bounded fetch; retry without penalty | test_source_provenance; all hard state/accounting unchanged |
-| Value theft/double exit | Wrong amount, arbitrary recipient, repeated settle/withdraw/recovery | Exact2GEN, deterministic beneficiary, own credit and debit before EVM message | test_value_and_recovery_safety plus native metadata/receipt checks |
+| Role forgery | Other wallet submits same bytes/digest, fake signer text, forwarded call | Exact direct sender, registered immutable slot and config/slate binding | tests/direct/test_authority.py: test_forwarded_actor_rejected_before_any_state and test_wrong_member_and_version_and_replay_do_not_change_motion |
+| Replay/version substitution | Reuse old motion, duplicate ballot, wrong round or source version | Unique keys, digests with chain/contract/version, immutable slot writes | tests/direct/test_judgment.py: test_hash_valid_motion_wrong_authority_binding_cannot_settle; test_authority.py: test_ballot_wrong_canonical_binding_before_judgment |
+| Stale phase/time | Late proposal/vote/review or premature recovery | Independent entrypoint timestamp guards | test_lifecycle.py: test_clock_independent_of_stale_phase; test_authority.py: test_creation_own_deadline and test_ballot_own_clock_stale_phase; test_judgment.py: test_review_checks_clock_with_phase_ready |
+| Semantic manipulation | Prompt injection, leader chooses payee/labels with right JSON shape | Untrusted-data boundary, independent replay, no payout fields | test_authority.py: test_validator_replay_rejects_different_meaning_and_invalid_leader; test_judgment.py: test_invalid_settlement_meaning_reverts_before_mutation. Actual model resistance to every injection is not guaranteed. |
+| Invalid partition | Extra/missing/duplicate ID, wrong enum, non-transitive SAME, invented root/downstream | Exact normalized relation and deterministic graph/tally invariants | test_judgment.py: test_invalid_settlement_meaning_reverts_before_mutation and test_transport_normalization_never_repairs_invalid_settlement_meaning |
+| Source substitution/outage | Matching claimant bytes or changed official representation | Exact built-in URL/raw hash and bounded fetch; retry without penalty | test_judgment.py: test_source_failure_and_valid_actor_hash_cannot_credit; test_authority.py: test_validator_reruns_source_and_model_after_leader |
+| Value theft/double exit | Wrong amount, arbitrary recipient, repeated settle/withdraw/recovery | Exact2GEN, deterministic beneficiary, own credit and debit before EVM message | test_lifecycle.py: test_recovery_wrong_caller_unchanged, test_recovery_credit_once_and_reject_terminal, test_withdraw_other_owner_and_duplicate_cannot_debit; tooling/test_metadata.py and scripts/external-delivery.test.mjs |
 | UI false success | Signature/submission called finalized; stale browser data | Track independent execution+finality then canonical reload | adapter/UI finality/error/retry and real browser lifecycle |
 
 Test-first contract batches: establish failing cases for each planned public method
@@ -453,7 +453,7 @@ mocked nondet transaction; real network tests are clearly separated and authoriz
 | Only named members author immutable commitments | submit_motion; keyed MotionState/config digest | get_motion/get_round | authentication, stable-digest wrong-binding, duplicate and phase tests; exact control args | Finalized three distinct role writes and exact canonical texts |
 | Every member casts one exact-slate ballot | cast_ballot; keyed BallotState | get_ballot/get_round | wrong caller/digest/choice/replay/time; UI exact-slate test | Three finalized ballots, canonical choices, rejected duplicate unchanged |
 | Neutral meaning controls pooled support | review_round; relation/AttemptState | get_attempt/get_round | independent replay and settlement-invariant negatives | Successful multi-validator finalized review; exact relation and scores |
-| Majority result controls fixed2GEN grant | review_round; winner_slot/recipient/credit | round,get_credit,get_accounting | pooled AB votes2 versus C1; all distinct/tie refund; no LLM amount | Finalized elected result and2GEN native withdrawal with child/balance delta |
+| Majority result controls fixed2GEN grant | review_round; winner_slot/recipient/credit | round,get_credit,get_accounting | pooled AB votes2 versus C1; all distinct/tie refund; no LLM amount | Finalized elected result and2GEN native withdrawal with external execution/delivered-value receipt and exact native balance decrease; Studio exposes no separate child hash |
 | Uncertainty never pays a nominee | review_round RETRYABLE; unchanged escrow | attempt,round,accounting | UNCLEAR/source failure/hash mismatch/injection/provenance cases | Canonical real retry if obtained; otherwise explicitly local-only |
 | Missing participants cannot orphan sponsor funding | recover_round/cancel_round | round,credit,accounting | all recovery callers/states/boundaries/duplicates/terminal cases | Real unparticipated cancel and incomplete/expired refund with2GEN exit |
 | Product uses a real selected wallet and canonical state | frontend typed adapter and all seven controls | finalized SDK reads via same-origin proxy | real-SDK adapter tests; UI finality/role/logout/error/retry | Actual extension-wallet primary journey; script peers explicitly labeled |
@@ -523,18 +523,28 @@ escrow, frontend canonical-state gap,4/7duplicate or a core untraceable claim.
 
 ## Evidence status
 
-Local checkpoint2026-10-16:104 Python tests,20 Node tests and98 frontend
+Local checkpoint2026-10-16:104 Python tests,20 Node tests and99 frontend
 tests PASS, no skips; recognized contract lint, TypeScript and production build
 PASS. Unsigned viability vectors were12/12. These are separate from CI.
 Studio Dev revision1 at `0xA78E771B40C017ff88520ff2fc632cF37cf60A88` is
 SUPERSEDED_RECOVERED after one failed real review. Both2GEN budgets were recovered
 and delivered; native balance/escrow/credit are0GEN. A0GEN normalization control
 finalized SUCCESS. Active revision2 is0xFB0943A725499C65D49254168Dce37AFdb949a81.
-Its majority election and three-way tie finalized SUCCESS; five terminal cases
-returned or granted all10GEN, with five exact2GEN native exits. Current native,
-escrow and credit are0GEN. The canonical lifecycle audit passed. Browser-wallet
-writes remain PENDING_REAL_EVIDENCE and are distinct from script signatures.
+Its two majority elections and one three-way tie finalized SUCCESS; six terminal
+cases returned or granted all12GEN, with six exact2GEN native exits. Current
+native, escrow and credit are0GEN. The baseline audit verifies five cases; the
+separate browser audit verifies the sixth, including five actual Chrome/OKX
+signatures and four explicitly script-signed peer actions. The baseline audit's
+browserWriteProven=false describes that script-only witness, not the separate
+browser audit, whose browserWriteProven=true is backed by UI observations and
+the five exact finalized transaction hashes.
 Studionet/localnet/other networks: no SlateFold evidence or deployment claimed.
-Browser: local rendering/navigation/discovery and a real selected OKX account
-connection observed; no browser signature, transaction or external adopter claimed. Public CI/app/Portal:
-pending. These limits remain until replaced by fresh evidence, not by a plan.
+Browser: rendering/navigation/discovery, selected OKX account, five signed writes,
+finality/canonical reload, real read-error/retry and logout observed. No external
+adopter is claimed. Cancellation/recovery controls have UI/SDK tests and real
+script network cases; actual browser execution of those two branches is not claimed.
+Production at https://slate-fold-genlayer.vercel.app returns HTTP200 and renders
+six canonical rounds through its same-origin proxy. Linux CI38872338701 passed
+the complete223-test check at frontend source commit32bddef. See the hosting
+record for immutable deployment identity. Portal submission remains pending.
+These limits remain until replaced by fresh evidence, not by a plan.

@@ -1,0 +1,272 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "rpc": "https://studio-next.genlayer.com/api",
+  "explorer": "https://explorer-studio-dev.genlayer.com",
+  "checkedAt": "2026-10-16T08:17:08.173Z",
+  "command": "node .codex/browser-audit.mjs (read-only local witness)",
+  "target": "0xFB0943A725499C65D49254168Dce37AFdb949a81",
+  "roundId": "browser-council-20261016-01",
+  "browserOrigin": "https://slate-fold-genlayer.vercel.app",
+  "frontendSourceCommit": "4e03472bf7a18b3a7279884793b911fb5f4079c9",
+  "browser": "Actual Chrome with user-selected OKX Wallet",
+  "browserActor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+  "browserSignedActions": 5,
+  "scriptPeerActions": 4,
+  "operations": [
+    {
+      "file": "lifecycle-browser-browser-council-20261016-01-create.json",
+      "operation": "create_round",
+      "actor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "hash": "0x9fceff6e3f0f92432a6827d26a5417c79c96e5cc317c9ca136956095bd675d95",
+      "signatureSource": "browser-selected OKX Wallet on production origin",
+      "applicationValueGEN": "2",
+      "status": "FINALIZED",
+      "executionResult": "SUCCESS"
+    },
+    {
+      "file": "lifecycle-browser-browser-council-20261016-01-motion1.json",
+      "operation": "submit_motion",
+      "actor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "hash": "0xa8615f03dd1d4daa83923b81f268ba87a34f18707c831a895979568dd4fa9349",
+      "signatureSource": "browser-selected OKX Wallet on production origin",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "executionResult": "SUCCESS"
+    },
+    {
+      "file": "lifecycle-browser-browser-council-20261016-01-motion2.json",
+      "operation": "submit_motion",
+      "actor": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5",
+      "hash": "0xd2b7554e77633e0ffb47bfe1c9090a40489c29a4acde786206aaf10b585c0948",
+      "signatureSource": "script-signed demo peer",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "executionResult": "SUCCESS"
+    },
+    {
+      "file": "lifecycle-browser-browser-council-20261016-01-motion3.json",
+      "operation": "submit_motion",
+      "actor": "0x79F9eCaa174b2F17afb57DFC8450684C238A033e",
+      "hash": "0x491ea206dd266fbb94dfa48b0f7b6a3a8b6118bb2bcd556a1263d3e1cb0c9192",
+      "signatureSource": "script-signed demo peer",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "executionResult": "SUCCESS"
+    },
+    {
+      "file": "lifecycle-browser-browser-council-20261016-01-ballot1.json",
+      "operation": "cast_ballot",
+      "actor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "hash": "0x37de6956d5bcc81e4fb3aa0de8f048fb858d3f5117a2e9abeb0f58cc2f8b6433",
+      "signatureSource": "browser-selected OKX Wallet on production origin",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "executionResult": "SUCCESS"
+    },
+    {
+      "file": "lifecycle-browser-browser-council-20261016-01-ballot2.json",
+      "operation": "cast_ballot",
+      "actor": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5",
+      "hash": "0xbf2b2d1dfc85c636bf93f8cbe2e191a29d385bfc9460e103925ed5cf12b0f005",
+      "signatureSource": "script-signed demo peer",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "executionResult": "SUCCESS"
+    },
+    {
+      "file": "lifecycle-browser-browser-council-20261016-01-ballot3.json",
+      "operation": "cast_ballot",
+      "actor": "0x79F9eCaa174b2F17afb57DFC8450684C238A033e",
+      "hash": "0xffb48ea530f0b8b3c9678f1fd551ce97a0ba4b61359995513f50e52cfac1a897",
+      "signatureSource": "script-signed demo peer",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "executionResult": "SUCCESS"
+    },
+    {
+      "file": "lifecycle-browser-browser-council-20261016-01-review.json",
+      "operation": "review_round",
+      "actor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "hash": "0x7a805e9c8e0a10dc1196ec8a40d42bbc5cdd9a92e8d40f7092b72af201eace7a",
+      "signatureSource": "browser-selected OKX Wallet on production origin",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "executionResult": "SUCCESS"
+    },
+    {
+      "file": "lifecycle-browser-browser-council-20261016-01-withdraw.json",
+      "operation": "withdraw_credit",
+      "actor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "hash": "0x75b7865002dbf2d858c7e29e602abfa779c7828801460538ee74c82e5eaaddb2",
+      "signatureSource": "browser-selected OKX Wallet on production origin",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "executionResult": "SUCCESS"
+    }
+  ],
+  "round": {
+    "attemptCount": 1,
+    "ballots": [
+      1,
+      2,
+      3
+    ],
+    "configDigest": "5aaf17dc8cadbcebebd87f6426e98e1d911260025c0808b4200974685f931d63",
+    "createdAt": 1792136909,
+    "escrowGEN": "0",
+    "groups": [
+      [
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "id": "browser-council-20261016-01",
+    "members": [
+      "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+      "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+    ],
+    "motionDigests": [
+      "4f63d69c678f5eeabeb2c87bd74e2e374a76a210679c983df277bb83640b50f2",
+      "b14a99ef3071cbf4ee22d10398ab851c7a1e06c9717f941ccb68e630c363b6cb",
+      "f4bbf6de5c2dda6c1e7816dab9da4a9cc3bf30727d39fabf880a906d2c08e797"
+    ],
+    "motions": [
+      "Permit all council members to read the archive and redistribute its copies to the public, with attribution to the original author.",
+      "Every council member may read the archive and share archive copies with the public, provided the original author is credited.",
+      "Permit council members to read the archive. Prohibit sharing archive copies outside the council. Require attribution to the original author."
+    ],
+    "objective": "Choose the council archive policy, pooling equivalent permission commitments under the fixed majority rule.",
+    "proposalDeadline": 1792137380,
+    "reason": "Equivalent motions pooled; earliest representative of majority funded.",
+    "recipient": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+    "reviewDeadline": 1792139060,
+    "rule": "slatefold-v1-fixed-three-earliest-representative",
+    "scores": [
+      2,
+      1
+    ],
+    "settledAt": 1792137929,
+    "slateDigest": "87d2bdc471766e4ad613532d299236bbcef5c1fb25f4c514ad802caf45c82fe1",
+    "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+    "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+    "sponsor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+    "status": "ELECTED",
+    "title": "Browser archive council",
+    "voteDeadline": 1792137860,
+    "winnerSlot": 1
+  },
+  "attempt": {
+    "number": 1,
+    "pairs": {
+      "12": "SAME",
+      "13": "DIFFERENT",
+      "23": "DIFFERENT"
+    },
+    "reviewedAt": 1792137929,
+    "round": "browser-council-20261016-01",
+    "slateDigest": "87d2bdc471766e4ad613532d299236bbcef5c1fb25f4c514ad802caf45c82fe1",
+    "sourceStatus": "OK"
+  },
+  "motions": [
+    {
+      "actor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "configDigest": "5aaf17dc8cadbcebebd87f6426e98e1d911260025c0808b4200974685f931d63",
+      "digest": "4f63d69c678f5eeabeb2c87bd74e2e374a76a210679c983df277bb83640b50f2",
+      "round": "browser-council-20261016-01",
+      "slot": 1,
+      "submittedAt": 1792137036,
+      "text": "Permit all council members to read the archive and redistribute its copies to the public, with attribution to the original author."
+    },
+    {
+      "actor": "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+      "configDigest": "5aaf17dc8cadbcebebd87f6426e98e1d911260025c0808b4200974685f931d63",
+      "digest": "b14a99ef3071cbf4ee22d10398ab851c7a1e06c9717f941ccb68e630c363b6cb",
+      "round": "browser-council-20261016-01",
+      "slot": 2,
+      "submittedAt": 1792137105,
+      "text": "Every council member may read the archive and share archive copies with the public, provided the original author is credited."
+    },
+    {
+      "actor": "0x79f9ecaa174b2f17afb57dfc8450684c238a033e",
+      "configDigest": "5aaf17dc8cadbcebebd87f6426e98e1d911260025c0808b4200974685f931d63",
+      "digest": "f4bbf6de5c2dda6c1e7816dab9da4a9cc3bf30727d39fabf880a906d2c08e797",
+      "round": "browser-council-20261016-01",
+      "slot": 3,
+      "submittedAt": 1792137205,
+      "text": "Permit council members to read the archive. Prohibit sharing archive copies outside the council. Require attribution to the original author."
+    }
+  ],
+  "ballots": [
+    {
+      "actor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "castAt": 1792137426,
+      "choice": 1,
+      "round": "browser-council-20261016-01",
+      "slateDigest": "87d2bdc471766e4ad613532d299236bbcef5c1fb25f4c514ad802caf45c82fe1",
+      "slot": 1
+    },
+    {
+      "actor": "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+      "castAt": 1792137573,
+      "choice": 2,
+      "round": "browser-council-20261016-01",
+      "slateDigest": "87d2bdc471766e4ad613532d299236bbcef5c1fb25f4c514ad802caf45c82fe1",
+      "slot": 2
+    },
+    {
+      "actor": "0x79f9ecaa174b2f17afb57dfc8450684c238a033e",
+      "castAt": 1792137637,
+      "choice": 3,
+      "round": "browser-council-20261016-01",
+      "slateDigest": "87d2bdc471766e4ad613532d299236bbcef5c1fb25f4c514ad802caf45c82fe1",
+      "slot": 3
+    }
+  ],
+  "accounting": {
+    "creditGEN": "0",
+    "escrowGEN": "0",
+    "receivedGEN": "12",
+    "withdrawnGEN": "12"
+  },
+  "nativeContractGEN": "0",
+  "creditsGEN": [
+    "0",
+    "0",
+    "0"
+  ],
+  "nativeExit": {
+    "externalReceipt": {
+      "kind": "parent-attached external EVM execution receipt",
+      "recipient": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "valueGEN": "2",
+      "executionRecorded": true,
+      "messageValueDelivered": true,
+      "effectId": "0xbd83fea4b43f77c53b235e890cea736c947dbe8c1a99422df84a636364982adf",
+      "separateChildHashAvailable": false
+    },
+    "contractBeforeGEN": "2",
+    "contractAfterGEN": "0",
+    "nativeDecreaseGEN": "2",
+    "recipientNetIncreaseGEN": "1.999873694749999177",
+    "balanceProven": true
+  },
+  "observations": [
+    "Wallet picker discovered OKX Wallet and MetaMask; user selected OKX.",
+    "An initial wallet signing rejection was displayed; user retried the same round and signed successfully.",
+    "Submitted and accepted were displayed separately from finalized.",
+    "Each primary write reloaded canonical data after finalization.",
+    "Refreshing restored only the previously selected wallet through live permission."
+  ],
+  "limits": [
+    "Two peer motions and two peer ballots are script-signed, not browser-signed.",
+    "Cancellation/recovery browser controls are tested; their actual network cases were script-signed.",
+    "Semantic RETRYABLE is locally tested; no real-network RETRYABLE outcome is claimed."
+  ],
+  "browserWriteProven": true,
+  "passed": true
+}

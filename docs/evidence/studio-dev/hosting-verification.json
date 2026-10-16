@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-10-16T03:42:49.228Z",
+  "checkedAt": "2026-10-16T08:22:38.616Z",
   "network": "Studio Dev",
   "chainId": 61997,
   "publicRepository": "https://github.com/duclucky/slate-fold-genlayer",
   "productionURL": "https://slate-fold-genlayer.vercel.app",
-  "frontendSourceCommit": "4e03472bf7a18b3a7279884793b911fb5f4079c9",
+  "frontendSourceCommit": "32bddef40beecec832adeb6971abe6ad20c336a5",
   "contract": {
     "address": "0xFB0943A725499C65D49254168Dce37AFdb949a81",
     "sourceCommit": "e2338e86604a09227c34989f535d16baa040659a",
@@ -12,7 +12,7 @@
   },
   "hosting": {
     "provider": "Vercel",
-    "deploymentId": "dpl_FRQ587yv2XFL6kCoV4bafSTXvxBB",
+    "deploymentId": "dpl_71HgMGXRWH3k2pPPZevKuAnkQt3U",
     "readyState": "READY",
     "target": "production",
     "project": "slate-fold-genlayer",
@@ -22,7 +22,8 @@
     "installCommand": "npm ci --prefix ..",
     "outputDirectory": "dist",
     "nodeVersion": "24.x",
-    "sourceFilesOutsideRootDirectory": true
+    "sourceFilesOutsideRootDirectory": true,
+    "immutableDeploymentURL": "https://slate-fold-genlayer-keagaryd4-duckys-projects-bc83c6a0.vercel.app"
   },
   "upload": {
     "fileCount": 17,
@@ -79,8 +80,8 @@
       },
       {
         "file": "frontend/src/adapter.ts",
-        "bytes": 7724,
-        "sha256": "8f40ca148431959d7ded4678a322f8569ef70ebc74835a3a837d771a8f0dce9f"
+        "bytes": 7850,
+        "sha256": "d4efaa78332a4dbe2f39275c356ac9d60c1bceb4e417cdf5f6c6aed12e188e15"
       },
       {
         "file": "frontend/src/main.tsx",
@@ -121,27 +122,38 @@
     "command": "curl.exe -I https://slate-fold-genlayer.vercel.app; curl.exe -s https://slate-fold-genlayer.vercel.app",
     "status": 200,
     "containsProjectName": true,
-    "containsReactRoot": true
+    "containsReactRoot": true,
+    "scriptAsset": "/assets/index-Cu05VXCP.js",
+    "cssAsset": "/assets/index-BNMDLvwr.css"
   },
   "browser": {
-    "productionCanonicalRoundsRendered": 5,
+    "productionCanonicalRoundsRendered": 6,
+    "canonicalCreditGEN": "0",
     "sameOriginICPath": "/genlayer-rpc",
     "corsFailureObserved": false,
     "providersDetected": [
       "OKX Wallet",
       "MetaMask"
     ],
-    "selectedProvider": "OKX Wallet",
-    "authorizedProductionAccounts": 0,
-    "browserWriteStatus": "PENDING_REAL_EVIDENCE"
+    "selectedProviderObserved": "OKX Wallet",
+    "browserActor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+    "browserWriteStatus": "PASS_PRIMARY_JOURNEY",
+    "browserSignedActions": 5,
+    "scriptPeerActions": 4,
+    "browserWriteFrontendSourceCommit": "4e03472bf7a18b3a7279884793b911fb5f4079c9",
+    "browserProof": "browser-lifecycle-audit.json",
+    "subsequentPatch": "Read-error presentation only; successful reads and all write logic preserved.",
+    "currentProductionReadsVerified": true,
+    "passiveRestorationObserved": true,
+    "logoutClearedAccountAndBlockedWrites": true
   },
   "ci": {
-    "url": "https://github.com/duclucky/slate-fold-genlayer/actions/runs/38845148997",
-    "sourceCommit": "4e03472bf7a18b3a7279884793b911fb5f4079c9",
+    "url": "https://github.com/duclucky/slate-fold-genlayer/actions/runs/38872338701",
+    "sourceCommit": "32bddef40beecec832adeb6971abe6ad20c336a5",
     "conclusion": "success",
     "pythonTests": 104,
     "nodeTests": 20,
-    "frontendTests": 98,
-    "totalTests": 222
+    "frontendTests": 99,
+    "totalTests": 223
   }
 }

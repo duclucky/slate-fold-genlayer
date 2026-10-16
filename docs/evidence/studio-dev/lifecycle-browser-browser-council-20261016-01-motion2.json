@@ -1,0 +1,147 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "rpc": "https://studio-next.genlayer.com/api",
+  "explorer": "https://explorer-studio-dev.genlayer.com",
+  "identity": {
+    "network": "Studio Dev",
+    "chainId": 61997,
+    "sourceCommit": "110baf5b22fa70d2f4657308905b09f6c52eaed1",
+    "sourceSha256": "2182b042117cf8a0cc7f6c0e4c2eb95a5bc7244cf50b6d9b65e2bc0c4e1cd51e",
+    "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+    "api": "v0.3.0",
+    "genvm": "v0.6.0-rc5",
+    "sdk": "2.0.0-rc.1"
+  },
+  "target": "0xFB0943A725499C65D49254168Dce37AFdb949a81",
+  "operation": "submit_motion",
+  "actor": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5",
+  "args": [
+    "browser-council-20261016-01",
+    "5aaf17dc8cadbcebebd87f6426e98e1d911260025c0808b4200974685f931d63",
+    "Every council member may read the archive and share archive copies with the public, provided the original author is credited."
+  ],
+  "valueGEN": "0",
+  "feeDepositGEN": "0.000378517200010352",
+  "signatureSource": "script-signed demo peer",
+  "before": {
+    "round": {
+      "attemptCount": 0,
+      "ballots": [
+        0,
+        0,
+        0
+      ],
+      "configDigest": "5aaf17dc8cadbcebebd87f6426e98e1d911260025c0808b4200974685f931d63",
+      "createdAt": 1792136909,
+      "escrowGEN": "2",
+      "groups": [],
+      "id": "browser-council-20261016-01",
+      "members": [
+        "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "4f63d69c678f5eeabeb2c87bd74e2e374a76a210679c983df277bb83640b50f2",
+        "",
+        ""
+      ],
+      "motions": [
+        "Permit all council members to read the archive and redistribute its copies to the public, with attribution to the original author.",
+        "",
+        ""
+      ],
+      "objective": "Choose the council archive policy, pooling equivalent permission commitments under the fixed majority rule.",
+      "proposalDeadline": 1792137380,
+      "reason": "",
+      "recipient": "",
+      "reviewDeadline": 1792139060,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [],
+      "settledAt": 0,
+      "slateDigest": "",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "status": "COLLECTING",
+      "title": "Browser archive council",
+      "voteDeadline": 1792137860,
+      "winnerSlot": 0
+    },
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "2",
+      "receivedGEN": "12",
+      "withdrawnGEN": "10"
+    },
+    "nativeContractGEN": "2"
+  },
+  "preparedAt": "2026-10-16T07:51:43.841Z",
+  "status": "FINALIZED",
+  "hash": "0xd2b7554e77633e0ffb47bfe1c9090a40489c29a4acde786206aaf10b585c0948",
+  "executionResult": "SUCCESS",
+  "finalizedObservedAt": "2026-10-16T07:52:26.242Z",
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0xd2b7554e77633e0ffb47bfe1c9090a40489c29a4acde786206aaf10b585c0948",
+    "from": "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+    "to": "0xfb0943a725499c65d49254168dce37afdb949a81"
+  },
+  "after": {
+    "round": {
+      "attemptCount": 0,
+      "ballots": [
+        0,
+        0,
+        0
+      ],
+      "configDigest": "5aaf17dc8cadbcebebd87f6426e98e1d911260025c0808b4200974685f931d63",
+      "createdAt": 1792136909,
+      "escrowGEN": "2",
+      "groups": [],
+      "id": "browser-council-20261016-01",
+      "members": [
+        "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "4f63d69c678f5eeabeb2c87bd74e2e374a76a210679c983df277bb83640b50f2",
+        "b14a99ef3071cbf4ee22d10398ab851c7a1e06c9717f941ccb68e630c363b6cb",
+        ""
+      ],
+      "motions": [
+        "Permit all council members to read the archive and redistribute its copies to the public, with attribution to the original author.",
+        "Every council member may read the archive and share archive copies with the public, provided the original author is credited.",
+        ""
+      ],
+      "objective": "Choose the council archive policy, pooling equivalent permission commitments under the fixed majority rule.",
+      "proposalDeadline": 1792137380,
+      "reason": "",
+      "recipient": "",
+      "reviewDeadline": 1792139060,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [],
+      "settledAt": 0,
+      "slateDigest": "",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "status": "COLLECTING",
+      "title": "Browser archive council",
+      "voteDeadline": 1792137860,
+      "winnerSlot": 0
+    },
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "2",
+      "receivedGEN": "12",
+      "withdrawnGEN": "10"
+    },
+    "nativeContractGEN": "2"
+  },
+  "verified": true
+}

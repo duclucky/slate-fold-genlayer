@@ -1,0 +1,150 @@
+{
+  "checkedAt": "2026-10-16T03:42:49.228Z",
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "publicRepository": "https://github.com/duclucky/slate-fold-genlayer",
+  "productionURL": "https://slate-fold-genlayer.vercel.app",
+  "frontendSourceCommit": "4e03472bf7a18b3a7279884793b911fb5f4079c9",
+  "contract": {
+    "address": "0xFB0943A725499C65D49254168Dce37AFdb949a81",
+    "sourceCommit": "e2338e86604a09227c34989f535d16baa040659a",
+    "sourceSha256": "2182b042117cf8a0cc7f6c0e4c2eb95a5bc7244cf50b6d9b65e2bc0c4e1cd51e"
+  },
+  "hosting": {
+    "provider": "Vercel",
+    "deploymentId": "dpl_FRQ587yv2XFL6kCoV4bafSTXvxBB",
+    "readyState": "READY",
+    "target": "production",
+    "project": "slate-fold-genlayer",
+    "framework": "vite",
+    "rootDirectory": "frontend",
+    "buildCommand": "npm run build",
+    "installCommand": "npm ci --prefix ..",
+    "outputDirectory": "dist",
+    "nodeVersion": "24.x",
+    "sourceFilesOutsideRootDirectory": true
+  },
+  "upload": {
+    "fileCount": 17,
+    "files": [
+      {
+        "file": "package.json",
+        "bytes": 323,
+        "sha256": "00730d4e1d2cebc5537cc1f2013ae7cb8cc649013581fa52bf83a92fa1376f74"
+      },
+      {
+        "file": "package-lock.json",
+        "bytes": 179347,
+        "sha256": "79eaa5380e8781301d40c90670a6d8ff14b72a442f4e8c0fcaf82e9157b2c31f"
+      },
+      {
+        "file": "frontend/package.json",
+        "bytes": 576,
+        "sha256": "8db2d1e87c87e07927ccf2ff0e686c32f5fcd47cbed3f8736e7cede216e1c86b"
+      },
+      {
+        "file": "frontend/index.html",
+        "bytes": 437,
+        "sha256": "86009746bad985500169a9e0a6d9b61ecb39b969c5e4f0b8214e5054eab94020"
+      },
+      {
+        "file": "frontend/tsconfig.json",
+        "bytes": 315,
+        "sha256": "0d005ce943a3dedd30dd66fc178700fdc1aeafd54c483393d4f5ed97e7f00199"
+      },
+      {
+        "file": "frontend/vite.config.ts",
+        "bytes": 393,
+        "sha256": "5349cec5e402619d68858e6643d3297d7c78dfd8df519e82df88e02981ffd155"
+      },
+      {
+        "file": "frontend/vercel.json",
+        "bytes": 231,
+        "sha256": "bb587247bd7e6bcce5545b4683149f8598faed009677ed0dc9d3d0702177de7e"
+      },
+      {
+        "file": "frontend/api/genlayer-rpc.mjs",
+        "bytes": 5511,
+        "sha256": "bf83dda494914d917c53ae92e6853e6500b5184c1f71e00ec4ed67ce52f82fcd"
+      },
+      {
+        "file": "frontend/api/genlayer-rpc.d.mts",
+        "bytes": 218,
+        "sha256": "252f1fcce061aa53482673acaac122ec95661e3d215018467723410d2bac14e0"
+      },
+      {
+        "file": "frontend/src/App.tsx",
+        "bytes": 35045,
+        "sha256": "8c4e9a2c364df369c661c54b13e3361f5a2f72e0da0abc85fd91ce57e4a88a81"
+      },
+      {
+        "file": "frontend/src/adapter.ts",
+        "bytes": 7724,
+        "sha256": "8f40ca148431959d7ded4678a322f8569ef70ebc74835a3a837d771a8f0dce9f"
+      },
+      {
+        "file": "frontend/src/main.tsx",
+        "bytes": 562,
+        "sha256": "aa522a801371a3554fd8c4bbc8fbfd68a35e668946ae5d1afe897dd746ad5f1c"
+      },
+      {
+        "file": "frontend/src/model.ts",
+        "bytes": 2917,
+        "sha256": "18addecccc586ff9122ce8b3fac85d2731bc332a290f6f3698cf3a0bdb3ad876"
+      },
+      {
+        "file": "frontend/src/wallet.ts",
+        "bytes": 4077,
+        "sha256": "c0b69854099d0f714493197df274d3b6ac1e7099a9ea9de2eb1b139ec50f8ade"
+      },
+      {
+        "file": "frontend/src/styles.css",
+        "bytes": 14780,
+        "sha256": "326df247220f963e7c3974c84e6e9bd77c17a841257d149d806d906ffb88ee0a"
+      },
+      {
+        "file": "scripts/receipt.mjs",
+        "bytes": 2321,
+        "sha256": "973f71cbb29650d9e5acab4c679a4b28817117b23d1844c7ca2f5dc67252e7a3"
+      },
+      {
+        "file": "scripts/receipt.d.mts",
+        "bytes": 269,
+        "sha256": "b5b18f090e91d4689b45acac51464ad5e9088cf01984f629ede49f51fbf9472e"
+      }
+    ],
+    "allHashesMatchedDryRun": true,
+    "environmentFilesIncluded": false,
+    "controlFilesIncluded": false
+  },
+  "http": {
+    "command": "curl.exe -I https://slate-fold-genlayer.vercel.app; curl.exe -s https://slate-fold-genlayer.vercel.app",
+    "status": 200,
+    "containsProjectName": true,
+    "containsReactRoot": true
+  },
+  "browser": {
+    "productionCanonicalRoundsRendered": 5,
+    "sameOriginICPath": "/genlayer-rpc",
+    "corsFailureObserved": false,
+    "providersDetected": [
+      "OKX Wallet",
+      "MetaMask"
+    ],
+    "selectedProvider": "OKX Wallet",
+    "authorizedProductionAccounts": 0,
+    "browserWriteStatus": "PENDING_REAL_EVIDENCE"
+  },
+  "ci": {
+    "url": "https://github.com/duclucky/slate-fold-genlayer/actions/runs/38845148997",
+    "sourceCommit": "4e03472bf7a18b3a7279884793b911fb5f4079c9",
+    "conclusion": "success",
+    "pythonTests": 104,
+    "nodeTests": 20,
+    "frontendTests": 98,
+    "totalTests": 222
+  },
+  "archiveStatus": "SUPERSEDED_FRONTEND",
+  "immutableDeploymentURL": "https://slate-fold-genlayer-nat6f3mc0-duckys-projects-bc83c6a0.vercel.app",
+  "replacementReason": "Read-error presentation only; five actual browser signatures belong to this frontend revision."
+}

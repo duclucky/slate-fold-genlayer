@@ -3,8 +3,15 @@
   "chainId": 61997,
   "rpc": "https://studio-next.genlayer.com/api",
   "explorer": "https://explorer-studio-dev.genlayer.com",
-  "command": "node scripts/evidence-timeline.mjs",
-  "checkedAt": "2026-10-16T02:51:35.035Z",
+  "command": "node .codex/browser-timeline.mjs (read-only incremental witness)",
+  "checkedAt": "2026-10-16T08:24:11.065Z",
+  "incremental": {
+    "baselineRecords": 33,
+    "baselineCheckedAt": "2026-10-16T02:51:35.035Z",
+    "baselineFile": "lifecycle-timeline-baseline.json",
+    "newRecords": 9,
+    "previousFinalizedReceiptsReused": true
+  },
   "transactions": [
     {
       "hash": "0xad04775b320b0ac7ddc7850ad32ef71f5c5c0551fb2dc7a5d52057bf1bf84342",
@@ -29,7 +36,8 @@
       "canonicalRecords": [
         "caller-spoof-smoke.json"
       ],
-      "expectedRejection": true
+      "expectedRejection": true,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0xc9feec56c54c9a72d56274753000b644234e9114f4c8220cbdd4e73d2ad310a2",
@@ -55,7 +63,8 @@
         "deployment-attempt.json",
         "deployment.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x90fa5b6d84e0d8ac4ecadf014f17d59fdce17be000e2b957e78862b5c48e27ed",
@@ -80,7 +89,8 @@
       "canonicalRecords": [
         "lifecycle-run3-ballot1.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x2e5ef5f208ad08364fdf6960daa385421400c28bb59b309f373f817ba0e45afa",
@@ -105,7 +115,8 @@
       "canonicalRecords": [
         "lifecycle-run3-ballot2.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x18db9453772c3b6e0f49d475ec6911a3c700b9a40a16d746118813f5d731bd41",
@@ -130,7 +141,8 @@
       "canonicalRecords": [
         "lifecycle-run3-ballot3.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0xfa81402256fe32cbf68cbe43927238cafeb8a7bd9af8823fe69245867ce05826",
@@ -155,7 +167,8 @@
       "canonicalRecords": [
         "lifecycle-run3-cancel-create.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0xa83ae90205b75e07e115a7fff2ec7b9efd108a1cee5d4436925fe95c2a000d52",
@@ -180,7 +193,8 @@
       "canonicalRecords": [
         "lifecycle-run3-cancel-withdraw.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x88cb5e4ffb7b764c49bd95dfd8b7929cd9ab790fa002964a9d8e52050c8d8c33",
@@ -205,7 +219,8 @@
       "canonicalRecords": [
         "lifecycle-run3-cancel.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0xba353f99f7d77daeb45ee20d577d427c245128743184e8e99475a41a1708cb45",
@@ -230,7 +245,8 @@
       "canonicalRecords": [
         "lifecycle-run3-election-create.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x9e4a5c16338f67095a9b1896d4a1d6eabd7af106af41d2d402eb72dfb46571b6",
@@ -255,7 +271,8 @@
       "canonicalRecords": [
         "lifecycle-run3-election-review.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x9c9efca58a13987e3e7968b133de493d9116ab1026858b8233026df7a737926f",
@@ -280,7 +297,8 @@
       "canonicalRecords": [
         "lifecycle-run3-election-withdraw.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0xf49dbc2b67627068c35ac3fa4d6e5c45e011493205771bd2ea1676a8f1e35b26",
@@ -305,7 +323,8 @@
       "canonicalRecords": [
         "lifecycle-run3-expired-tie-recover.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0xac967d455d35f5b3f8122232bbf585e9a05e5b74788a83add1904f01c99edf23",
@@ -330,7 +349,8 @@
       "canonicalRecords": [
         "lifecycle-run3-expired-tie-withdraw.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x7a639cdf7095765f81cb90198e30c2c2bb3525a0d1a79fa5529528b72225cf6a",
@@ -355,7 +375,8 @@
       "canonicalRecords": [
         "lifecycle-run3-expiry-create.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x3f45f5701ac273f1e1804ac4451197b5195f207b105ed23d7c71dd8f03a571a3",
@@ -380,7 +401,8 @@
       "canonicalRecords": [
         "lifecycle-run3-expiry-withdraw.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x1ec63c47f2e333970a93f434389b8a8a0bfa62722ba03ddae5c170ab15f60094",
@@ -405,7 +427,8 @@
       "canonicalRecords": [
         "lifecycle-run3-motion1.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x8556fe5c4f07e638242f3135ac2f83e8b78bf045082212e6636f0ff5cd4add63",
@@ -430,7 +453,8 @@
       "canonicalRecords": [
         "lifecycle-run3-motion2.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x6107499f9bacce42a1bbe4485a2c9bf5fcd57112ee3656eacb6bb847d337279a",
@@ -455,7 +479,8 @@
       "canonicalRecords": [
         "lifecycle-run3-motion3.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x6c470257dfcfffffde08059518ad17bb9194a399c33372f4cbdea4486d8ea5cc",
@@ -480,7 +505,8 @@
       "canonicalRecords": [
         "lifecycle-run3-recover.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x4e19b66b33488c79df75c88c2b11e7ed94f05eb534bd0ddd3e4a1a2953f7e389",
@@ -505,7 +531,8 @@
       "canonicalRecords": [
         "lifecycle-run3-tie-ballot1.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x45debc304dfd86e7cad524c67b75d2efe50be9b73dfc95d0d0557e6fbbb79935",
@@ -530,7 +557,8 @@
       "canonicalRecords": [
         "lifecycle-run3-tie-create.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x590027b7185a80de3950836408a2ae9e4eaee6f9eed7d615b03de7b3ce44eeab",
@@ -555,7 +583,8 @@
       "canonicalRecords": [
         "lifecycle-run3-tie-motion1.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0xce647139f8d8d1ae05dbd87b3598dcf13c66651a12734739cd35306145a298f7",
@@ -580,7 +609,8 @@
       "canonicalRecords": [
         "lifecycle-run3-tie-motion2.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0xc9c212898f90325e2254bcb84b3c7c40a860a23b1e6a6d5b1ef1af7f5879910b",
@@ -605,7 +635,8 @@
       "canonicalRecords": [
         "lifecycle-run3-tie-motion3.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x91eb039e3dbdafa8a069a3d22e1f9b94d396b8f155971b1ecf71cd4a5f318ea6",
@@ -630,7 +661,8 @@
       "canonicalRecords": [
         "lifecycle-run4-tie-ballot1.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x4da60ce904ec43eaea4d70c6c093de3620dda73ed2143e9956e0c8e2ee849892",
@@ -655,7 +687,8 @@
       "canonicalRecords": [
         "lifecycle-run4-tie-ballot2.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x316c859f6180220b3f0884c193adc9e6ffe0221f49a547acf98957ea63c9dd3d",
@@ -680,7 +713,8 @@
       "canonicalRecords": [
         "lifecycle-run4-tie-ballot3.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x0b8234da1f974761ad80722fc91cc64b4240040c813b4f4787e50de2f161a7f9",
@@ -705,7 +739,8 @@
       "canonicalRecords": [
         "lifecycle-run4-tie-create.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0xe1f51045c6ad3f5ac2c14111093b94e7cf0d012612ec1d6ae74957161d83d191",
@@ -730,7 +765,8 @@
       "canonicalRecords": [
         "lifecycle-run4-tie-motion1.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0xf4d94ed7f8ef0daf1841ec082cf850dec62b1be9f97537d02c99756e3cd13977",
@@ -755,7 +791,8 @@
       "canonicalRecords": [
         "lifecycle-run4-tie-motion2.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x4ca3fb52409e8275d7b364afaf4da85d2c58c1205f2bafcd97ee6b51c6bac4a0",
@@ -780,7 +817,8 @@
       "canonicalRecords": [
         "lifecycle-run4-tie-motion3.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x4caea369c7f6827acc1fbd9f278a616de49659fb568781a5157c26a8855a68b0",
@@ -805,7 +843,8 @@
       "canonicalRecords": [
         "lifecycle-run4-tie-review.json"
       ],
-      "expectedRejection": false
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
     },
     {
       "hash": "0x2c57f4cadeb6821e0f958a0b39df0fe6b68e6d344fb31c78b09a05c334bce9e7",
@@ -830,10 +869,245 @@
       "canonicalRecords": [
         "lifecycle-run4-tie-withdraw.json"
       ],
+      "expectedRejection": false,
+      "receiptVerifiedAt": "2026-10-16T02:51:35.035Z"
+    },
+    {
+      "hash": "0x9fceff6e3f0f92432a6827d26a5417c79c96e5cc317c9ca136956095bd675d95",
+      "operation": "create_round",
+      "actor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "applicationValueGEN": "2",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "acceptedAt": "2026-10-16T07:48:36.209Z",
+      "finalizedAt": "2026-10-16T07:49:07.184Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T07:48:34.338Z",
+        "PROPOSING": "2026-10-16T07:48:34.362Z",
+        "COMMITTING": "2026-10-16T07:48:34.909Z",
+        "REVEALING": "2026-10-16T07:48:36.138Z",
+        "ACCEPTED": "2026-10-16T07:48:36.209Z",
+        "FINALIZED": "2026-10-16T07:49:07.184Z"
+      },
+      "receiptVerifiedAt": "2026-10-16T08:23:45.851Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x9fceff6e3f0f92432a6827d26a5417c79c96e5cc317c9ca136956095bd675d95",
+      "canonicalRecords": [
+        "lifecycle-browser-browser-council-20261016-01-create.json"
+      ],
+      "signatureSource": "browser-selected OKX Wallet on production origin",
+      "expectedRejection": false
+    },
+    {
+      "hash": "0xa8615f03dd1d4daa83923b81f268ba87a34f18707c831a895979568dd4fa9349",
+      "operation": "submit_motion",
+      "actor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "acceptedAt": "2026-10-16T07:50:39.711Z",
+      "finalizedAt": "2026-10-16T07:51:10.561Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T07:50:38.527Z",
+        "PROPOSING": "2026-10-16T07:50:38.540Z",
+        "COMMITTING": "2026-10-16T07:50:38.875Z",
+        "REVEALING": "2026-10-16T07:50:39.659Z",
+        "ACCEPTED": "2026-10-16T07:50:39.711Z",
+        "FINALIZED": "2026-10-16T07:51:10.561Z"
+      },
+      "receiptVerifiedAt": "2026-10-16T08:23:46.270Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xa8615f03dd1d4daa83923b81f268ba87a34f18707c831a895979568dd4fa9349",
+      "canonicalRecords": [
+        "lifecycle-browser-browser-council-20261016-01-motion1.json"
+      ],
+      "signatureSource": "browser-selected OKX Wallet on production origin",
+      "expectedRejection": false
+    },
+    {
+      "hash": "0xd2b7554e77633e0ffb47bfe1c9090a40489c29a4acde786206aaf10b585c0948",
+      "operation": "submit_motion",
+      "actor": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "acceptedAt": "2026-10-16T07:51:47.582Z",
+      "finalizedAt": "2026-10-16T07:52:20.197Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T07:51:46.418Z",
+        "PROPOSING": "2026-10-16T07:51:46.430Z",
+        "COMMITTING": "2026-10-16T07:51:46.757Z",
+        "REVEALING": "2026-10-16T07:51:47.523Z",
+        "ACCEPTED": "2026-10-16T07:51:47.582Z",
+        "FINALIZED": "2026-10-16T07:52:20.197Z"
+      },
+      "receiptVerifiedAt": "2026-10-16T08:23:51.284Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xd2b7554e77633e0ffb47bfe1c9090a40489c29a4acde786206aaf10b585c0948",
+      "canonicalRecords": [
+        "lifecycle-browser-browser-council-20261016-01-motion2.json"
+      ],
+      "signatureSource": "script-signed demo peer",
+      "expectedRejection": false
+    },
+    {
+      "hash": "0x491ea206dd266fbb94dfa48b0f7b6a3a8b6118bb2bcd556a1263d3e1cb0c9192",
+      "operation": "submit_motion",
+      "actor": "0x79F9eCaa174b2F17afb57DFC8450684C238A033e",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "acceptedAt": "2026-10-16T07:53:28.389Z",
+      "finalizedAt": "2026-10-16T07:53:58.985Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T07:53:26.363Z",
+        "PROPOSING": "2026-10-16T07:53:26.376Z",
+        "COMMITTING": "2026-10-16T07:53:26.946Z",
+        "REVEALING": "2026-10-16T07:53:28.323Z",
+        "ACCEPTED": "2026-10-16T07:53:28.389Z",
+        "FINALIZED": "2026-10-16T07:53:58.985Z"
+      },
+      "receiptVerifiedAt": "2026-10-16T08:23:52.308Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x491ea206dd266fbb94dfa48b0f7b6a3a8b6118bb2bcd556a1263d3e1cb0c9192",
+      "canonicalRecords": [
+        "lifecycle-browser-browser-council-20261016-01-motion3.json"
+      ],
+      "signatureSource": "script-signed demo peer",
+      "expectedRejection": false
+    },
+    {
+      "hash": "0x37de6956d5bcc81e4fb3aa0de8f048fb858d3f5117a2e9abeb0f58cc2f8b6433",
+      "operation": "cast_ballot",
+      "actor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "acceptedAt": "2026-10-16T07:57:08.194Z",
+      "finalizedAt": "2026-10-16T07:57:38.323Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T07:57:07.082Z",
+        "PROPOSING": "2026-10-16T07:57:07.092Z",
+        "COMMITTING": "2026-10-16T07:57:07.405Z",
+        "REVEALING": "2026-10-16T07:57:08.142Z",
+        "ACCEPTED": "2026-10-16T07:57:08.194Z",
+        "FINALIZED": "2026-10-16T07:57:38.323Z"
+      },
+      "receiptVerifiedAt": "2026-10-16T08:23:53.684Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x37de6956d5bcc81e4fb3aa0de8f048fb858d3f5117a2e9abeb0f58cc2f8b6433",
+      "canonicalRecords": [
+        "lifecycle-browser-browser-council-20261016-01-ballot1.json"
+      ],
+      "signatureSource": "browser-selected OKX Wallet on production origin",
+      "expectedRejection": false
+    },
+    {
+      "hash": "0xbf2b2d1dfc85c636bf93f8cbe2e191a29d385bfc9460e103925ed5cf12b0f005",
+      "operation": "cast_ballot",
+      "actor": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "acceptedAt": "2026-10-16T07:59:34.881Z",
+      "finalizedAt": "2026-10-16T08:00:08.339Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T07:59:33.709Z",
+        "PROPOSING": "2026-10-16T07:59:33.726Z",
+        "COMMITTING": "2026-10-16T07:59:34.055Z",
+        "REVEALING": "2026-10-16T07:59:34.819Z",
+        "ACCEPTED": "2026-10-16T07:59:34.881Z",
+        "FINALIZED": "2026-10-16T08:00:08.339Z"
+      },
+      "receiptVerifiedAt": "2026-10-16T08:23:57.909Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xbf2b2d1dfc85c636bf93f8cbe2e191a29d385bfc9460e103925ed5cf12b0f005",
+      "canonicalRecords": [
+        "lifecycle-browser-browser-council-20261016-01-ballot2.json"
+      ],
+      "signatureSource": "script-signed demo peer",
+      "expectedRejection": false
+    },
+    {
+      "hash": "0xffb48ea530f0b8b3c9678f1fd551ce97a0ba4b61359995513f50e52cfac1a897",
+      "operation": "cast_ballot",
+      "actor": "0x79F9eCaa174b2F17afb57DFC8450684C238A033e",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "acceptedAt": "2026-10-16T08:00:40.564Z",
+      "finalizedAt": "2026-10-16T08:01:10.197Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T08:00:39.380Z",
+        "PROPOSING": "2026-10-16T08:00:39.392Z",
+        "COMMITTING": "2026-10-16T08:00:39.720Z",
+        "REVEALING": "2026-10-16T08:00:40.510Z",
+        "ACCEPTED": "2026-10-16T08:00:40.564Z",
+        "FINALIZED": "2026-10-16T08:01:10.197Z"
+      },
+      "receiptVerifiedAt": "2026-10-16T08:24:09.051Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xffb48ea530f0b8b3c9678f1fd551ce97a0ba4b61359995513f50e52cfac1a897",
+      "canonicalRecords": [
+        "lifecycle-browser-browser-council-20261016-01-ballot3.json"
+      ],
+      "signatureSource": "script-signed demo peer",
+      "expectedRejection": false
+    },
+    {
+      "hash": "0x7a805e9c8e0a10dc1196ec8a40d42bbc5cdd9a92e8d40f7092b72af201eace7a",
+      "operation": "review_round",
+      "actor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "acceptedAt": "2026-10-16T08:05:36.259Z",
+      "finalizedAt": "2026-10-16T08:06:07.904Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T08:05:29.942Z",
+        "PROPOSING": "2026-10-16T08:05:29.954Z",
+        "COMMITTING": "2026-10-16T08:05:31.892Z",
+        "REVEALING": "2026-10-16T08:05:36.142Z",
+        "ACCEPTED": "2026-10-16T08:05:36.259Z",
+        "FINALIZED": "2026-10-16T08:06:07.904Z"
+      },
+      "receiptVerifiedAt": "2026-10-16T08:24:10.294Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x7a805e9c8e0a10dc1196ec8a40d42bbc5cdd9a92e8d40f7092b72af201eace7a",
+      "canonicalRecords": [
+        "lifecycle-browser-browser-council-20261016-01-review.json"
+      ],
+      "signatureSource": "browser-selected OKX Wallet on production origin",
+      "expectedRejection": false
+    },
+    {
+      "hash": "0x75b7865002dbf2d858c7e29e602abfa779c7828801460538ee74c82e5eaaddb2",
+      "operation": "withdraw_credit",
+      "actor": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "applicationValueGEN": "0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "acceptedAt": "2026-10-16T08:10:04.780Z",
+      "finalizedAt": "2026-10-16T08:10:34.903Z",
+      "observedStages": {
+        "PENDING": "2026-10-16T08:10:03.603Z",
+        "PROPOSING": "2026-10-16T08:10:03.615Z",
+        "COMMITTING": "2026-10-16T08:10:03.933Z",
+        "REVEALING": "2026-10-16T08:10:04.716Z",
+        "ACCEPTED": "2026-10-16T08:10:04.780Z",
+        "FINALIZED": "2026-10-16T08:10:34.903Z"
+      },
+      "receiptVerifiedAt": "2026-10-16T08:24:11.065Z",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x75b7865002dbf2d858c7e29e602abfa779c7828801460538ee74c82e5eaaddb2",
+      "canonicalRecords": [
+        "lifecycle-browser-browser-council-20261016-01-withdraw.json"
+      ],
+      "signatureSource": "browser-selected OKX Wallet on production origin",
       "expectedRejection": false
     }
   ],
-  "successful": 32,
+  "successful": 41,
   "expectedRejections": 1,
   "unexpectedFailures": 0
 }

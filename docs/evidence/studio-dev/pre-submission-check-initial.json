@@ -1,0 +1,98 @@
+{
+  "checkedAt": "2026-10-16T03:52:36.010Z",
+  "category": "projects",
+  "sourceCommit": "110baf5b22fa70d2f4657308905b09f6c52eaed1",
+  "contractSourceSha256": "2182b042117cf8a0cc7f6c0e4c2eb95a5bc7244cf50b6d9b65e2bc0c4e1cd51e",
+  "command": "genlayer-precheck.ps1 -Project <project-child> -Category projects -RepoUrl https://github.com/duclucky/slate-fold-genlayer -ExplorerUrl https://explorer-studio-dev.genlayer.com/address/0xFB0943A725499C65D49254168Dce37AFdb949a81 -NotesFile docs/SUBMISSION-NOTES.md",
+  "skipDynamic": false,
+  "graderModified": false,
+  "toolSha256": {
+    "genlayer-precheck.ps1": "0e90ae93c72c9464b4b995db6896cf08ea8f8d14b66a847156012f830e896746",
+    "precheck_static.py": "e67ae6076ce48d5cc4d3179138f7dacb514792ea21d0a48ab5b4d93222263f44",
+    "genlayer_grade.py": "b80fd0a80f5040865ec8f7801bca1adbe44ca1a617e314cf4385fe0e24a7db59"
+  },
+  "staticCounts": {
+    "BLOCKER": 0,
+    "WARN": 1,
+    "AUTO": 7
+  },
+  "warning": [
+    {
+      "rule": "docs/08 Rule#7",
+      "msg": "`gl.nondet.*` looks like it may be outside an inner leader function - it must run inside a fn passed to eq_principle/run_nondet",
+      "file": "contracts/slate_fold.py",
+      "line": 149
+    }
+  ],
+  "dynamic": {
+    "npmCheck": "PASS",
+    "gltest": "PASS",
+    "directTests": 100,
+    "toolingTests": 4,
+    "nodeTests": 20,
+    "frontendTests": 98,
+    "totalTests": 222,
+    "skips": 0,
+    "xfails": 0
+  },
+  "gate": [
+    {
+      "item": "real GenLayer contract present",
+      "status": "pass"
+    },
+    {
+      "item": "uses consensus (not deterministic-only / not fake off-chain)",
+      "status": "pass"
+    },
+    {
+      "item": "not a renamed boilerplate / empty fork",
+      "status": "pass"
+    },
+    {
+      "item": "repository builds & tests pass",
+      "status": "pass"
+    },
+    {
+      "item": "frontend actually calls the contract (not branding-only)",
+      "status": "pass"
+    }
+  ],
+  "estimate": {
+    "sectionTotal": 17,
+    "sectionMaximum": 20,
+    "officialScore": false
+  },
+  "manualOrMissing": {
+    "genlayer_fit": {
+      "missing": [],
+      "manual": "CONFIRM: GenLayer must be ESSENTIAL - replacing it with a DB/EVM/backend-LLM would lose a core trust property (docs/02 gate)."
+    },
+    "contract_quality": {
+      "missing": [
+        "custom validator (run_nondet) rather than strict_eq of a blob"
+      ],
+      "manual": "CONFIRM (make-or-break): the validator agrees on the MEANING of the result - two validators reaching different decisions must never both pass."
+    },
+    "engineering": {
+      "missing": [],
+      "manual": "CONFIRM: Studionet Result: SUCCESS (not just FINALIZED); meaningful commit history; exact contract/test counts."
+    },
+    "frontend_ux": {
+      "missing": [
+        "no simulated signature/tx/balance/fee/finality",
+        "no localStorage used as canonical contract state"
+      ],
+      "manual": "CONFIRM: a real wallet signature + a meaningful user outcome + failure/retry. A polished UI does not rescue a fake integration."
+    }
+  },
+  "submissionNotes": {
+    "trimmedCharacters": 980,
+    "fileCharacters": 981,
+    "limit": 1000,
+    "passes": true
+  },
+  "verdict": "GATE OK - address MISSING items + confirm the manual (!) criteria, then submit",
+  "exitCode": 1,
+  "overallAcceptance": "PENDING_BROWSER_EXECUTION",
+  "browserWriteProven": false
+}
