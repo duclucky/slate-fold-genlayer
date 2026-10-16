@@ -65,7 +65,10 @@ and [frontend verification](docs/FRONTEND-VERIFICATION.md).
 
 ## Live App
 
-Production hosting is pending verification. No live URL is claimed yet.
+[Open SlateFold](https://slate-fold-genlayer.vercel.app).
+Production returns HTTP200 and the SlateFold React application. Browser-origin
+reads render the five canonical Studio Dev rounds through the live same-origin
+proxy. Browser-wallet write proof remains pending wallet permission on this origin.
 
 ## Deployed Contract
 
@@ -133,9 +136,15 @@ hash or unresolved execution requires inspection before another send.
 20 Node receipt/journal/balance/backoff cases and98 frontend cases; no skips or
 xfails. GenVM lint recognizes one `SlateFoldContract`,7 writes and7 views.
 TypeScript and production build pass. The separate `gltest tests/` run covers
-the same104 Python tests and is not added again to the total. Public CI is
-pending its first pushed commit. Local browser reads render the five canonical
+the same104 Python tests and is not added again to the total.
+[Successful Linux CI](https://github.com/duclucky/slate-fold-genlayer/actions/runs/38845148997)
+verified that source at commit4e03472. Local and production browser reads render the five canonical
 rounds through the same-origin proxy; wallet connection/menu is observed.
+
+[Hosting proof](docs/evidence/studio-dev/hosting-verification.json) records the
+frontend source commit and exact17-file upload manifest. The production build
+uses Vite, Node24, root frontend/ and output dist; no local environment or control
+files were uploaded. The CI lock applies pywin32 only on Windows.
 
 ## Honest limits and reuse
 
