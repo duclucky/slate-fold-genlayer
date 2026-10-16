@@ -10,6 +10,7 @@ import {createClient} from 'genlayer-js';
 import {studioDevnet} from 'genlayer-js/chains';
 import {TransactionHashVariant} from 'genlayer-js/types';
 import {receiptState,address,hash} from './receipt.mjs';
+import {retryRead} from './read-retry.mjs';
 
 export const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 export const RPC='https://studio-next.genlayer.com/api';
@@ -26,12 +27,12 @@ console.warn=()=>{};
 console.error=()=>{};
 export function safeError(error){
  const text=String(error?.message??'');
- return {kind:error instanceof SafeError?error.kind:['AbortError','TimeoutError'].includes(error?.name)?error.name:'OperationFailed',rpcCode:error instanceof SafeError?error.code:null,
+ return {kind:error instanceof SafeError?error.kind:['AbortError','TimeoutError'].includes(error?.name)?error.name:'OperationFailed',errorType:typeof error?.name==='string'&&/^[A-Za-z]{1,64}(?:Error|Exception)$/.test(error.name)?error.name:null,rpcCode:error instanceof SafeError?error.code:null,
   markers:{insufficientFunds:/insufficient funds/i.test(text),invalidAddress:/invalid address|Address.*invalid/i.test(text),timeout:/time.*out/i.test(text),nonPayable:/non.payable/i.test(text),...(error instanceof SafeError?error.markers:{})}};
 }
 export async function rpc(method,params=[]){
  const response=await fetch(RPC,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,method,params}),signal:AbortSignal.timeout(55000)});
- if(!response.ok)throw new SafeError('RpcHttpFailure',response.status);
+ if(!response.ok){const error=new SafeError('RpcHttpFailure',response.status),seconds=Number(response.headers.get('retry-after'));if(response.status===429&&Number.isFinite(seconds)&&seconds>0)error.retryAfterSeconds=seconds;throw error;}
  const result=await response.json();
  if(result.error){const text=JSON.stringify(result.error);throw new SafeError('RpcError',result.error.code,{insufficientFunds:/insufficient funds/i.test(text),feeCap:/MaxPriceExceeded|InsufficientFees|FeeValueMustBeNonZero|BudgetTooLow|0xb4132db3|0x8d53e553|0x632be5a1|0x305e533c/i.test(text),abiMismatch:/selector|decode|ABI|function not found/i.test(text)});}
  return result.result;
@@ -61,8 +62,8 @@ export async function sponsor(){
  return privateKeyToAccount(key);
 }
 export function client(account){return createClient({chain:{...chain,rpcUrls:{default:{http:[RPC]}}},...account?{account}:{}});}
-export async function read(address,functionName,args=[]){return client().readContract({address,functionName,args,transactionHashVariant:TransactionHashVariant.LATEST_FINAL});}
-export async function balance(account){return BigInt(await rpc('eth_getBalance',[account,'latest']));}
+export async function read(address,functionName,args=[]){return retryRead(()=>client().readContract({address,functionName,args,transactionHashVariant:TransactionHashVariant.LATEST_FINAL}));}
+export async function balance(account){return BigInt(await retryRead(()=>rpc('eth_getBalance',[account,'latest'])));}
 export async function identity(){
  const source=await readFile(sourcePath,'utf8');
  const revision=spawnSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).stdout.trim();
@@ -75,7 +76,7 @@ export async function inspect(){
  let deployment=null;try{deployment=JSON.parse(await readFile(resolve(evidence,'deployment.json'),'utf8'));}catch(error){if(error.code!=='ENOENT')throw new SafeError('DeploymentIdentityReadFailed');}
  return {at:new Date().toISOString(),...network,identity:await identity(),actors:result,deployment:deployment?{address:address(deployment.address),hash:hash(deployment.hash),status:deployment.status}:null};
 }
-export async function transaction(txHash){if(!hash(txHash))throw new SafeError('InvalidTransactionHash');return rpc('eth_getTransactionByHash',[txHash]);}
+export async function transaction(txHash){if(!hash(txHash))throw new SafeError('InvalidTransactionHash');return retryRead(()=>rpc('eth_getTransactionByHash',[txHash]));}
 export async function wait(txHash,onState=()=>{},limit=120){
  let last='';
  for(let i=0;i<limit;i++){
@@ -83,7 +84,7 @@ export async function wait(txHash,onState=()=>{},limit=120){
   if(state.status!==last){onState(state);last=state.status;}
   if(state.status==='FINALIZED'){if(!state.successful)throw new SafeError('FinalizedExecutionFailed');return tx;}
   if(['UNDETERMINED','CANCELED','LEADER_TIMEOUT','VALIDATORS_TIMEOUT'].includes(state.status))throw new SafeError('ConsensusNeedsInspection');
-  await new Promise(resolve=>setTimeout(resolve,3000));
+  await new Promise(resolve=>setTimeout(resolve,6000));
  }
  throw new SafeError('TransactionStillPending');
 }

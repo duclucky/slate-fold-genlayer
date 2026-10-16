@@ -1,7 +1,7 @@
 /** Read-only reconciliation of public hashes, then safe timestamp projection. */
 import {readdir,readFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
-import {evidence,rpc,save,EXPLORER,verifyNetwork,SafeError,safeError} from './network.mjs';
+import {evidence,transaction,save,EXPLORER,verifyNetwork,SafeError,safeError} from './network.mjs';
 import {hash,receiptState} from './receipt.mjs';
 import {loadJournal} from './journal.mjs';
 const stages=['PENDING','ACTIVATED','PROPOSING','COMMITTING','REVEALING','ACCEPTED','FINALIZED'];
@@ -17,7 +17,7 @@ async function main(){
  }
  const rows=[];
  for(const [txHash,{record,files}]of records){
-  const tx=await rpc('eth_getTransactionByHash',[txHash]);const state=receiptState(tx);if(state.status!=='FINALIZED')throw new SafeError('EvidenceTransactionNotFinalized');
+  const tx=await transaction(txHash);const state=receiptState(tx);if(state.status!=='FINALIZED')throw new SafeError('EvidenceTransactionNotFinalized');
   const timestamps={};const history=tx.consensus_history;
   for(const item of [...(history?.consensus_results??[]),{monitoring:history?.current_monitoring}])for(const stage of stages){const time=iso(item?.monitoring?.[stage]);if(time)timestamps[stage]=time;}
   const accepted= timestamps.ACCEPTED??iso(tx.timestamp_awaiting_finalization);

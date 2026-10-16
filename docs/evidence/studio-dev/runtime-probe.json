@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-16T01:44:45.775Z",
+  "command": "node scripts/runtime-probe.mjs",
+  "scope": "Unsigned exact-source simulation and schema only; no finalized consensus or value.",
+  "network": {
+    "network": "Studio Dev",
+    "chainId": 61997,
+    "rpc": "https://studio-next.genlayer.com/api",
+    "explorer": "https://explorer-studio-dev.genlayer.com"
+  },
+  "identity": {
+    "network": "Studio Dev",
+    "chainId": 61997,
+    "sourceCommit": "e2338e86604a09227c34989f535d16baa040659a",
+    "sourceSha256": "2182b042117cf8a0cc7f6c0e4c2eb95a5bc7244cf50b6d9b65e2bc0c4e1cd51e",
+    "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+    "api": "v0.3.0",
+    "genvm": "v0.6.0-rc5",
+    "sdk": "2.0.0-rc.1"
+  },
+  "checks": [
+    {
+      "name": "schema",
+      "hasConstructor": true,
+      "methods": [
+        "cancel_round",
+        "cast_ballot",
+        "create_round",
+        "get_accounting",
+        "get_attempt",
+        "get_ballot",
+        "get_credit",
+        "get_motion",
+        "get_round",
+        "list_rounds",
+        "recover_round",
+        "review_round",
+        "submit_motion",
+        "withdraw_credit"
+      ],
+      "passed": true
+    },
+    {
+      "name": "constructor",
+      "executionResult": "SUCCESS",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

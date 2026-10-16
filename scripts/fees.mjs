@@ -2,8 +2,9 @@
 import {readFile} from 'node:fs/promises';
 import {abi,createFeesDistribution} from 'genlayer-js';
 import {sourcePath,rpc,client,SafeError} from './network.mjs';
+import {retryRead} from './read-retry.mjs';
 export function rpcFees(quote){return JSON.parse(JSON.stringify({distribution:quote.distribution,messageAllocations:quote.messageAllocations??[],feeValue:quote.feeValue},(_key,value)=>typeof value==='bigint'?value.toString():value));}
-export async function quoteDeploy(account){
+async function measureDeployment(account){
  const baseline=await client(account).estimateTransactionFees();
  const code=await readFile(sourcePath,'utf8');
  const data=abi.transactions.serialize([code,abi.calldata.encode(abi.calldata.makeCalldataObject(undefined,[])),false]);
@@ -14,7 +15,7 @@ export async function quoteDeploy(account){
  if(feeValue<=0n||feeValue>=10n**18n)throw new SafeError('DeploymentFeeQuoteOutsideBound');
  return {distribution:createFeesDistribution(preset.distribution),feeValue,messageAllocations:preset.messageAllocations??[]};
 }
-export async function quoteWrite(account,address,functionName,args,value=0n){
+async function measureWrite(account,address,functionName,args,value=0n){
  const baseline=await client(account).estimateTransactionFees();
  const data=abi.transactions.serialize([abi.calldata.encode(abi.calldata.makeCalldataObject(functionName,args)),false]);
  // Studio's unsigned write simulation omits its clock unless explicitly supplied.
@@ -26,3 +27,5 @@ export async function quoteWrite(account,address,functionName,args,value=0n){
  if(feeValue<=0n||feeValue>=10n**18n)throw new SafeError('WriteFeeQuoteOutsideBound');
  return {distribution:createFeesDistribution(preset.distribution),feeValue,messageAllocations:preset.messageAllocations??[]};
 }
+export async function quoteDeploy(account){return retryRead(()=>measureDeployment(account));}
+export async function quoteWrite(account,address,functionName,args,value=0n){return retryRead(()=>measureWrite(account,address,functionName,args,value));}

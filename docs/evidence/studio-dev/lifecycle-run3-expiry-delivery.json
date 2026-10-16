@@ -1,0 +1,99 @@
+{
+  "parentHash": "0x3f45f5701ac273f1e1804ac4451197b5195f207b105ed23d7c71dd8f03a571a3",
+  "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "expectedTransferGEN": "2",
+  "contractBeforeGEN": "4",
+  "contractAfterGEN": "2",
+  "recipientNetIncreaseGEN": "2.000173573450008706",
+  "feeDepositGEN": "0.000759798000010352",
+  "creditAfterGEN": "0",
+  "childReceipts": [],
+  "externalReceipt": {
+    "kind": "parent-attached external EVM execution receipt",
+    "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+    "valueGEN": "2",
+    "executionRecorded": true,
+    "messageValueDelivered": true,
+    "effectId": "0x3d8cfb11a3a861aad951dbf6136a50bf6c5b1aa2b041423fa45f4818b189cc81",
+    "separateChildHashAvailable": false
+  },
+  "after": {
+    "round": {
+      "attemptCount": 0,
+      "ballots": [
+        0,
+        0,
+        0
+      ],
+      "configDigest": "097762fd80c789db135eaba75a8b58a540ce4f06075bbb3c8b09786040516ded",
+      "createdAt": 1792116731,
+      "escrowGEN": "0",
+      "groups": [],
+      "id": "expired-incomplete-v3",
+      "members": [
+        "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "",
+        "",
+        ""
+      ],
+      "motions": [
+        "",
+        "",
+        ""
+      ],
+      "objective": "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+      "proposalDeadline": 1792116783,
+      "reason": "Unresolved round expired; sponsor recovered budget.",
+      "recipient": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "reviewDeadline": 1792116843,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [],
+      "settledAt": 1792116853,
+      "slateDigest": "",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "status": "REFUNDED",
+      "title": "Expired council budget",
+      "voteDeadline": 1792116813,
+      "winnerSlot": 0
+    },
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "2",
+      "receivedGEN": "8",
+      "withdrawnGEN": "6"
+    },
+    "nativeContractGEN": "2",
+    "creditsGEN": [
+      "0",
+      "0",
+      "0"
+    ],
+    "actorBalancesGEN": [
+      "26.171670852000078517",
+      "2.999244641749992593",
+      "0.999528204749995062"
+    ]
+  },
+  "checkedAt": "2026-10-16T02:23:04.941Z",
+  "balanceProven": true,
+  "snapshotPreparedAt": "2026-10-16T02:17:29.542Z",
+  "isolatedRecipientDeltaPassed": false,
+  "overlappingFeeRefunds": [
+    {
+      "hash": "0x4e19b66b33488c79df75c88c2b11e7ed94f05eb534bd0ddd3e4a1a2953f7e389",
+      "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "paidFeeGEN": "0.000378511200010352",
+      "refundedGEN": "0.000299878700009529",
+      "finalizedAt": "2026-10-16T02:17:46.790Z"
+    }
+  ],
+  "recipientDeltaNote": "Aggregate wallet increase includes overlapping protocol fee activity. Payout amount is proven independently by the exact contract decrease and matching external execution receipt; no exact fee split is attributed.",
+  "deliveryProven": true,
+  "receiptReconciledAt": "2026-10-16T03:04:05.903Z"
+}

@@ -1,0 +1,128 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "rpc": "https://studio-next.genlayer.com/api",
+  "explorer": "https://explorer-studio-dev.genlayer.com/transactions/0x0b8234da1f974761ad80722fc91cc64b4240040c813b4f4787e50de2f161a7f9",
+  "identity": {
+    "network": "Studio Dev",
+    "chainId": 61997,
+    "sourceCommit": "e2338e86604a09227c34989f535d16baa040659a",
+    "sourceSha256": "2182b042117cf8a0cc7f6c0e4c2eb95a5bc7244cf50b6d9b65e2bc0c4e1cd51e",
+    "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+    "api": "v0.3.0",
+    "genvm": "v0.6.0-rc5",
+    "sdk": "2.0.0-rc.1"
+  },
+  "target": "0xFB0943A725499C65D49254168Dce37AFdb949a81",
+  "operation": "create_round",
+  "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "args": [
+    "council-distinct-v4",
+    "Three distinct archive permissions",
+    "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+    "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5",
+    "0x79F9eCaa174b2F17afb57DFC8450684C238A033e",
+    1792117899,
+    1792118259,
+    1792118859
+  ],
+  "valueGEN": "2",
+  "feeDepositGEN": "0.000378538800010352",
+  "before": {
+    "round": null,
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "2",
+      "receivedGEN": "8",
+      "withdrawnGEN": "6"
+    },
+    "nativeContractGEN": "2",
+    "creditsGEN": [
+      "0",
+      "0",
+      "0"
+    ],
+    "actorBalancesGEN": [
+      "26.171670852000078517",
+      "2.999244641749992593",
+      "0.999528204749995062"
+    ]
+  },
+  "preparedAt": "2026-10-16T02:24:47.520Z",
+  "status": "FINALIZED",
+  "hash": "0x0b8234da1f974761ad80722fc91cc64b4240040c813b4f4787e50de2f161a7f9",
+  "executionResult": "SUCCESS",
+  "finalizedObservedAt": "2026-10-16T02:25:26.225Z",
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0x0b8234da1f974761ad80722fc91cc64b4240040c813b4f4787e50de2f161a7f9",
+    "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+    "to": "0xfb0943a725499c65d49254168dce37afdb949a81"
+  },
+  "after": {
+    "round": {
+      "attemptCount": 0,
+      "ballots": [
+        0,
+        0,
+        0
+      ],
+      "configDigest": "a08f44ab25a6c00e761e15b44fe0a0467d69a39db6e8804c9731cfc29623b8b0",
+      "createdAt": 1792117489,
+      "escrowGEN": "2",
+      "groups": [],
+      "id": "council-distinct-v4",
+      "members": [
+        "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "",
+        "",
+        ""
+      ],
+      "motions": [
+        "",
+        "",
+        ""
+      ],
+      "objective": "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+      "proposalDeadline": 1792117899,
+      "reason": "",
+      "recipient": "",
+      "reviewDeadline": 1792118859,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [],
+      "settledAt": 0,
+      "slateDigest": "",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "status": "COLLECTING",
+      "title": "Three distinct archive permissions",
+      "voteDeadline": 1792118259,
+      "winnerSlot": 0
+    },
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "4",
+      "receivedGEN": "10",
+      "withdrawnGEN": "6"
+    },
+    "nativeContractGEN": "4",
+    "creditsGEN": [
+      "0",
+      "0",
+      "0"
+    ],
+    "actorBalancesGEN": [
+      "24.171592213750077694",
+      "2.999244641749992593",
+      "0.999528204749995062"
+    ]
+  },
+  "verified": true
+}

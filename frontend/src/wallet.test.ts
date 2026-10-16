@@ -1,8 +1,13 @@
 import {afterEach,describe,expect,it,vi} from 'vitest';
-import {connectWallet,discoverWallets,ensureChain,validAddress,type Provider} from './wallet';
-afterEach(()=>{delete window.ethereum;delete window.okxwallet;delete window.rabby;delete window.coinbaseWalletExtension;vi.restoreAllMocks();});
+import {connectWallet,discoverWallets,ensureChain,rememberWallet,restoreWallet,validAddress,type Provider} from './wallet';
+afterEach(()=>{localStorage.clear();delete window.ethereum;delete window.okxwallet;delete window.rabby;delete window.coinbaseWalletExtension;vi.restoreAllMocks();});
 const address='0x1111111111111111111111111111111111111111';
 describe('wallet trust boundary',()=>{
+ it.each([['no permission',[], '0xf22d'],['invalid account',['0x123'],'0xf22d'],['different network',[address],'0x1']])('does not restore %s or request permission/network changes',async(_name,accounts,chain)=>{
+  const request=vi.fn(async({method}:{method:string})=>method==='eth_accounts'?accounts:chain);window.ethereum={request,isMetaMask:true};
+  rememberWallet({name:'MetaMask',id:'MetaMask',provider:window.ethereum});expect(localStorage.getItem('slatefold.wallet-choice')).toBe('MetaMask');
+  expect(await restoreWallet()).toBeUndefined();expect(request.mock.calls.every(([x])=>['eth_accounts','eth_chainId'].includes(x.method))).toBe(true);
+ });
  it.each(['','undefined','0x123','0x'+'0'.repeat(40),'0x'+'g'.repeat(40)])('rejects invalid address %s',value=>expect(validAddress(value)).toBe(false));
  it('discovers distinct injected providers without requesting accounts',async()=>{const first={request:vi.fn(),isMetaMask:true};const second={request:vi.fn(),isRabby:true};window.ethereum={request:vi.fn(),providers:[first,second]};window.rabby=second;const found=await discoverWallets();expect(found.map(x=>x.name).sort()).toEqual(['MetaMask','Rabby']);expect(first.request).not.toHaveBeenCalled();expect(second.request).not.toHaveBeenCalled();});
  it('uses EIP6963 identity and deduplicates the injected fallback',async()=>{const p={request:vi.fn()};window.ethereum=p;const announce=()=>window.dispatchEvent(new CustomEvent('eip6963:announceProvider',{detail:{info:{name:'Council Wallet',uuid:'wallet-1'},provider:p}}));window.addEventListener('eip6963:requestProvider',announce);try{const found=await discoverWallets();expect(found).toHaveLength(1);expect(found[0].name).toBe('Council Wallet');}finally{window.removeEventListener('eip6963:requestProvider',announce);}});

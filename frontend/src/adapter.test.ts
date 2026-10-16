@@ -90,3 +90,10 @@ it('ambiguous timeout rechecks existing hash and never rebroadcasts the action',
  await expect(a.write('cancel_round',['pending-fixture'],'0',()=>{})).rejects.toThrow(/existing transaction/i);
  await a.write('cancel_round',['pending-fixture'],'0',()=>{});expect(sends.filter(x=>x.method==='eth_sendTransaction')).toHaveLength(1);
 });
+it('ambiguous create retry keeps the original hash even when regenerated deadlines change',async()=>{
+ const {provider,sends}=io();const a=createSlateAdapter({address:recipient,account:sender,provider,endpoint,pollIntervalMs:0,maxPolls:1});
+ const args=['pending-create-fixture','Archive council','Choose archive permission.',sender,recipient,1900000100,1900000200,1900000300];
+ await expect(a.write('create_round',args,'2',()=>{})).rejects.toThrow(/existing transaction/i);
+ await a.write('create_round',[...args.slice(0,5),1900000110,1900000210,1900000310],'2',()=>{});
+ expect(sends.filter(x=>x.method==='eth_sendTransaction')).toHaveLength(1);
+});

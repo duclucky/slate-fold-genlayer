@@ -4,7 +4,7 @@ SlateFold lets three named council members fund shared policy intent: GenLayer
 validators group equivalent motions, and deterministic ballots allocate a fixed
 2 GEN grant or return it to the sponsor.
 
-**Category: Projects. Status: local build verified; network lifecycle pending.**
+**Category: Projects. Local build and Studio Dev lifecycle verified; browser-wallet write verification is pending.**
 
 ## Why it exists
 
@@ -30,12 +30,15 @@ npm ci
 python -m venv .venv
 .venv/Scripts/python.exe -m pip install -r requirements.lock
 npm run check
+Copy-Item frontend/.env.example frontend/.env
 npm run dev
 ```
 
 Linux uses `.venv/bin/python` for installation. The check command chooses the
-platform-specific environment automatically. No wallet or network is required
-for the local tests. A missing deployed address is displayed honestly.
+platform-specific environment automatically. Set the public
+`VITE_CONTRACT_ADDRESS` to the address below before starting the frontend.
+No wallet or network is required for local tests. Missing configuration is
+displayed honestly. Wallet keys never belong in frontend configuration.
 
 ## Product and contract
 
@@ -58,12 +61,79 @@ GEN strings in public views. Demo purses are exactly 2 GEN.
 See [specification](docs/README.md), [local checks](docs/LOCAL-VERIFICATION.md)
 and [frontend verification](docs/FRONTEND-VERIFICATION.md).
 
-## Live app and deployed contract
+## Live App
 
-PENDING_REAL_EVIDENCE. No live URL, address or finalized lifecycle is claimed yet.
-Selected deployment identity: Studio Dev, chain61997, locked RPC
-https://studio-next.genlayer.com/api. Network evidence will remain separate from
-local tests under `docs/evidence/studio-dev/`.
+Production hosting is pending verification. No live URL is claimed yet.
+
+## Deployed Contract
+
+Studio Dev, chain61997: **`0xFB0943A725499C65D49254168Dce37AFdb949a81`**.
+[Contract Explorer](https://explorer-studio-dev.genlayer.com/address/0xFB0943A725499C65D49254168Dce37AFdb949a81)
+and [successful deployment](https://explorer-studio-dev.genlayer.com/tx/0xc9feec56c54c9a72d56274753000b644234e9114f4c8220cbdd4e73d2ad310a2).
+RPC: https://studio-next.genlayer.com/api.
+The deployed source commit is `e2338e86604a09227c34989f535d16baa040659a`;
+[deployment identity](docs/evidence/studio-dev/deployment.json) binds the exact
+source hash, pinned runner, API family, SDK, address and transaction.
+
+The [finalized majority review](https://explorer-studio-dev.genlayer.com/tx/0x9e4a5c16338f67095a9b1896d4a1d6eabd7af106af41d2d402eb72dfb46571b6)
+grouped motions2/3, pooled two votes and vested2GEN to member2. The
+[three-way tie review](https://explorer-studio-dev.genlayer.com/tx/0x4caea369c7f6827acc1fbd9f278a616de49659fb568781a5157c26a8855a68b0)
+refunded the sponsor. Five terminal demo cases received and withdrew10GEN in
+five separate2GEN exits. Current native balance, escrow and credits are0GEN.
+[Canonical audit](docs/evidence/studio-dev/lifecycle-audit.json),
+[transaction timeline](docs/evidence/studio-dev/lifecycle-timeline.json) and
+[network verification](docs/NETWORK-VERIFICATION.md) contain receipts, timestamps,
+authoritative motion/ballot reads and exact native balance evidence. Two older
+revision1 exits were also fully recovered. Script signatures are distinct from
+browser-wallet signatures; the latter remain pending at this checkpoint.
+
+## Verify and deploy on Studio Dev
+
+Use three distinct existing EOAs in an ignored project `.env`, following
+`.env.example`. The sponsor pays test GEN and network fees. The scripts use
+Studio Dev explicitly; legacy variable names do not select another network.
+Run the local checks and commit the contract source before deployment:
+
+```powershell
+npm run check
+node scripts/inspect.mjs
+node scripts/runtime-probe.mjs
+node scripts/envelope-preflight.mjs
+node scripts/deploy.mjs
+node scripts/deploy.mjs --execute
+node scripts/network-smoke.mjs --execute
+```
+
+These commands recover the recorded deployment when its identity matches;
+they do not blindly redeploy. A new revision needs its own reviewed identity
+and recovery/archive record. The exact-source unsigned probes precede signing,
+and the zero-application-value authority smoke precedes any purse funding.
+The documented consequential demos use:
+
+```powershell
+node scripts/lifecycle.mjs --execute --case=election --run=3
+node scripts/lifecycle.mjs --execute --case=cancel --run=3
+node scripts/lifecycle.mjs --execute --case=expiry --run=3
+node scripts/lifecycle.mjs --execute --case=expired-tie --run=3
+node scripts/lifecycle.mjs --execute --case=tie --run=4
+node scripts/verify-deliveries.mjs
+node scripts/lifecycle-audit.mjs
+node scripts/evidence-timeline.mjs
+```
+
+Existing finalized hashes are reconciled, not sent again. Each purse is2GEN.
+Unsigned fee quotations and reads honor bounded server retry advice. A missing
+hash or unresolved execution requires inspection before another send.
+
+## Verification
+
+`npm run check` passed222 tests:100 direct contract cases,4 tooling/metadata,
+20 Node receipt/journal/balance/backoff cases and98 frontend cases; no skips or
+xfails. GenVM lint recognizes one `SlateFoldContract`,7 writes and7 views.
+TypeScript and production build pass. The separate `gltest tests/` run covers
+the same104 Python tests and is not added again to the total. Public CI is
+pending its first pushed commit. Local browser reads render the five canonical
+rounds through the same-origin proxy; wallet connection/menu is observed.
 
 ## Honest limits and reuse
 

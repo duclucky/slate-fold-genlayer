@@ -65,3 +65,22 @@ no RPC error and a funded quote of0.000378535200010352GEN for an unsigned2GEN
 create simulation. No transaction was broadcast. This proves the corrected fee
 proxy path works from a browser without CORS failure. It does not prove wallet
 signing, deployed-address rendering or live-host behavior; those remain separate.
+
+## Deployed-address local checkpoint
+
+The ignored frontend configuration now selects revision2 at
+0xFB0943A725499C65D49254168Dce37AFdb949a81. `cd frontend; npm run build` exited0.
+Actual Chrome rendered all five canonical rounds, including the funded majority,
+empty cancellation and three refunded cases. This establishes browser-origin
+deployed reads through `/genlayer-rpc`, without a CORS/Failed-to-fetch failure.
+An existing OKX wallet was selected and connected; its clickable address opens
+the account/disconnect menu. No browser transaction is inferred from connection.
+
+The English audit inspected42 source/README files:0 non-English alphabetic lines;
+the extracted UI copy was reviewed. Review also caught provisional ID/objective
+bounds that differed from the deployed contract. Six focused cases first failed,
+then passed with lowercase1..48-character IDs and10..500-character objectives.
+A minimum-motion test first failed, then passed at10characters. Text bounds count
+trimmed Unicode code points, matching the Python boundary. The complete check
+passed104 Python,20 Node and98 frontend tests, TypeScript and production build.
+CSS remains exactly the established baseline. Browser signing remains pending.

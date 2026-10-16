@@ -1,0 +1,372 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "rpc": "https://studio-next.genlayer.com/api",
+  "explorer": "https://explorer-studio-dev.genlayer.com",
+  "command": "node scripts/lifecycle-audit.mjs",
+  "checkedAt": "2026-10-16T02:50:00.434Z",
+  "target": "0xFB0943A725499C65D49254168Dce37AFdb949a81",
+  "deployedSourceCommit": "e2338e86604a09227c34989f535d16baa040659a",
+  "sourceSha256": "2182b042117cf8a0cc7f6c0e4c2eb95a5bc7244cf50b6d9b65e2bc0c4e1cd51e",
+  "rounds": [
+    {
+      "round": {
+        "attemptCount": 1,
+        "ballots": [
+          1,
+          2,
+          3
+        ],
+        "configDigest": "23cd0d2569840fb1d74907692715a5b7127d7c5ad2ca3277a535e87134a70b9d",
+        "createdAt": 1792115292,
+        "escrowGEN": "0",
+        "groups": [
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "id": "council-permissions-v3",
+        "members": [
+          "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+          "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+        ],
+        "motionDigests": [
+          "3b6efd5884cb5c9ff1d821a099b17a4eece4c5b6c89df850baf13bb6954d6b97",
+          "768b66effe1f5f45b25e4b668f351a4766e8bed6faf92e88c13ff553fd4fc5e9",
+          "af996aa97327fa05dd96a20aecde75ed4e1d1a3badb381e1affd14143313c54a"
+        ],
+        "motions": [
+          "Permit every council member to read the council archive and to redistribute archive copies to the public, provided the original author is credited.",
+          "Permit council members to read the council archive. Prohibit redistribution of archive copies to anyone outside the council. Require attribution to the original author.",
+          "Every member of the council may read its archive, must credit the original author, and must not share copies with people who are not council members."
+        ],
+        "objective": "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+        "proposalDeadline": 1792115705,
+        "reason": "Equivalent motions pooled; earliest representative of majority funded.",
+        "recipient": "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "reviewDeadline": 1792116545,
+        "rule": "slatefold-v1-fixed-three-earliest-representative",
+        "scores": [
+          1,
+          2
+        ],
+        "settledAt": 1792116251,
+        "slateDigest": "271d4819b5a6d25e970dcf5618e3f9c6dfb1f2d433c1523cf7b0a75e33940d68",
+        "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+        "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+        "sponsor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "status": "ELECTED",
+        "title": "Council archive permissions",
+        "voteDeadline": 1792115945,
+        "winnerSlot": 2
+      },
+      "attempt": {
+        "number": 1,
+        "pairs": {
+          "12": "DIFFERENT",
+          "13": "DIFFERENT",
+          "23": "SAME"
+        },
+        "reviewedAt": 1792116251,
+        "round": "council-permissions-v3",
+        "slateDigest": "271d4819b5a6d25e970dcf5618e3f9c6dfb1f2d433c1523cf7b0a75e33940d68",
+        "sourceStatus": "OK"
+      },
+      "motions": [
+        {
+          "actor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "configDigest": "23cd0d2569840fb1d74907692715a5b7127d7c5ad2ca3277a535e87134a70b9d",
+          "digest": "3b6efd5884cb5c9ff1d821a099b17a4eece4c5b6c89df850baf13bb6954d6b97",
+          "round": "council-permissions-v3",
+          "slot": 1,
+          "submittedAt": 1792115342,
+          "text": "Permit every council member to read the council archive and to redistribute archive copies to the public, provided the original author is credited."
+        },
+        {
+          "actor": "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+          "configDigest": "23cd0d2569840fb1d74907692715a5b7127d7c5ad2ca3277a535e87134a70b9d",
+          "digest": "768b66effe1f5f45b25e4b668f351a4766e8bed6faf92e88c13ff553fd4fc5e9",
+          "round": "council-permissions-v3",
+          "slot": 2,
+          "submittedAt": 1792115393,
+          "text": "Permit council members to read the council archive. Prohibit redistribution of archive copies to anyone outside the council. Require attribution to the original author."
+        },
+        {
+          "actor": "0x79f9ecaa174b2f17afb57dfc8450684c238a033e",
+          "configDigest": "23cd0d2569840fb1d74907692715a5b7127d7c5ad2ca3277a535e87134a70b9d",
+          "digest": "af996aa97327fa05dd96a20aecde75ed4e1d1a3badb381e1affd14143313c54a",
+          "round": "council-permissions-v3",
+          "slot": 3,
+          "submittedAt": 1792115449,
+          "text": "Every member of the council may read its archive, must credit the original author, and must not share copies with people who are not council members."
+        }
+      ],
+      "ballots": [
+        {
+          "actor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "castAt": 1792115717,
+          "choice": 1,
+          "round": "council-permissions-v3",
+          "slateDigest": "271d4819b5a6d25e970dcf5618e3f9c6dfb1f2d433c1523cf7b0a75e33940d68",
+          "slot": 1
+        },
+        {
+          "actor": "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+          "castAt": 1792115767,
+          "choice": 2,
+          "round": "council-permissions-v3",
+          "slateDigest": "271d4819b5a6d25e970dcf5618e3f9c6dfb1f2d433c1523cf7b0a75e33940d68",
+          "slot": 2
+        },
+        {
+          "actor": "0x79f9ecaa174b2f17afb57dfc8450684c238a033e",
+          "castAt": 1792115818,
+          "choice": 3,
+          "round": "council-permissions-v3",
+          "slateDigest": "271d4819b5a6d25e970dcf5618e3f9c6dfb1f2d433c1523cf7b0a75e33940d68",
+          "slot": 3
+        }
+      ]
+    },
+    {
+      "round": {
+        "attemptCount": 1,
+        "ballots": [
+          1,
+          2,
+          3
+        ],
+        "configDigest": "a08f44ab25a6c00e761e15b44fe0a0467d69a39db6e8804c9731cfc29623b8b0",
+        "createdAt": 1792117489,
+        "escrowGEN": "0",
+        "groups": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "id": "council-distinct-v4",
+        "members": [
+          "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+          "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+        ],
+        "motionDigests": [
+          "62c7e0e69cfd1c8e219ccd5dbb3e82eece2f691dea0bdc369721e5e715a9b683",
+          "7c342cffaef55ce430758324994a86b1d0252e50c1206c5b38c56663c02f55e7",
+          "8fbfec9f1d1448e090ba7a79d67dc4b0facbb62f3d2bb32b9b0f170bcb59e5ac"
+        ],
+        "motions": [
+          "Permit council members to read the council archive. Prohibit redistribution of archive copies to anyone outside the council. Require attribution to the original author.",
+          "Permit council members to read the council archive and redistribute archive copies to the public. Require attribution to the original author.",
+          "Permit council members to read and modify the council archive. Prohibit redistribution of archive copies to anyone outside the council. Require attribution to the original author."
+        ],
+        "objective": "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+        "proposalDeadline": 1792117899,
+        "reason": "No unique majority; budget returned to sponsor.",
+        "recipient": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "reviewDeadline": 1792118859,
+        "rule": "slatefold-v1-fixed-three-earliest-representative",
+        "scores": [
+          1,
+          1,
+          1
+        ],
+        "settledAt": 1792118350,
+        "slateDigest": "b3617259d1526959830ea106d6ac4385d56d19080a0599a6e711681e578283ef",
+        "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+        "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+        "sponsor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "status": "REFUNDED",
+        "title": "Three distinct archive permissions",
+        "voteDeadline": 1792118259,
+        "winnerSlot": 0
+      },
+      "attempt": {
+        "number": 1,
+        "pairs": {
+          "12": "DIFFERENT",
+          "13": "DIFFERENT",
+          "23": "DIFFERENT"
+        },
+        "reviewedAt": 1792118350,
+        "round": "council-distinct-v4",
+        "slateDigest": "b3617259d1526959830ea106d6ac4385d56d19080a0599a6e711681e578283ef",
+        "sourceStatus": "OK"
+      },
+      "motions": [
+        {
+          "actor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "configDigest": "a08f44ab25a6c00e761e15b44fe0a0467d69a39db6e8804c9731cfc29623b8b0",
+          "digest": "62c7e0e69cfd1c8e219ccd5dbb3e82eece2f691dea0bdc369721e5e715a9b683",
+          "round": "council-distinct-v4",
+          "slot": 1,
+          "submittedAt": 1792117545,
+          "text": "Permit council members to read the council archive. Prohibit redistribution of archive copies to anyone outside the council. Require attribution to the original author."
+        },
+        {
+          "actor": "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+          "configDigest": "a08f44ab25a6c00e761e15b44fe0a0467d69a39db6e8804c9731cfc29623b8b0",
+          "digest": "7c342cffaef55ce430758324994a86b1d0252e50c1206c5b38c56663c02f55e7",
+          "round": "council-distinct-v4",
+          "slot": 2,
+          "submittedAt": 1792117600,
+          "text": "Permit council members to read the council archive and redistribute archive copies to the public. Require attribution to the original author."
+        },
+        {
+          "actor": "0x79f9ecaa174b2f17afb57dfc8450684c238a033e",
+          "configDigest": "a08f44ab25a6c00e761e15b44fe0a0467d69a39db6e8804c9731cfc29623b8b0",
+          "digest": "8fbfec9f1d1448e090ba7a79d67dc4b0facbb62f3d2bb32b9b0f170bcb59e5ac",
+          "round": "council-distinct-v4",
+          "slot": 3,
+          "submittedAt": 1792117818,
+          "text": "Permit council members to read and modify the council archive. Prohibit redistribution of archive copies to anyone outside the council. Require attribution to the original author."
+        }
+      ],
+      "ballots": [
+        {
+          "actor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "castAt": 1792117906,
+          "choice": 1,
+          "round": "council-distinct-v4",
+          "slateDigest": "b3617259d1526959830ea106d6ac4385d56d19080a0599a6e711681e578283ef",
+          "slot": 1
+        },
+        {
+          "actor": "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+          "castAt": 1792117959,
+          "choice": 2,
+          "round": "council-distinct-v4",
+          "slateDigest": "b3617259d1526959830ea106d6ac4385d56d19080a0599a6e711681e578283ef",
+          "slot": 2
+        },
+        {
+          "actor": "0x79f9ecaa174b2f17afb57dfc8450684c238a033e",
+          "castAt": 1792118007,
+          "choice": 3,
+          "round": "council-distinct-v4",
+          "slateDigest": "b3617259d1526959830ea106d6ac4385d56d19080a0599a6e711681e578283ef",
+          "slot": 3
+        }
+      ]
+    }
+  ],
+  "terminalCases": [
+    {
+      "id": "council-permissions-v3",
+      "status": "ELECTED",
+      "escrowGEN": "0",
+      "recipient": "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+      "reason": "Equivalent motions pooled; earliest representative of majority funded."
+    },
+    {
+      "id": "cancel-before-participation-v3",
+      "status": "CANCELLED",
+      "escrowGEN": "0",
+      "recipient": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "reason": "Sponsor cancelled before participation."
+    },
+    {
+      "id": "expired-incomplete-v3",
+      "status": "REFUNDED",
+      "escrowGEN": "0",
+      "recipient": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "reason": "Unresolved round expired; sponsor recovered budget."
+    },
+    {
+      "id": "council-distinct-v3",
+      "status": "REFUNDED",
+      "escrowGEN": "0",
+      "recipient": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "reason": "Unresolved round expired; sponsor recovered budget."
+    },
+    {
+      "id": "council-distinct-v4",
+      "status": "REFUNDED",
+      "escrowGEN": "0",
+      "recipient": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "reason": "No unique majority; budget returned to sponsor."
+    }
+  ],
+  "accounting": {
+    "creditGEN": "0",
+    "escrowGEN": "0",
+    "receivedGEN": "10",
+    "withdrawnGEN": "10"
+  },
+  "nativeContractGEN": "0",
+  "creditsGEN": [
+    "0",
+    "0",
+    "0"
+  ],
+  "deliveries": [
+    {
+      "file": "lifecycle-run3-election-delivery.json",
+      "parentHash": "0x9c9efca58a13987e3e7968b133de493d9116ab1026858b8233026df7a737926f",
+      "recipient": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5",
+      "valueGEN": "2",
+      "contractBeforeGEN": "2",
+      "contractAfterGEN": "0",
+      "recipientDeltaNote": "Isolated recipient delta within the funded protocol-fee bound."
+    },
+    {
+      "file": "lifecycle-run3-cancel-delivery.json",
+      "parentHash": "0xa83ae90205b75e07e115a7fff2ec7b9efd108a1cee5d4436925fe95c2a000d52",
+      "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "valueGEN": "2",
+      "contractBeforeGEN": "2",
+      "contractAfterGEN": "0",
+      "recipientDeltaNote": "Isolated recipient delta within the funded protocol-fee bound."
+    },
+    {
+      "file": "lifecycle-run3-expiry-delivery.json",
+      "parentHash": "0x3f45f5701ac273f1e1804ac4451197b5195f207b105ed23d7c71dd8f03a571a3",
+      "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "valueGEN": "2",
+      "contractBeforeGEN": "4",
+      "contractAfterGEN": "2",
+      "recipientDeltaNote": "Aggregate wallet increase includes overlapping protocol fee activity. Payout amount is proven independently by the exact contract decrease and matching external execution receipt; no exact fee split is attributed."
+    },
+    {
+      "file": "lifecycle-run3-expired-tie-delivery.json",
+      "parentHash": "0xac967d455d35f5b3f8122232bbf585e9a05e5b74788a83add1904f01c99edf23",
+      "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "valueGEN": "2",
+      "contractBeforeGEN": "4",
+      "contractAfterGEN": "2",
+      "recipientDeltaNote": "Isolated recipient delta within the funded protocol-fee bound."
+    },
+    {
+      "file": "lifecycle-run4-tie-delivery.json",
+      "parentHash": "0x2c57f4cadeb6821e0f958a0b39df0fe6b68e6d344fb31c78b09a05c334bce9e7",
+      "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "valueGEN": "2",
+      "contractBeforeGEN": "2",
+      "contractAfterGEN": "0",
+      "recipientDeltaNote": "Isolated recipient delta within the funded protocol-fee bound."
+    }
+  ],
+  "superseded": {
+    "target": "0xA78E771B40C017ff88520ff2fc632cF37cf60A88",
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "0",
+      "receivedGEN": "4",
+      "withdrawnGEN": "4"
+    },
+    "nativeContractGEN": "0"
+  },
+  "browserWriteProven": false,
+  "passed": true
+}

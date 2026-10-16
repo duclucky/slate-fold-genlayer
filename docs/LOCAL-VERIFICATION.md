@@ -57,3 +57,31 @@ normalization. Duplicate keys, surrounding prose, extra payout fields, invalid
 partitions and oversized output remain rejected with unchanged accounting.
 Native-delivery tests reject parent-only success, wrong recipient/amount,
 premature phase, unrecorded external execution and undelivered value effects.
+
+Current checkpoint2026-10-16: `npm run check` exit0,104 Python (100 direct and
+4 tooling),14 Node and85 frontend tests:203 total, zero skips or xfails.
+Recognized SlateFoldContract lint reports14methods (7view,7write); TypeScript
+and production Vite build pass. `.venv/Scripts/gltest.exe tests/ -q --tb=short`
+separately returned `104 passed in 10.72s`; these are the same Python tests.
+The focused wallet regression first failed because code-32002 produced a generic
+message, then all28 App tests passed with a specific pending-request explanation.
+Pending wallet selection can be closed, and a late connection is ignored.
+The real-SDK adapter regression also prevents changed creation deadlines from
+rebroadcasting an existing unresolved transaction for the same round and wallet.
+
+Final Phase8 local checkpoint:104 Python +20 Node +89 frontend =213 tests,
+all passed with zero skips/xfails; recognized lint, TypeScript and build pass.
+New regressions cover bounded read-only rate backoff, honoring server retry
+advice, refusal to retry execution/authentication errors, and overlapping fee
+refund accounting without relaxing the exact native contract debit requirement.
+Wallet restoration stores only the chosen wallet name as a UI preference;
+live eth_accounts and chain reads establish the actual account each time.
+No permission prompt or network mutation occurs during passive restoration.
+
+Public-source checkpoint: `npm run check` exit0,104 Python +20 Node +98 frontend
+=222 tests, zero skips/xfails, lint/TypeScript/build PASS. Additional regressions
+cover deployed ID/objective/motion bounds; an explicit RETRYABLE UI case requests
+another review and reloads its finalized canonical outcome. A read-only guarded
+rerun of the expiry demo recovered all three finalized hashes and its historical
+4GEN ->2GEN exit proof while current native/accounting were0GEN. Broadcasting was
+blocked by the verification wrapper; no new transaction was attempted.

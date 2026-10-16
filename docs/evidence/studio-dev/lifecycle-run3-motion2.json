@@ -1,0 +1,166 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "rpc": "https://studio-next.genlayer.com/api",
+  "explorer": "https://explorer-studio-dev.genlayer.com/transactions/0x8556fe5c4f07e638242f3135ac2f83e8b78bf045082212e6636f0ff5cd4add63",
+  "identity": {
+    "network": "Studio Dev",
+    "chainId": 61997,
+    "sourceCommit": "e2338e86604a09227c34989f535d16baa040659a",
+    "sourceSha256": "2182b042117cf8a0cc7f6c0e4c2eb95a5bc7244cf50b6d9b65e2bc0c4e1cd51e",
+    "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+    "api": "v0.3.0",
+    "genvm": "v0.6.0-rc5",
+    "sdk": "2.0.0-rc.1"
+  },
+  "target": "0xFB0943A725499C65D49254168Dce37AFdb949a81",
+  "operation": "submit_motion",
+  "actor": "0x160b8045f65A82aAac362cf9dbA6C958cEBa35D5",
+  "args": [
+    "council-permissions-v3",
+    "23cd0d2569840fb1d74907692715a5b7127d7c5ad2ca3277a535e87134a70b9d",
+    "Permit council members to read the council archive. Prohibit redistribution of archive copies to anyone outside the council. Require attribution to the original author."
+  ],
+  "valueGEN": "0",
+  "feeDepositGEN": "0.000378514800010352",
+  "before": {
+    "round": {
+      "attemptCount": 0,
+      "ballots": [
+        0,
+        0,
+        0
+      ],
+      "configDigest": "23cd0d2569840fb1d74907692715a5b7127d7c5ad2ca3277a535e87134a70b9d",
+      "createdAt": 1792115292,
+      "escrowGEN": "2",
+      "groups": [],
+      "id": "council-permissions-v3",
+      "members": [
+        "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "3b6efd5884cb5c9ff1d821a099b17a4eece4c5b6c89df850baf13bb6954d6b97",
+        "",
+        ""
+      ],
+      "motions": [
+        "Permit every council member to read the council archive and to redistribute archive copies to the public, provided the original author is credited.",
+        "",
+        ""
+      ],
+      "objective": "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+      "proposalDeadline": 1792115705,
+      "reason": "",
+      "recipient": "",
+      "reviewDeadline": 1792116545,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [],
+      "settledAt": 0,
+      "slateDigest": "",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "status": "COLLECTING",
+      "title": "Council archive permissions",
+      "voteDeadline": 1792115945,
+      "winnerSlot": 0
+    },
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "2",
+      "receivedGEN": "2",
+      "withdrawnGEN": "0"
+    },
+    "nativeContractGEN": "2",
+    "creditsGEN": [
+      "0",
+      "0",
+      "0"
+    ],
+    "actorBalancesGEN": [
+      "28.17263142425008757",
+      "0.999606845499995885",
+      "0.999764105249997531"
+    ]
+  },
+  "preparedAt": "2026-10-16T01:49:52.459Z",
+  "status": "FINALIZED",
+  "hash": "0x8556fe5c4f07e638242f3135ac2f83e8b78bf045082212e6636f0ff5cd4add63",
+  "executionResult": "SUCCESS",
+  "finalizedObservedAt": "2026-10-16T01:50:29.458Z",
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0x8556fe5c4f07e638242f3135ac2f83e8b78bf045082212e6636f0ff5cd4add63",
+    "from": "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+    "to": "0xfb0943a725499c65d49254168dce37afdb949a81"
+  },
+  "after": {
+    "round": {
+      "attemptCount": 0,
+      "ballots": [
+        0,
+        0,
+        0
+      ],
+      "configDigest": "23cd0d2569840fb1d74907692715a5b7127d7c5ad2ca3277a535e87134a70b9d",
+      "createdAt": 1792115292,
+      "escrowGEN": "2",
+      "groups": [],
+      "id": "council-permissions-v3",
+      "members": [
+        "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "3b6efd5884cb5c9ff1d821a099b17a4eece4c5b6c89df850baf13bb6954d6b97",
+        "768b66effe1f5f45b25e4b668f351a4766e8bed6faf92e88c13ff553fd4fc5e9",
+        ""
+      ],
+      "motions": [
+        "Permit every council member to read the council archive and to redistribute archive copies to the public, provided the original author is credited.",
+        "Permit council members to read the council archive. Prohibit redistribution of archive copies to anyone outside the council. Require attribution to the original author.",
+        ""
+      ],
+      "objective": "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+      "proposalDeadline": 1792115705,
+      "reason": "",
+      "recipient": "",
+      "reviewDeadline": 1792116545,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [],
+      "settledAt": 0,
+      "slateDigest": "",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "status": "COLLECTING",
+      "title": "Council archive permissions",
+      "voteDeadline": 1792115945,
+      "winnerSlot": 0
+    },
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "2",
+      "receivedGEN": "2",
+      "withdrawnGEN": "0"
+    },
+    "nativeContractGEN": "2",
+    "creditsGEN": [
+      "0",
+      "0",
+      "0"
+    ],
+    "actorBalancesGEN": [
+      "28.17263142425008757",
+      "0.999528212249995062",
+      "0.999764105249997531"
+    ]
+  },
+  "verified": true
+}

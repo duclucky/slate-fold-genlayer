@@ -53,7 +53,9 @@ export function createSlateAdapter(options:Options):Adapter{
    if(!options.provider||!validAddress(options.account))throw Error('Connect your selected wallet before signing.');
    if((action==='create_round'&&valueGEN!=='2')||(action!=='create_round'&&valueGEN!=='0'))throw Error('This action has an invalid GEN amount.');
    if(args.some(x=>typeof x!=='string'&&typeof x!=='number'))throw Error('Invalid transaction input.');
-   const key=JSON.stringify([chain.id,address.toLowerCase(),options.account.toLowerCase(),action,args]);
+   // Each write owns one immutable member slot, round transition or own-credit exit.
+   // Form-generated deadlines/text must not turn an ambiguous retry into a new send.
+   const key=JSON.stringify([chain.id,address.toLowerCase(),options.account.toLowerCase(),action,action==='withdraw_credit'?null:args[0]]);
    const existing=pending.get(key);
    if(existing){await poll(existing,onStage);pending.delete(key);return;}
    await ensureChain(options.provider);

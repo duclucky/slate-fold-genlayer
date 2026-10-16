@@ -1,0 +1,70 @@
+{
+  "round": {
+    "attemptCount": 1,
+    "ballots": [
+      1,
+      2,
+      3
+    ],
+    "configDigest": "23cd0d2569840fb1d74907692715a5b7127d7c5ad2ca3277a535e87134a70b9d",
+    "createdAt": 1792115292,
+    "escrowGEN": "0",
+    "groups": [
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "id": "council-permissions-v3",
+    "members": [
+      "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+      "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+    ],
+    "motionDigests": [
+      "3b6efd5884cb5c9ff1d821a099b17a4eece4c5b6c89df850baf13bb6954d6b97",
+      "768b66effe1f5f45b25e4b668f351a4766e8bed6faf92e88c13ff553fd4fc5e9",
+      "af996aa97327fa05dd96a20aecde75ed4e1d1a3badb381e1affd14143313c54a"
+    ],
+    "motions": [
+      "Permit every council member to read the council archive and to redistribute archive copies to the public, provided the original author is credited.",
+      "Permit council members to read the council archive. Prohibit redistribution of archive copies to anyone outside the council. Require attribution to the original author.",
+      "Every member of the council may read its archive, must credit the original author, and must not share copies with people who are not council members."
+    ],
+    "objective": "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+    "proposalDeadline": 1792115705,
+    "reason": "Equivalent motions pooled; earliest representative of majority funded.",
+    "recipient": "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+    "reviewDeadline": 1792116545,
+    "rule": "slatefold-v1-fixed-three-earliest-representative",
+    "scores": [
+      1,
+      2
+    ],
+    "settledAt": 1792116251,
+    "slateDigest": "271d4819b5a6d25e970dcf5618e3f9c6dfb1f2d433c1523cf7b0a75e33940d68",
+    "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+    "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+    "sponsor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+    "status": "ELECTED",
+    "title": "Council archive permissions",
+    "voteDeadline": 1792115945,
+    "winnerSlot": 2
+  },
+  "attempt": {
+    "number": 1,
+    "pairs": {
+      "12": "DIFFERENT",
+      "13": "DIFFERENT",
+      "23": "SAME"
+    },
+    "reviewedAt": 1792116251,
+    "round": "council-permissions-v3",
+    "slateDigest": "271d4819b5a6d25e970dcf5618e3f9c6dfb1f2d433c1523cf7b0a75e33940d68",
+    "sourceStatus": "OK"
+  },
+  "checkedAt": "2026-10-16T02:05:18.612Z"
+}

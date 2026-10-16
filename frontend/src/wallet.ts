@@ -26,3 +26,16 @@ export async function connectWallet(choice:WalletChoice){
  const accounts=await choice.provider.request({method:'eth_requestAccounts'});if(!Array.isArray(accounts)||!validAddress(accounts[0]))throw new Error('The selected wallet did not provide a valid account.');
  await ensureChain(choice.provider);return {choice,address:accounts[0]};
 }
+export function rememberWallet(choice:WalletChoice){try{localStorage.setItem('slatefold.wallet-choice',choice.name);}catch{}}
+export function forgetWallet(){try{localStorage.removeItem('slatefold.wallet-choice');}catch{}}
+export async function restoreWallet(){
+ let name:string|null;try{name=localStorage.getItem('slatefold.wallet-choice');}catch{return;}
+ if(!name)return;
+ const choice=(await discoverWallets()).find(wallet=>wallet.name===name);if(!choice)return;
+ try{
+  const accounts=await choice.provider.request({method:'eth_accounts'});
+  if(!Array.isArray(accounts)||!validAddress(accounts[0]))return;
+  const chain=await choice.provider.request({method:'eth_chainId'});if(typeof chain!=='string'||chain.toLowerCase()!=='0xf22d')return;
+  return {choice,address:accounts[0]};
+ }catch{return;}
+}

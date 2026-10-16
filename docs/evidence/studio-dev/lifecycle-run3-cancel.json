@@ -1,0 +1,164 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "rpc": "https://studio-next.genlayer.com/api",
+  "explorer": "https://explorer-studio-dev.genlayer.com/transactions/0x88cb5e4ffb7b764c49bd95dfd8b7929cd9ab790fa002964a9d8e52050c8d8c33",
+  "identity": {
+    "network": "Studio Dev",
+    "chainId": 61997,
+    "sourceCommit": "e2338e86604a09227c34989f535d16baa040659a",
+    "sourceSha256": "2182b042117cf8a0cc7f6c0e4c2eb95a5bc7244cf50b6d9b65e2bc0c4e1cd51e",
+    "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+    "api": "v0.3.0",
+    "genvm": "v0.6.0-rc5",
+    "sdk": "2.0.0-rc.1"
+  },
+  "target": "0xFB0943A725499C65D49254168Dce37AFdb949a81",
+  "operation": "cancel_round",
+  "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "args": [
+    "cancel-before-participation-v3"
+  ],
+  "valueGEN": "0",
+  "feeDepositGEN": "0.000378511200010352",
+  "before": {
+    "round": {
+      "attemptCount": 0,
+      "ballots": [
+        0,
+        0,
+        0
+      ],
+      "configDigest": "12eff472811578102efc184836124a8eb98b412823fc24bdc877b5ea2542640f",
+      "createdAt": 1792116407,
+      "escrowGEN": "2",
+      "groups": [],
+      "id": "cancel-before-participation-v3",
+      "members": [
+        "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "",
+        "",
+        ""
+      ],
+      "motions": [
+        "",
+        "",
+        ""
+      ],
+      "objective": "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+      "proposalDeadline": 1792116698,
+      "reason": "",
+      "recipient": "",
+      "reviewDeadline": 1792117298,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [],
+      "settledAt": 0,
+      "slateDigest": "",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "status": "COLLECTING",
+      "title": "Cancelled council budget",
+      "voteDeadline": 1792116998,
+      "winnerSlot": 0
+    },
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "2",
+      "receivedGEN": "4",
+      "withdrawnGEN": "2"
+    },
+    "nativeContractGEN": "2",
+    "creditsGEN": [
+      "0",
+      "0",
+      "0"
+    ],
+    "actorBalancesGEN": [
+      "26.172395269750085101",
+      "2.999323275499993416",
+      "0.999606839249995885"
+    ]
+  },
+  "preparedAt": "2026-10-16T02:07:38.454Z",
+  "status": "FINALIZED",
+  "hash": "0x88cb5e4ffb7b764c49bd95dfd8b7929cd9ab790fa002964a9d8e52050c8d8c33",
+  "executionResult": "SUCCESS",
+  "finalizedObservedAt": "2026-10-16T02:08:15.547Z",
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0x88cb5e4ffb7b764c49bd95dfd8b7929cd9ab790fa002964a9d8e52050c8d8c33",
+    "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+    "to": "0xfb0943a725499c65d49254168dce37afdb949a81"
+  },
+  "after": {
+    "round": {
+      "attemptCount": 0,
+      "ballots": [
+        0,
+        0,
+        0
+      ],
+      "configDigest": "12eff472811578102efc184836124a8eb98b412823fc24bdc877b5ea2542640f",
+      "createdAt": 1792116407,
+      "escrowGEN": "0",
+      "groups": [],
+      "id": "cancel-before-participation-v3",
+      "members": [
+        "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "",
+        "",
+        ""
+      ],
+      "motions": [
+        "",
+        "",
+        ""
+      ],
+      "objective": "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+      "proposalDeadline": 1792116698,
+      "reason": "Sponsor cancelled before participation.",
+      "recipient": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "reviewDeadline": 1792117298,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [],
+      "settledAt": 1792116459,
+      "slateDigest": "",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "status": "CANCELLED",
+      "title": "Cancelled council budget",
+      "voteDeadline": 1792116998,
+      "winnerSlot": 0
+    },
+    "accounting": {
+      "creditGEN": "2",
+      "escrowGEN": "0",
+      "receivedGEN": "4",
+      "withdrawnGEN": "2"
+    },
+    "nativeContractGEN": "2",
+    "creditsGEN": [
+      "2",
+      "0",
+      "0"
+    ],
+    "actorBalancesGEN": [
+      "26.172316637250084278",
+      "2.999323275499993416",
+      "0.999606839249995885"
+    ]
+  },
+  "verified": true
+}

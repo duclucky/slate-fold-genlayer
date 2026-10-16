@@ -1,0 +1,87 @@
+{
+  "parentHash": "0xac967d455d35f5b3f8122232bbf585e9a05e5b74788a83add1904f01c99edf23",
+  "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "expectedTransferGEN": "2",
+  "contractBeforeGEN": "4",
+  "contractAfterGEN": "2",
+  "recipientNetIncreaseGEN": "1.999873694749999177",
+  "feeDepositGEN": "0.000759798000010352",
+  "creditAfterGEN": "0",
+  "childReceipts": [],
+  "externalReceipt": {
+    "kind": "parent-attached external EVM execution receipt",
+    "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+    "valueGEN": "2",
+    "executionRecorded": true,
+    "messageValueDelivered": true,
+    "effectId": "0xad04d09321cc3cb2db6eca9135ff9e268401d854f765a70cea09a5784ab14080",
+    "separateChildHashAvailable": false
+  },
+  "after": {
+    "round": {
+      "attemptCount": 0,
+      "ballots": [
+        1,
+        0,
+        0
+      ],
+      "configDigest": "aadce1bd90037e62d91117dffb49059b14802fdce2d76f52fdc4125aaa492bc9",
+      "createdAt": 1792116610,
+      "escrowGEN": "0",
+      "groups": [],
+      "id": "council-distinct-v3",
+      "members": [
+        "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "88c6b1c6ff332ab3961fc78c5eac574943309b60f65d0e6d38f7d56dccd9d2f5",
+        "2156d003e308416fb404096238d128a780d445436264e248a0e73141a7c8d75e",
+        "ebfdd5500113221243cb6bb24282ebadac2c4112776187bb7945ada309a422c1"
+      ],
+      "motions": [
+        "Permit council members to read the council archive. Prohibit redistribution of archive copies to anyone outside the council. Require attribution to the original author.",
+        "Permit council members to read the council archive and redistribute archive copies to the public. Require attribution to the original author.",
+        "Permit council members to read and modify the council archive. Prohibit redistribution of archive copies to anyone outside the council. Require attribution to the original author."
+      ],
+      "objective": "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+      "proposalDeadline": 1792117020,
+      "reason": "Unresolved round expired; sponsor recovered budget.",
+      "recipient": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "reviewDeadline": 1792117860,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [],
+      "settledAt": 1792118021,
+      "slateDigest": "d51015ac636f3171c9bf790066364ae6fd5b976b33445b7a31688ac926803b23",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "status": "REFUNDED",
+      "title": "Three distinct archive permissions",
+      "voteDeadline": 1792117260,
+      "winnerSlot": 0
+    },
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "2",
+      "receivedGEN": "10",
+      "withdrawnGEN": "8"
+    },
+    "nativeContractGEN": "2",
+    "creditsGEN": [
+      "0",
+      "0",
+      "0"
+    ],
+    "actorBalancesGEN": [
+      "26.171230010750074402",
+      "2.999087375749990947",
+      "0.999370937249993416"
+    ]
+  },
+  "checkedAt": "2026-10-16T02:38:35.505Z",
+  "balanceProven": true,
+  "deliveryProven": true,
+  "receiptReconciledAt": "2026-10-16T02:49:26.583Z"
+}

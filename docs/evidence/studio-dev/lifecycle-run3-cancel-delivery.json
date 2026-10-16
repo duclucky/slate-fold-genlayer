@@ -1,0 +1,87 @@
+{
+  "parentHash": "0xa83ae90205b75e07e115a7fff2ec7b9efd108a1cee5d4436925fe95c2a000d52",
+  "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "expectedTransferGEN": "2",
+  "contractBeforeGEN": "2",
+  "contractAfterGEN": "0",
+  "recipientNetIncreaseGEN": "1.999873694749999177",
+  "feeDepositGEN": "0.000759798000010352",
+  "creditAfterGEN": "0",
+  "childReceipts": [],
+  "externalReceipt": {
+    "kind": "parent-attached external EVM execution receipt",
+    "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+    "valueGEN": "2",
+    "executionRecorded": true,
+    "messageValueDelivered": true,
+    "effectId": "0x28b52635cad149a4c84a31162bd0b3d8a9dac11ca8d20f3b6b2666610ffba16c",
+    "separateChildHashAvailable": false
+  },
+  "after": {
+    "round": {
+      "attemptCount": 0,
+      "ballots": [
+        0,
+        0,
+        0
+      ],
+      "configDigest": "12eff472811578102efc184836124a8eb98b412823fc24bdc877b5ea2542640f",
+      "createdAt": 1792116407,
+      "escrowGEN": "0",
+      "groups": [],
+      "id": "cancel-before-participation-v3",
+      "members": [
+        "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "0x160b8045f65a82aaac362cf9dba6c958ceba35d5",
+        "0x79f9ecaa174b2f17afb57dfc8450684c238a033e"
+      ],
+      "motionDigests": [
+        "",
+        "",
+        ""
+      ],
+      "motions": [
+        "",
+        "",
+        ""
+      ],
+      "objective": "Choose the council archive policy: compare the same permission, prohibition, beneficiary and attribution duty.",
+      "proposalDeadline": 1792116698,
+      "reason": "Sponsor cancelled before participation.",
+      "recipient": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "reviewDeadline": 1792117298,
+      "rule": "slatefold-v1-fixed-three-earliest-representative",
+      "scores": [],
+      "settledAt": 1792116459,
+      "slateDigest": "",
+      "source": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+      "sourceHash": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+      "sponsor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "status": "CANCELLED",
+      "title": "Cancelled council budget",
+      "voteDeadline": 1792116998,
+      "winnerSlot": 0
+    },
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "0",
+      "receivedGEN": "4",
+      "withdrawnGEN": "4"
+    },
+    "nativeContractGEN": "0",
+    "creditsGEN": [
+      "0",
+      "0",
+      "0"
+    ],
+    "actorBalancesGEN": [
+      "28.172190332000083455",
+      "2.999323275499993416",
+      "0.999606839249995885"
+    ]
+  },
+  "checkedAt": "2026-10-16T02:09:13.671Z",
+  "balanceProven": true,
+  "deliveryProven": true,
+  "receiptReconciledAt": "2026-10-16T02:49:25.392Z"
+}

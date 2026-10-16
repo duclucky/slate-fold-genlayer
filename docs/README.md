@@ -149,10 +149,10 @@ than inventing fixtures, funds, successful signatures or canonical results.
 
 ## Current evidence boundary
 
-Admission design and unsigned feasibility12/12 are recorded internally. No
-production contract, finalized judgment/consequence, frontend build, real browser
-signature, deployment, CI, public remote, hosted app or submission is claimed yet.
-Gate13 is PASS_ADMISSION/PENDING_EXECUTION. Full specification follows Phase3B.
+Admission and unsigned feasibility12/12 are recorded; local implementation and
+Studio Dev lifecycle are now verified below. Browser-wallet writes, public CI,
+hosting and submission remain pending. Gate13 is PASS_ADMISSION and requires
+the separate browser execution proof before Projects completion.
 
 ## Adoption path and milestone headroom
 
@@ -240,7 +240,7 @@ allocation ambiguity). Money/counters/times use bigint or sized integers, not
 bare stored int. Public methods return bounded JSON views assembled from these
 structured fields; JSON is a transport representation, not canonical raw storage.
 
-RoundState: ID, title<=80, objective<=1200, sponsor, member1/2/3, config_digest,
+RoundState: ID, title3..80, objective10..500, sponsor, member1/2/3, config_digest,
 slate_digest, proposal_deadline/vote_deadline/review_deadline, status, motion_count,
 ballot_count, attempt_count, exact relation12/13/23, winner_slot, recipient, escrow,
 created_at, settled_at and reason. MotionState: round_id, slot, actor, text<=1200,
@@ -248,7 +248,7 @@ config_digest, text_digest and submitted_at. BallotState: round_id, voter_slot,
 actor, choice1..3, slate_digest and cast_at. AttemptState: round/slate/attempt ID,
 time, source status and exact pair classes. Attempts are append-only.
 
-ID regex `[A-Za-z0-9_-]{1,64}` excludes the composite-key delimiter. Keys are
+ID regex `[a-z0-9][a-z0-9-]{0,47}` excludes the composite-key delimiter. Keys are
 `round:slot` and `round:attempt`, preventing cross-entity collision. At most100
 rounds per instance; paginated listing limit1..20. A fresh instance is the scale
 boundary in V1. Existing records, membership, source/rule version and motions have
@@ -402,14 +402,14 @@ plus typed writes, not a claimed Safe integration or pass-through second contrac
 
 | Canonical state | User action | Contract write | UI component/route | Frontend test | Evidence status |
 |---|---|---|---|---|---|
-| No round | Fund council | create_round | CreateRound /rounds/new | exact members/value; validation; SDK adapter2GEN required | UI local PASS; SDK/network/browser pending |
-| COLLECTING own slot empty | Author and assent | submit_motion | RoundWorkspace motions | exact motion/config digest, role/cutoff gating | UI local PASS; real evidence pending |
-| BALLOT_OPEN own ballot absent | Cast one choice | cast_ballot | RoundWorkspace ballot | exact slate/choice, duplicate/time gating | UI local PASS; real evidence pending |
-| READY_FOR_REVIEW | Group votes and resolve | review_round | RoundWorkspace result | wrapper/control/reload and interval test | UI local PASS; actual semantic consensus pending |
-| RETRYABLE | Request another review | review_round | RoundWorkspace result | retry label/current attempt/error/finality path | Local extended retry test required; browser pending |
-| Unparticipated live round | Safe cancellation | cancel_round | RoundWorkspace result | legal cancel control; participant blocks cancel | UI local PASS; real evidence pending |
-| Unresolved expired round | Recover own funding | recover_round | RoundWorkspace result | equality/role/terminal gating plus wrapper/reload | UI local PASS; real timed recovery pending |
-| Positive own credit | Withdraw to own wallet | withdraw_credit | Account /account | selected provider, accepted!=finalized, duplicate disabled, canonical reload | UI local PASS; SDK/native/browser proof pending |
+| No round | Fund council | create_round | CreateRound /rounds/new | exact members/value; deployed input bounds; real SDK2GEN envelope | UI/SDK PASS; script network PASS; browser write pending |
+| COLLECTING own slot empty | Author and assent | submit_motion | RoundWorkspace motions | exact motion/config digest, role/cutoff gating | UI/SDK PASS; script network PASS; browser write pending |
+| BALLOT_OPEN own ballot absent | Cast one choice | cast_ballot | RoundWorkspace ballot | exact slate/choice, duplicate/time gating | UI/SDK PASS; script network PASS; browser write pending |
+| READY_FOR_REVIEW | Group votes and resolve | review_round | RoundWorkspace result | wrapper/control/reload and interval test | UI/SDK PASS; two real semantic outcomes PASS; browser write pending |
+| RETRYABLE | Request another review | review_round | RoundWorkspace result | explicit retry label and newly finalized canonical outcome reload | Local direct/UI PASS; real source-uncertainty retry not observed |
+| Unparticipated live round | Safe cancellation | cancel_round | RoundWorkspace result | legal cancel control; participant blocks cancel | UI/SDK PASS; script network PASS; browser write pending |
+| Unresolved expired round | Recover own funding | recover_round | RoundWorkspace result | equality/role/terminal gating plus wrapper/reload | UI/SDK PASS; timed script network PASS; browser write pending |
+| Positive own credit | Withdraw to own wallet | withdraw_credit | Account /account | selected provider, accepted!=finalized, duplicate disabled, canonical reload | UI/SDK PASS; five active2GEN native exits PASS; browser write pending |
 
 All writes use real adapter/SDK at Phase7, account at createClient, no raw-string
 per-write account override. Real-SDK intercepted-I/O adapter regression (including
@@ -523,15 +523,18 @@ escrow, frontend canonical-state gap,4/7duplicate or a core untraceable claim.
 
 ## Evidence status
 
-Local checkpoint2026-10-16:104 Python tests,14 receipt/journal/delivery tests and82 frontend
+Local checkpoint2026-10-16:104 Python tests,20 Node tests and98 frontend
 tests PASS, no skips; recognized contract lint, TypeScript and production build
 PASS. Unsigned viability vectors were12/12. These are separate from CI.
 Studio Dev revision1 at `0xA78E771B40C017ff88520ff2fc632cF37cf60A88` is
 SUPERSEDED_RECOVERED after one failed real review. Both2GEN budgets were recovered
 and delivered; native balance/escrow/credit are0GEN. A0GEN normalization control
-finalized SUCCESS. The replacement source still needs its own deployment and
-consequential election. Browser-wallet writes remain PENDING_REAL_EVIDENCE.
+finalized SUCCESS. Active revision2 is0xFB0943A725499C65D49254168Dce37AFdb949a81.
+Its majority election and three-way tie finalized SUCCESS; five terminal cases
+returned or granted all10GEN, with five exact2GEN native exits. Current native,
+escrow and credit are0GEN. The canonical lifecycle audit passed. Browser-wallet
+writes remain PENDING_REAL_EVIDENCE and are distinct from script signatures.
 Studionet/localnet/other networks: no SlateFold evidence or deployment claimed.
-Browser: actual local rendering/navigation/discovery only; no account permission,
-signature, funding, transaction or external adopter claimed. Public CI/app/Portal:
+Browser: local rendering/navigation/discovery and a real selected OKX account
+connection observed; no browser signature, transaction or external adopter claimed. Public CI/app/Portal:
 pending. These limits remain until replaced by fresh evidence, not by a plan.
