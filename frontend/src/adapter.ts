@@ -20,7 +20,11 @@ export function createSlateAdapter(options:Options):Adapter{
  const chain={...studioDevnet,rpcUrls:{default:{http:[endpoint]}}};
  const client=createClient({chain,...options.provider?{provider:options.provider}:{},...validAddress(options.account)?{account:options.account}:{}});
  const configured=()=>{if(!validAddress(options.address))throw Error('A verified contract address is not configured. No transaction was submitted.');if(!validAddress(chain.consensusMainContract?.address))throw Error('The Studio Dev system contract address is invalid.');return options.address;};
- async function read(name:string,args:(string|number)[]){return client.readContract({address:configured(),functionName:name,args,transactionHashVariant:TransactionHashVariant.LATEST_FINAL});}
+ async function read(name:string,args:(string|number)[]){
+  const address=configured();
+  try{return await client.readContract({address,functionName:name,args,transactionHashVariant:TransactionHashVariant.LATEST_FINAL});}
+  catch{throw Error('Council records could not be loaded. Try loading again in a moment.');}
+ }
  async function poll(hash:`0x${string}`,stage:(s:TxStage,h?:string)=>void){
   let accepted=false;
   for(let i=0;i<(options.maxPolls??120);i++){

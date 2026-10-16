@@ -81,6 +81,16 @@ it('current selected account must still match before signing',async()=>{
 it('canonical list reads use IC proxy and real SDK decoding',async()=>{
  const {sends,reads}=io();expect(await createSlateAdapter({address:recipient,endpoint}).list()).toEqual([]);expect(reads).toEqual(['gen_call']);expect(sends).toHaveLength(0);
 });
+it('failed canonical reads expose recovery guidance and can retry without wallet writes',async()=>{
+ const {provider,sends}=io();let unavailable=true;
+ vi.stubGlobal('fetch',vi.fn(async(_url:unknown,options:RequestInit)=>{
+  const body=JSON.parse(String(options.body));expect(body.method).toBe('gen_call');
+  return Response.json(unavailable?{jsonrpc:'2.0',id:body.id,error:{code:-32000,message:'Studio Dev read is temporarily unavailable.'}}:{jsonrpc:'2.0',id:body.id,result:toHex(abi.calldata.encode('2'))});
+ }));
+ const adapter=createSlateAdapter({address:recipient,account:sender,provider,endpoint});
+ await expect(adapter.credit(sender)).rejects.toThrow('Council records could not be loaded. Try loading again in a moment.');
+ unavailable=false;expect(await adapter.credit(sender)).toBe('2');expect(sends).toHaveLength(0);
+});
 it('finalized failed execution cannot produce successful finality',async()=>{
  const {provider}=io('ERROR');const stages:string[]=[];
  await expect(createSlateAdapter({address:recipient,account:sender,provider,endpoint,pollIntervalMs:0}).write('cancel_round',['failed-fixture'],'0',s=>stages.push(s))).rejects.toThrow(/execution/i);expect(stages).not.toContain('finalized');
